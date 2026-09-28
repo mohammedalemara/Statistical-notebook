@@ -1,10 +1,10 @@
 ```{r table4, include=FALSE}
 
-c11 <- sum(as.numeric(df$f2_c3_b_2), na.rm = TRUE)
+c11 <- sum(as.numeric(df$drop_kg_age4_boys), na.rm = TRUE)
 c12 <- 0
 c13 <- c11
 
-c21 <- sum(as.numeric(df$f2_c3_b_3), na.rm = TRUE)
+c21 <- sum(as.numeric(df$drop_kg_age4_girls), na.rm = TRUE)
 c22 <- 0
 c23 <- c21
 
@@ -13,11 +13,11 @@ c32 <- 0
 c33 <- c31
 
 c41 <- 0
-c42 <- sum(as.numeric(df$f2_c3_c_2), na.rm = TRUE)
+c42 <- sum(as.numeric(df$drop_kg_age5_boys), na.rm = TRUE)
 c43 <- c42
 
 c51 <- 0
-c52 <- sum(as.numeric(df$f2_c3_c_3), na.rm = TRUE)
+c52 <- sum(as.numeric(df$drop_kg_age5_girls), na.rm = TRUE)
 c53 <- c52
 
 c61 <- 0

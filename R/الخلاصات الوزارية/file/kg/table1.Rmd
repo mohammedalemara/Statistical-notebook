@@ -1,28 +1,28 @@
 ```{r table1, include=FALSE}
 
 
-c11 <- nrow(df[which(df$q6 == "1"),])
-c12 <- nrow(df[which(df$q6 == "2"),])
+c11 <- nrow(df[which(df$book_class == "kg" & df$sch_env == "urb"), ])
+c12 <- nrow(df[which(df$book_class == "kg" & df$sch_env == "rur"), ])
 c13 <- c11 + c12
 
-c21 <- sum(as.numeric(df$f2_c1_b_2[df$q6 == 1]), na.rm = TRUE)
-c22 <- sum(as.numeric(df$f2_c1_b_2[df$q6 == 2]), na.rm = TRUE)
+c21 <- sum(as.numeric(df$reg_kg_age4_boys[df$sch_env == "urb"]), na.rm = TRUE)
+c22 <- sum(as.numeric(df$reg_kg_age4_boys[df$sch_env == "rur"]), na.rm = TRUE)
 c23 <- c21 + c22
 
-c31 <- sum(as.numeric(df$f2_c1_b_3[df$q6 == 1]), na.rm = TRUE)
-c32 <- sum(as.numeric(df$f2_c1_b_3[df$q6 == 2]), na.rm = TRUE)
+c31 <- sum(as.numeric(df$reg_kg_age4_girls[df$sch_env == "urb"]), na.rm = TRUE)
+c32 <- sum(as.numeric(df$reg_kg_age4_girls[df$sch_env == "rur"]), na.rm = TRUE)
 c33 <- c31 + c32
 
 c41 <- c21 + c31
 c42 <- c22 + c32
 c43 <- c41 + c42
 
-c51 <- sum(as.numeric(df$f2_c1_c_2[df$q6 == 1]), na.rm = TRUE)
-c52 <- sum(as.numeric(df$f2_c1_c_2[df$q6 == 2]), na.rm = TRUE)
+c51 <- sum(as.numeric(df$reg_kg_age5_boys[df$sch_env == "urb"]), na.rm = TRUE)
+c52 <- sum(as.numeric(df$reg_kg_age5_boys[df$sch_env == "rur"]), na.rm = TRUE)
 c53 <- c51 + c52
 
-c61 <- sum(as.numeric(df$f2_c1_c_3[df$q6 == 1]), na.rm = TRUE)
-c62 <- sum(as.numeric(df$f2_c1_c_3[df$q6 == 2]), na.rm = TRUE)
+c61 <- sum(as.numeric(df$reg_kg_age5_girls[df$sch_env == "urb"]), na.rm = TRUE)
+c62 <- sum(as.numeric(df$reg_kg_age5_girls[df$sch_env == "rur"]), na.rm = TRUE)
 c63 <- c61 + c62
 
 c71 <- c51 + c61
@@ -41,32 +41,32 @@ c101 <- c41 + c71
 c102 <- c42 + c72
 c103 <- c43 + c73
 
-c111 <- sum(as.numeric(df$f2_c2_b_2[df$q6 == 1]), na.rm = TRUE)
-c112 <- sum(as.numeric(df$f2_c2_b_2[df$q6 == 2]), na.rm = TRUE)
+c111 <- sum(as.numeric(df$cls_kg_age4_cls_count[df$sch_env == "urb"]), na.rm = TRUE)
+c112 <- sum(as.numeric(df$cls_kg_age4_cls_count[df$sch_env == "rur"]), na.rm = TRUE)
 c113 <- c111 + c112
 
-c121 <- sum(as.numeric(df$f2_c2_c_2[df$q6 == 1]), na.rm = TRUE)
-c122 <- sum(as.numeric(df$f2_c2_c_2[df$q6 == 2]), na.rm = TRUE)
+c121 <- sum(as.numeric(df$cls_kg_age5_cls_count[df$sch_env == "urb"]), na.rm = TRUE)
+c122 <- sum(as.numeric(df$cls_kg_age5_cls_count[df$sch_env == "rur"]), na.rm = TRUE)
 c123 <- c121 + c122
 
 c131 <- c111 + c121
 c132 <- c112 + c122
 c133 <- c113 + c123
 
-c141 <- nrow(df[which(df$q6 == "1" & df$q22 == "1"), ])
-c142 <- nrow(df[which(df$q6 == "2" & df$q22 == "1"), ])
+c141 <- nrow(df[which(df$independent == "org" & df$sch_env == "urb"), ])
+c142 <- nrow(df[which(df$independent == "org" & df$sch_env == "rur"), ])
 c143 <- c141 + c142
 
-c151 <- nrow(df[which(df$q6 == "1" & df$q22 == "2"), ])
-c152 <- nrow(df[which(df$q6 == "2" & df$q22 == "2"), ])
+c151 <- nrow(df[which(df$independent == "gst" & df$sch_env == "urb"), ])
+c152 <- nrow(df[which(df$independent == "gst" & df$sch_env == "rur"), ])
 c153 <- c151 + c152
 
-c161 <- nrow(df[which(df$q6 == "1" & df$q22 == "3"), ])
-c162 <- nrow(df[which(df$q6 == "2" & df$q22 == "3"), ])
+c161 <- nrow(df[which(df$independent == "hst" & df$sch_env == "urb"), ])
+c162 <- nrow(df[which(df$independent == "hst" & df$sch_env == "rur"), ])
 c163 <- c161 + c162
 
-c171 <- nrow(df[which(df$q6 == "1" & df$q15 == "1"), ])
-c172 <- nrow(df[which(df$q6 == "2" & df$q22 == "1"), ])
+c171 <- nrow(df[which(df$is_new == "1" & df$sch_env == "urb"), ])
+c172 <- nrow(df[which(df$is_new == "1" & df$sch_env == "rur"), ])
 c173 <- c171 + c172
 
 ```

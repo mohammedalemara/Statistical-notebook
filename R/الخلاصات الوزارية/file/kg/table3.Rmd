@@ -1,59 +1,59 @@
 ```{r table3, include=FALSE}
 
-c11 <- sum(as.numeric(df$emp1_b_3[df$q6 == 1]), na.rm = TRUE)
-c12 <- sum(as.numeric(df$emp1_b_3[df$q6 == 2]), na.rm = TRUE)
+c11 <- sum(as.numeric(df$staff_title_mgr_female[df$sch_env == "urb"]), na.rm = TRUE)
+c12 <- sum(as.numeric(df$staff_title_mgr_female[df$sch_env == "rur"]), na.rm = TRUE)
 c13 <- c11 + c12
 
-c21 <- sum(as.numeric(df$emp1_c_3[df$q6 == 1]), na.rm = TRUE)
-c22 <- sum(as.numeric(df$emp1_c_3[df$q6 == 2]), na.rm = TRUE)
+c21 <- sum(as.numeric(df$staff_title_asst_female[df$sch_env == "urb"]), na.rm = TRUE)
+c22 <- sum(as.numeric(df$staff_title_asst_female[df$sch_env == "rur"]), na.rm = TRUE)
 c23 <- c21 + c22
 
-c31 <- sum(as.numeric(df$emp1_d_3[df$q6 == 1]), na.rm = TRUE)
-c32 <- sum(as.numeric(df$emp1_d_3[df$q6 == 2]), na.rm = TRUE)
+c31 <- sum(as.numeric(df$staff_title_tchr_female[df$sch_env == "urb"]), na.rm = TRUE)
+c32 <- sum(as.numeric(df$staff_title_tchr_female[df$sch_env == "rur"]), na.rm = TRUE)
 c33 <- c31 + c32
 
-c41 <- sum(as.numeric(df$emp1_e_3[df$q6 == 1]), na.rm = TRUE)
-c42 <- sum(as.numeric(df$emp1_e_3[df$q6 == 2]), na.rm = TRUE)
+c41 <- sum(as.numeric(df$staff_title_cslr_female[df$sch_env == "urb"]), na.rm = TRUE)
+c42 <- sum(as.numeric(df$staff_title_cslr_female[df$sch_env == "rur"]), na.rm = TRUE)
 c43 <- c41 + c42
 
 c51 <- c11 + c21 + c31 + c41
 c52 <- c12 + c22 + c32 + c42
 c53 <- c51 + c52
 
-c61 <- sum(as.numeric(df$emp8_c_2[df$q6 == 1]), na.rm = TRUE)
-c62 <- sum(as.numeric(df$emp8_c_2[df$q6 == 2]), na.rm = TRUE)
+c61 <- sum(as.numeric(df$staff_qual_kg_female_train[df$sch_env == "urb"]), na.rm = TRUE)
+c62 <- sum(as.numeric(df$staff_qual_kg_female_train[df$sch_env == "rur"]), na.rm = TRUE)
 c63 <- c61 + c62
 
-c71 <- sum(as.numeric(df$emp8_c_3[df$q6 == 1]), na.rm = TRUE)
-c72 <- sum(as.numeric(df$emp8_c_3[df$q6 == 2]), na.rm = TRUE)
+c71 <- sum(as.numeric(df$staff_qual_kg_female_dip_edu[df$sch_env == "urb"]), na.rm = TRUE)
+c72 <- sum(as.numeric(df$staff_qual_kg_female_dip_edu[df$sch_env == "rur"]), na.rm = TRUE)
 c73 <- c71 + c72
 
-c81 <- sum(as.numeric(df$emp8_c_4[df$q6 == 1]), na.rm = TRUE)
-c82 <- sum(as.numeric(df$emp8_c_4[df$q6 == 2]), na.rm = TRUE)
+c81 <- sum(as.numeric(df$staff_qual_kg_female_dip_art[df$sch_env == "urb"]), na.rm = TRUE)
+c82 <- sum(as.numeric(df$staff_qual_kg_female_dip_art[df$sch_env == "rur"]), na.rm = TRUE)
 c83 <- c81 + c82
 
-c91 <- sum(as.numeric(df$emp8_c_5[df$q6 == 1]), na.rm = TRUE)
-c92 <- sum(as.numeric(df$emp8_c_5[df$q6 == 2]), na.rm = TRUE)
+c91 <- sum(as.numeric(df$staff_qual_kg_female_ba_edu[df$sch_env == "urb"]), na.rm = TRUE)
+c92 <- sum(as.numeric(df$staff_qual_kg_female_ba_edu[df$sch_env == "rur"]), na.rm = TRUE)
 c93 <- c91 + c92
 
-c101 <- sum(as.numeric(df$emp8_c_6[df$q6 == 1]), na.rm = TRUE)
-c102 <- sum(as.numeric(df$emp8_c_6[df$q6 == 2]), na.rm = TRUE)
+c101 <- sum(as.numeric(df$staff_qual_kg_female_ba_kg[df$sch_env == "urb"]), na.rm = TRUE)
+c102 <- sum(as.numeric(df$staff_qual_kg_female_ba_kg[df$sch_env == "rur"]), na.rm = TRUE)
 c103 <- c101 + c102
 
-c111 <- sum(as.numeric(df$emp8_c_7[df$q6 == 1]), na.rm = TRUE)
-c112 <- sum(as.numeric(df$emp8_c_7[df$q6 == 2]), na.rm = TRUE)
+c111 <- sum(as.numeric(df$staff_qual_kg_female_ba[df$sch_env == "urb"]), na.rm = TRUE)
+c112 <- sum(as.numeric(df$staff_qual_kg_female_ba[df$sch_env == "rur"]), na.rm = TRUE)
 c113 <- c111 + c112
 
-c121 <- sum(as.numeric(df$emp8_c_8[df$q6 == 1]), na.rm = TRUE)
-c122 <- sum(as.numeric(df$emp8_c_8[df$q6 == 2]), na.rm = TRUE)
+c121 <- sum(as.numeric(df$staff_qual_kg_female_msc[df$sch_env == "urb"]), na.rm = TRUE)
+c122 <- sum(as.numeric(df$staff_qual_kg_female_msc[df$sch_env == "rur"]), na.rm = TRUE)
 c123 <- c121 + c122
 
-c131 <- sum(as.numeric(df$emp8_c_9[df$q6 == 1]), na.rm = TRUE)
-c132 <- sum(as.numeric(df$emp8_c_9[df$q6 == 2]), na.rm = TRUE)
+c131 <- sum(as.numeric(df$staff_qual_kg_female_phd[df$sch_env == "urb"]), na.rm = TRUE)
+c132 <- sum(as.numeric(df$staff_qual_kg_female_phd[df$sch_env == "rur"]), na.rm = TRUE)
 c133 <- c131 + c132
 
-c141 <- sum(as.numeric(df$emp8_c_10[df$q6 == 1]), na.rm = TRUE)
-c142 <- sum(as.numeric(df$emp8_c_10[df$q6 == 2]), na.rm = TRUE)
+c141 <- sum(as.numeric(df$staff_qual_kg_female_oth[df$sch_env == "urb"]), na.rm = TRUE)
+c142 <- sum(as.numeric(df$staff_qual_kg_female_oth[df$sch_env == "rur"]), na.rm = TRUE)
 c143 <- c141 + c142
 
 c151 <- c61 + c71 + c81 + c91 + c101 + c111 + c121 + c131 + c141

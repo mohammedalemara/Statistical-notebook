@@ -1,25 +1,25 @@
 ```{r table8, include=FALSE}
 
 
-c11 <- sum(as.numeric(df$emp4_b_2), na.rm = TRUE)
-c21 <- sum(as.numeric(df$emp4_b_3), na.rm = TRUE)
+c11 <- sum(as.numeric(df$staff_serv_le5_male), na.rm = TRUE)
+c21 <- sum(as.numeric(df$staff_serv_le5_female), na.rm = TRUE)
 
-c31 <- sum(as.numeric(df$emp4_c_2), na.rm = TRUE)
-c41 <- sum(as.numeric(df$emp4_c_3), na.rm = TRUE)
+c31 <- sum(as.numeric(df$staff_serv_y6_10_male), na.rm = TRUE)
+c41 <- sum(as.numeric(df$staff_serv_y6_10_female), na.rm = TRUE)
 
-c51 <- sum(as.numeric(df$emp4_d_2), na.rm = TRUE)
-c61 <- sum(as.numeric(df$emp4_d_3), na.rm = TRUE)
+c51 <- sum(as.numeric(df$staff_serv_y11_15_male), na.rm = TRUE)
+c61 <- sum(as.numeric(df$staff_serv_y11_15_female), na.rm = TRUE)
 
-c71 <- sum(as.numeric(df$emp4_e_2), na.rm = TRUE)
-c81 <- sum(as.numeric(df$emp4_e_3), na.rm = TRUE)
+c71 <- sum(as.numeric(df$staff_serv_ge16_male), na.rm = TRUE)
+c81 <- sum(as.numeric(df$staff_serv_ge16_female), na.rm = TRUE)
 
 c91 <- 0
 c101 <- 0
 
-c111 <- sum(as.numeric(df$emp4_k_2_calc), na.rm = TRUE)
-c121 <- sum(as.numeric(df$emp4_k_3_calc), na.rm = TRUE)
+c111 <- sum(as.numeric(df$staff_serv_total_male_calc), na.rm = TRUE)
+c121 <- sum(as.numeric(df$staff_serv_total_female_calc), na.rm = TRUE)
 
-c131 <- sum(as.numeric(df$emp4_k_4_calc), na.rm = TRUE)
+c131 <- sum(as.numeric(df$staff_serv_total_total_calc), na.rm = TRUE)
 
 ```
 
@@ -27,7 +27,7 @@ c131 <- sum(as.numeric(df$emp4_k_4_calc), na.rm = TRUE)
 \begin{table}[H]
 \centering
 \Large
-\caption[]{عدد اعضاء الهيئة التعليمية المشاركين في الدورات التدريبية للعام السابق}
+\caption[]{عدد اعضاء الهيئة التعليمية حسب سنوات الخدمة}
 \renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cc|cc|cc|cc|cc|ccc|}
 \hline

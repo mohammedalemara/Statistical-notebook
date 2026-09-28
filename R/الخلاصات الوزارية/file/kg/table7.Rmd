@@ -1,9 +1,9 @@
 ```{r table7, include=FALSE}
 
 
-c11 <- sum(as.numeric(df$emp6_6), na.rm = TRUE)
-c12 <- sum(as.numeric(df$emp6_8), na.rm = TRUE)
-c13 <- sum(as.numeric(df$emp6_10), na.rm = TRUE)
+c11 <- sum(as.numeric(df$staff_train_male_train), na.rm = TRUE)
+c12 <- sum(as.numeric(df$staff_train_female_train), na.rm = TRUE)
+c13 <- sum(as.numeric(df$staff_train_total_train_calc), na.rm = TRUE)
 
 ```
 

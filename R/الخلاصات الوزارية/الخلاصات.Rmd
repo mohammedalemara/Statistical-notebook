@@ -20,7 +20,7 @@ library(readxl)
 library(dplyr)
 
 # رابط ملف البيانات
-url <- "https://kf.kobotoolbox.org/api/v2/assets/aycXgGj28xx2kp266wNKY9/export-settings/esiBoLNm45SQnB55UZCAmNq/data.xlsx"
+url <- "https://kf.kobotoolbox.org/api/v2/assets/akFULLhHuubDWuFd2icLho/export-settings/esbT7X2jEkED63uFsfHw4Qj/data.xlsx"
 
 # رمز الوصول
 my_token <- "5d24ece551cba75bfe9278bff0b4d482bc266b75"
@@ -53,7 +53,7 @@ by <- "2027/2026"
 ```{=latex}
 \input{models//cover.tex}
 ```
-
+-->
 
 
 ```{=latex}
@@ -64,7 +64,7 @@ by <- "2027/2026"
 \subsection{التعليم الحكومي}
 ```
 ```{r, include=FALSE}
-df <- df_original %>%filter(q18 == 1, q4 == 1)
+df <- df_original %>%filter(book_class == "kg", ownership == "gov")
 ```
 
 
@@ -93,9 +93,12 @@ df <- df_original %>%filter(q18 == 1, q4 == 1)
 \subsection{التعليم الاهلي}
 \setcounter{table}{0}
 ```
+
 ```{r, include=FALSE}
-df <- df_original %>%filter(q18 == 2, q4 == 1)
+df <- df_original %>%filter(book_class == "kg", ownership == "priv")
 ```
+
+
 ```{r, child='file//kg//table1.Rmd'}
 ```
 ```{r, child='file//kg//table2.Rmd'}
@@ -113,35 +116,4 @@ df <- df_original %>%filter(q18 == 2, q4 == 1)
 ```{r, child='file//kg//table8.Rmd'}
 ```
 ```{r, child='file//kg//table9.Rmd'}
-```
--->
-
-```{=latex}
-\newpage
-\section{الابتدائي}
-\subsection{التعليم الحكومي}
-\setcounter{table}{0}
-```
-```{r, include=FALSE}
-
-url <- "https://kf.kobotoolbox.org/api/v2/assets/agxT4dyzqAc47Q8wiqqTQ4/export-settings/esCqpVseFBDzpgNMxFFzcnQ/data.xlsx"
-tf <- tempfile(fileext = ".xlsx")
-
-my_token <- "5d24ece551cba75bfe9278bff0b4d482bc266b75"
-
-GET(url, 
-    write_disk(tf, overwrite = TRUE), 
-    add_headers(Authorization = paste("Token", my_token)))
-
-
-df <- read_excel(tf)
-df_original <- df
-
-
-```
-```{r, include=FALSE}
-df <- df_original %>%filter(ownership == 1, sch_class == 1)
-```
-
-```{r, child='file//pri//table1.Rmd'}
 ```

@@ -1,19 +1,19 @@
 ```{r table5, include=FALSE}
 
-c11 <- nrow(df[which(df$q62 == "1"),])
-c21 <- sum(as.numeric(df$q65c), na.rm = TRUE)
-c31 <- nrow(df[which(df$q54 == "1"),])
-c41 <- nrow(df[which(df$q54 == "2"),])
-c51 <- nrow(df[which(df$q54 == "3"),])
-c61 <- nrow(df[which(df$q55 == "1"),])
-c71 <- nrow(df[which(df$q55 == "2"),])
-c81 <- nrow(df[which(df$q55 == "3"),])
-c91 <- nrow(df[which(df$q47 == "1"),])
-c101 <- nrow(df[which(df$q47 == "4"),])
-c111 <- nrow(df[df$q47 == "2" | df$q47 == "3", ])
-c121 <- nrow(df[which(df$q47 == "5"),])
-c121 <- nrow(df[which(df$q47 == "6"),])
-c131 <- nrow(df[which(df$q47 == "7"),])
+c11 <- nrow(df[which(df$has_lib == "1"),])
+c21 <- sum(as.numeric(df$total_items), na.rm = TRUE)
+c31 <- nrow(df[which(df$bld_owner == "moe"),])
+c41 <- nrow(df[which(df$bld_owner == "gov_oth"),])
+c51 <- nrow(df[which(df$bld_owner == "rent"),])
+c61 <- nrow(df[which(df$bld_cond == "ok"),])
+c71 <- nrow(df[which(df$bld_cond == "rep"),])
+c81 <- nrow(df[which(df$bld_cond == "nok"),])
+c91 <- nrow(df[which(df$bld_material == "brk"),])
+c101 <- nrow(df[which(df$bld_material == "pre"),])
+c111 <- nrow(df[df$bld_material == "mud" | df$bld_material == "hut", ])
+c121 <- nrow(df[which(df$qbld_material == "stl"),])
+c121 <- nrow(df[which(df$bld_material == "car"),])
+c131 <- nrow(df[which(df$bld_material == "oth"),])
 ```
 
 ```{=latex}
@@ -32,18 +32,18 @@ c131 <- nrow(df[which(df$q47 == "7"),])
 \end{table}
 ```
 ```{r table5_1, include=FALSE}
-c11 <- nrow(df[which(df$q38 == "1"),])
-c21 <- nrow(df[which(df$q38 == "2"),])
+c11 <- nrow(df[which(df$bld_type == "sch"),])
+c21 <- nrow(df[which(df$bld_type == "non_sch"),])
 
-c31 <- nrow(df[which(df$q53 == "1"),])
-c41 <- nrow(df[which(df$q53 == "2"),])
-c51 <- nrow(df[which(df$q53 == "3"),])
+c31 <- nrow(df[which(df$occupancy == "sgl"),])
+c41 <- nrow(df[which(df$occupancy == "dbl"),])
+c51 <- nrow(df[which(df$occupancy == "multi"),])
 c61 <- c31 + c41 + c51
 
-c71 <- nrow(df[which(df$q48 == "1"),])
-c81 <- nrow(df[which(df$q49 == "1"),])
-c91 <- nrow(df[which(df$q50 == "1"),])
-c101<- nrow(df[which(df$q51 == "1"),])
+c71 <- nrow(df[which(df$has_san == "1"),])
+c81 <- nrow(df[which(df$drink_water == "1"),])
+c91 <- nrow(df[which(df$has_sewer == "1"),])
+c101<- nrow(df[which(df$has_fence == "1"),])
 ```
 
 ```{=latex}
@@ -61,16 +61,16 @@ c101<- nrow(df[which(df$q51 == "1"),])
 \end{table}
 ```
 ```{r table5_2, include=FALSE}
-c11 <- nrow(df[which(df$q43 == "1"),])
-c21 <- nrow(df[which(df$q43 == "2"),])
-c31 <- nrow(df[which(df$q43 == "3"),])
+c11 <- nrow(df[which(df$floors == "f1"),])
+c21 <- nrow(df[which(df$floors == "f2"),])
+c31 <- nrow(df[which(df$floors == "f3"),])
 c41 <- c11 + c21
 
-c51 <- nrow(df[which(df$q45a == "1"),])
-c61 <- nrow(df[which(df$q45a == "2"),])
-c71 <- nrow(df[which(df$q45a == "3"),])
-c81 <- nrow(df[which(df$q45a == "4"),])
-c91 <- nrow(df[which(df$q45a == "5"),])
+c51 <- nrow(df[which(df$capacity == "c6"),])
+c61 <- nrow(df[which(df$capacity == "c9"),])
+c71 <- nrow(df[which(df$capacity == "c12"),])
+c81 <- nrow(df[which(df$capacity == "c18"),])
+c91 <- nrow(df[which(df$capacity == "c24"),])
 c101 <- c51 + c61 + c71 + c81 + c91
 ```
 

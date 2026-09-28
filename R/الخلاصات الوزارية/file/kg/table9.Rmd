@@ -1,25 +1,25 @@
 ```{r table9, include=FALSE}
 
 
-c11 <- sum(as.numeric(df$emp5_b_2), na.rm = TRUE)
-c21 <- sum(as.numeric(df$emp5_b_3), na.rm = TRUE)
+c11 <- sum(as.numeric(df$staff_age_le30_male), na.rm = TRUE)
+c21 <- sum(as.numeric(df$staff_age_le30_female), na.rm = TRUE)
 
-c31 <- sum(as.numeric(df$emp5_c_2), na.rm = TRUE)
-c41 <- sum(as.numeric(df$emp5_c_3), na.rm = TRUE)
+c31 <- sum(as.numeric(df$staff_age_y30_39_male), na.rm = TRUE)
+c41 <- sum(as.numeric(df$staff_age_y30_39_female), na.rm = TRUE)
 
-c51 <- sum(as.numeric(df$emp5_d_2), na.rm = TRUE)
-c61 <- sum(as.numeric(df$emp5_d_3), na.rm = TRUE)
+c51 <- sum(as.numeric(df$staff_age_y40_49_male), na.rm = TRUE)
+c61 <- sum(as.numeric(df$staff_age_y40_49_female), na.rm = TRUE)
 
-c71 <- sum(as.numeric(df$emp5_e_2), na.rm = TRUE)
-c81 <- sum(as.numeric(df$emp5_e_3), na.rm = TRUE)
+c71 <- sum(as.numeric(df$staff_age_y50_59_male), na.rm = TRUE)
+c81 <- sum(as.numeric(df$staff_age_y50_59_female), na.rm = TRUE)
 
-c91  <- sum(as.numeric(df$emp5_f_2), na.rm = TRUE)
-c101 <- sum(as.numeric(df$emp5_f_3), na.rm = TRUE)
+c91  <- sum(as.numeric(df$staff_age_y50_59_male), na.rm = TRUE)
+c101 <- sum(as.numeric(df$staff_age_y50_59_female), na.rm = TRUE)
 
-c111 <- sum(as.numeric(df$emp5_g_2_calc), na.rm = TRUE)
-c121 <- sum(as.numeric(df$emp5_g_3_calc), na.rm = TRUE)
+c111 <- sum(as.numeric(df$staff_age_total_male_calc), na.rm = TRUE)
+c121 <- sum(as.numeric(df$staff_age_total_female_calc), na.rm = TRUE)
 
-c131 <- sum(as.numeric(df$emp5_g_4_calc), na.rm = TRUE)
+c131 <- sum(as.numeric(df$staff_age_total_total_calc), na.rm = TRUE)
 
 ```
 
