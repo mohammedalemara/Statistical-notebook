@@ -20,10 +20,10 @@ library(readxl)
 library(dplyr)
 
 # رابط ملف البيانات
-url <- "https://kf.kobotoolbox.org/api/v2/assets/akFULLhHuubDWuFd2icLho/export-settings/esbT7X2jEkED63uFsfHw4Qj/data.xlsx"
+url <- "https://kf.kobotoolbox.org/api/v2/assets/akFULLhHuubDWuFd2icLho/export-settings/esU8F5EM7Xv7735XeGnFKaG/data.xlsx"
 
 # رمز الوصول
-my_token <- "5d24ece551cba75bfe9278bff0b4d482bc266b75"
+my_token <- "ebf64ff6f976640feb272fc5d9c27eab5effeddd"
 
 # اسم ومكان حفظ الملف (داخل مجلد العمل)
 file_path <- "data.xlsx"
@@ -116,4 +116,17 @@ df <- df_original %>%filter(book_class == "kg", ownership == "priv")
 ```{r, child='file//kg//table8.Rmd'}
 ```
 ```{r, child='file//kg//table9.Rmd'}
+```
+```{=latex}
+\newpage
+\section{التعليم الابتدائي}
+\subsection{التعليم الحكومي}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original %>%filter(book_class == "pri", ownership == "gov")
+```
+
+
+```{r, child='file//pri//table1.Rmd'}
 ```

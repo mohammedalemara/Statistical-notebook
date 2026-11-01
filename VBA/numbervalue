@@ -1,4 +1,4 @@
-Sub ConvertTextToNumbers_AllColumns()
+﻿Sub ConvertTextToNumbers_AllColumns()
     Dim ws As Worksheet
     Dim rng As Range
     Dim cell As Range
