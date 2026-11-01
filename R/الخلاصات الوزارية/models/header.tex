@@ -1,5 +1,29 @@
+%==================================================
+% تحميل الحزم: يجب تحميل caption قبل polyglossia
+% لأن polyglossia يفعّل دعم bidi للغة العربية.
+%==================================================
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usepackage{eso-pic}
+\usepackage{titlesec}
+\usepackage{rotating}
+\usepackage{tabularray}
+\usepackage{pdfpages}
+\usepackage{hyperref} % يجب تحميله قبل polyglossia/bidi
 \usepackage{fontspec}
 \usepackage{polyglossia}
+
 \setdefaultlanguage[numerals=eastern]{arabic}
 \setotherlanguage{english}
 \newfontfamily\arabicfont[Script=Arabic]{Arial}
@@ -8,7 +32,6 @@
 %==================================================
 % [جديد] لوحة الألوان: أزرق سماوي مع رمادي
 %==================================================
-\usepackage{xcolor}
 \definecolor{GovBlue}{HTML}{1E88C8}    % أزرق سماوي: الهوية الأساسية
 \definecolor{GovDeep}{HTML}{14608F}    % [جديد] أزرق أغمق: للعناوين والتفاصيل
 \definecolor{GovSlate}{HTML}{22303C}   % رمادي مزرق داكن: النصوص
@@ -27,56 +50,39 @@
 %==================================================
 % دمج عدة صفوف في خلية واحدة داخل الجداول
 %==================================================
-\usepackage{multirow}
-%==================================================
 % إدراج الصور والتحكم في حجمها وتدويرها
-%==================================================
-\usepackage{graphicx}
-
 %==================================================
 % دعم الخيار [H] لتثبيت الجداول والأشكال في مكانها
 %==================================================
-\usepackage{float}
-
-%==================================================
 % ضبط هوامش الصفحة وأبعاد الورقة
 %==================================================
-\usepackage{geometry}
-
 \geometry{
-    a4paper,
-    landscape,
-    left=1cm,
-    right=1cm,
-    bottom=1.9cm,   % [معدّل] كان 1cm؛ لرفع التذييل عن حافة الورقة
-    top=0.5cm,
-    includehead,
-    headheight=35pt,
-    headsep=0pt,
-    footskip=31pt   % [معدّل] كان 25pt
+	a4paper,
+	landscape,
+	left=1cm,
+	right=1cm,
+	bottom=1.9cm,   % [معدّل] كان 1cm؛ لرفع التذييل عن حافة الورقة
+	top=0.5cm,
+	includehead,
+	headheight=35pt,
+	headsep=0pt,
+	footskip=31pt   % [معدّل] كان 25pt
 }
 
 %==================================================
 % التحكم في كابشن الجداول وزيادة الارتفاع عن الجدول
 %==================================================
-\usepackage{caption}
 \captionsetup[table]{
-    font={Large,bf},
-    labelfont={color=GovSlate},    % [جديد]
-    textfont={color=GovSlate},   % [جديد]
-    skip=5pt
+	font={Large,bf},
+	labelfont={color=GovSlate},    % [جديد]
+	textfont={color=GovSlate},   % [جديد]
+	skip=5pt
 }
 
 
 %==================================================
 % Header & Footer
 %==================================================
-
-\usepackage{fancyhdr}
-\usepackage{lastpage}   % [جديد] لعرض: صفحة X من Y
-\usepackage{adjustbox}  % [جديد] تصغير نص الرأس تلقائياً إن زاد عن المساحة المتاحة
-\usepackage{tikz}       % [جديد] للمربعات المستديرة في الرأس والتذييل
-\usepackage{eso-pic}    % [جديد] لرسم خلفية فاتحة بعرض الصفحة خلف الرأس والتذييل
 
 \setlength{\headheight}{26pt}   % [معدّل] كانت 20pt لتتسع لمربع القسم
 \setlength{\headsep}{12pt}
@@ -93,14 +99,14 @@
 \newcommand{\CurrentSubsection}{}
 
 \renewcommand{\sectionmark}[1]{%
-    \gdef\CurrentSection{#1}%
-    \gdef\CurrentSubsection{}%
-    \markright{\CurrentSection}%
+	\gdef\CurrentSection{#1}%
+	\gdef\CurrentSubsection{}%
+	\markright{\CurrentSection}%
 }
 
 \renewcommand{\subsectionmark}[1]{%
-    \gdef\CurrentSubsection{#1}%
-    \markright{\CurrentSection\ - \CurrentSubsection}%
+	\gdef\CurrentSubsection{#1}%
+	\markright{\CurrentSection\ - \CurrentSubsection}%
 }
 
 \makeatother
@@ -131,58 +137,58 @@
 \newlength{\GovHeadBandH}
 \newlength{\GovFootBandH}
 \AtBeginDocument{%
-    \setlength{\GovHeadBandH}{\dimexpr1in+\voffset+\topmargin+\headheight\relax}%
-    \setlength{\GovFootBandH}{\dimexpr\paperheight-1in-\voffset-\topmargin-\headheight-\headsep-\textheight-\footskip+25pt\relax}%
+	\setlength{\GovHeadBandH}{\dimexpr1in+\voffset+\topmargin+\headheight\relax}%
+	\setlength{\GovFootBandH}{\dimexpr\paperheight-1in-\voffset-\topmargin-\headheight-\headsep-\textheight-\footskip+25pt\relax}%
 }
 \AddToShipoutPictureBG{%
-    \ifGovTint
-        \AtPageUpperLeft{\raisebox{-\GovHeadBandH}[0pt][0pt]{\color{GovTint}\rule{\paperwidth}{\GovHeadBandH}}}%
-        \AtPageLowerLeft{\color{GovTint}\rule{\paperwidth}{\GovFootBandH}}%
-    \fi
+	\ifGovTint
+	\AtPageUpperLeft{\raisebox{-\GovHeadBandH}[0pt][0pt]{\color{GovTint}\rule{\paperwidth}{\GovHeadBandH}}}%
+	\AtPageLowerLeft{\color{GovTint}\rule{\paperwidth}{\GovFootBandH}}%
+	\fi
 }
 % عدد الصفحات الكلي للعرض (بدون رابط/إطار إن كانت hyperref محمّلة)
 \newcommand{\GovLastPage}{\ifdefined\hypersetup\pageref*{LastPage}\else\pageref{LastPage}\fi}
 \newcounter{GovTotal}   % عدد الصفحات الكلي كرقم خام (يُحدَّث بعد الترجمة الأولى)
 \makeatletter
 \AtEndDocument{%
-    \clearpage
-    \immediate\write\@auxout{\string\setcounter{GovTotal}{\number\numexpr\value{page}-1\relax}}%
+	\clearpage
+	\immediate\write\@auxout{\string\setcounter{GovTotal}{\number\numexpr\value{page}-1\relax}}%
 }
 
 % الرأس - يسار: اسم القسم الحالي داخل مربع مستدير (يختفي إن كان فارغاً)
 \newcommand{\GovHeadLeft}{%
-    \protected@edef\GovTmpMark{\rightmark}%
-    \ifx\GovTmpMark\@empty\else
-        \adjustbox{max width=0.24\headwidth}{%
-            \tikz[baseline=(GovHL.base)]\node[fill=white, draw=GovBlue!45, line width=0.6pt, text=GovDeep, rounded corners=3pt,
-                inner xsep=8pt, inner ysep=4pt, font=\normalsize\bfseries](GovHL){\RL{\nouppercase{\rightmark}}};}%
-    \fi
+	\protected@edef\GovTmpMark{\rightmark}%
+	\ifx\GovTmpMark\@empty\else
+	\adjustbox{max width=0.24\headwidth}{%
+		\tikz[baseline=(GovHL.base)]\node[fill=white, draw=GovBlue!45, line width=0.6pt, text=GovDeep, rounded corners=3pt,
+		inner xsep=8pt, inner ysep=4pt, font=\normalsize\bfseries](GovHL){\RL{\nouppercase{\rightmark}}};}%
+	\fi
 }
 \makeatother
 % الرأس - وسط: شعار وزارة التربية (صندوق بارتفاع صفري فلا يزيد ارتفاع الرأس)
 \newcommand{\GovHeadCenter}{%
-    \IfFileExists{\GovLogoFile}{%
-        \raisebox{-3pt}[0pt][0pt]{\includegraphics[height=\GovLogoHeight]{\GovLogoFile}}%
-    }{}%
+	\IfFileExists{\GovLogoFile}{%
+		\raisebox{-3pt}[0pt][0pt]{\includegraphics[height=\GovLogoHeight]{\GovLogoFile}}%
+	}{}%
 }
 % الرأس - يمين: الجهة في سطرين (المديرية ثم القسم والشعبة)
 \newcommand{\GovHeadRight}{%
-    \raisebox{0pt}[17pt][8pt]{\adjustbox{max width=0.42\headwidth}{\bfseries\color{GovSlate}%
-    \shortstack{\fontsize{10.5}{11}\selectfont \RL{المديرية العامة للتربية في محافظة النجف الاشرف}\\[-1pt]
-    \fontsize{8.5}{9}\selectfont\color{GovDeep}\RL{قسم التخطيط التربوي\textcolor{GovBlue}{\ \textbullet\ }شعبة الاحصاء}}}}%
+	\raisebox{0pt}[17pt][8pt]{\adjustbox{max width=0.42\headwidth}{\bfseries\color{GovSlate}%
+			\shortstack{\fontsize{10.5}{11}\selectfont \RL{المديرية العامة للتربية في محافظة النجف الاشرف}\\[-1pt]
+				\fontsize{8.5}{9}\selectfont\color{GovDeep}\RL{قسم التخطيط التربوي\textcolor{GovBlue}{\ \textbullet\ }شعبة الاحصاء}}}}%
 }
 % التذييل - يسار: صفحة X من Y داخل مربع أزرق مستدير
 \newcommand{\GovFootLeft}{%
-    \tikz[baseline=(GovFL.base)]\node[fill=GovBlue, text=white, rounded corners=4pt,
-        inner xsep=10pt, inner ysep=4.5pt, font=\normalsize\bfseries](GovFL){\RL{صفحة\ \thepage\ من\ \GovLastPage}};%
+	\tikz[baseline=(GovFL.base)]\node[fill=GovBlue, text=white, rounded corners=4pt,
+	inner xsep=10pt, inner ysep=4.5pt, font=\normalsize\bfseries](GovFL){\RL{صفحة\ \thepage\ من\ \GovLastPage}};%
 }
 % التذييل - وسط
 \newcommand{\GovFootCenter}{%
-    \normalsize\bfseries\color{GovGray}\RL{\FooterNote}%
+	\normalsize\bfseries\color{GovGray}\RL{\FooterNote}%
 }
 % التذييل - يمين
 \newcommand{\GovFootRight}{%
-    \normalsize\bfseries\color{GovDeep}\RL{\FooterRightNote}%
+	\normalsize\bfseries\color{GovDeep}\RL{\FooterRightNote}%
 }
 
 %==================================================
@@ -216,35 +222,35 @@
 
 % [جديد] خط الرأس بعرض الورقة كاملة دون قطع: أزرق سميك ثم رمادي رفيع
 \renewcommand{\headrule}{%
-    \hbox to\headwidth{\hss\vbox{\offinterlineskip
-        \hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 3pt depth 0pt}%
-        \vskip 1.5pt
-        \hbox to\paperwidth{\color{GovSilver}\vrule width \paperwidth height 1.5pt depth 0pt}%
-    }\hss}%
-    \vskip-\headrulewidth
+	\hbox to\headwidth{\hss\vbox{\offinterlineskip
+			\hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 3pt depth 0pt}%
+			\vskip 1.5pt
+			\hbox to\paperwidth{\color{GovSilver}\vrule width \paperwidth height 1.5pt depth 0pt}%
+		}\hss}%
+	\vskip-\headrulewidth
 }
 
 % [جديد] خط التذييل بعرض الورقة كاملة دون قطع: رمادي رفيع ثم أزرق سميك
 % (إن فُعّل شريط التقدم يتحول الخط الأزرق إلى أزرق + مسار فاتح)
 \renewcommand{\footrule}{%
-    \vskip-\footruleskip\vskip-\footrulewidth
-    \ifnum\value{GovTotal}>0
-        \GovProgDim=\dimexpr\paperwidth*\value{page}/\value{GovTotal}\relax
-        \ifdim\GovProgDim>\paperwidth \GovProgDim=\paperwidth\fi
-    \else
-        \GovProgDim=\paperwidth
-    \fi
-    \hbox to\headwidth{\hss\vbox{\offinterlineskip
-        \hbox to\paperwidth{\color{GovSilver}\vrule width \paperwidth height 1.5pt depth 0pt}%
-        \vskip 1.5pt
-        \ifGovProgress
-            \hbox to\paperwidth{\color{GovBlue}\vrule width \GovProgDim height 3pt depth 0pt%
-            \color{GovTrack}\vrule width \dimexpr\paperwidth-\GovProgDim\relax height 3pt depth 0pt}%
-        \else
-            \hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 3pt depth 0pt}%
-        \fi
-    }\hss}%
-    \vskip\footruleskip
+	\vskip-\footruleskip\vskip-\footrulewidth
+	\ifnum\value{GovTotal}>0
+	\GovProgDim=\dimexpr\paperwidth*\value{page}/\value{GovTotal}\relax
+	\ifdim\GovProgDim>\paperwidth \GovProgDim=\paperwidth\fi
+	\else
+	\GovProgDim=\paperwidth
+	\fi
+	\hbox to\headwidth{\hss\vbox{\offinterlineskip
+			\hbox to\paperwidth{\color{GovSilver}\vrule width \paperwidth height 1.5pt depth 0pt}%
+			\vskip 1.5pt
+			\ifGovProgress
+			\hbox to\paperwidth{\color{GovBlue}\vrule width \GovProgDim height 3pt depth 0pt%
+				\color{GovTrack}\vrule width \dimexpr\paperwidth-\GovProgDim\relax height 3pt depth 0pt}%
+			\else
+			\hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 3pt depth 0pt}%
+			\fi
+		}\hss}%
+	\vskip\footruleskip
 }
 
 %==================================================
@@ -252,28 +258,28 @@
 %==================================================
 
 \fancypagestyle{plain}{%
-    \fancyhf{}
-
-    % الرأس - يسار
-    \fancyhead[L]{\GovHeadLeft}
-
-    % الرأس - وسط: الشعار
-    \fancyhead[C]{\GovHeadCenter}
-
-    % الرأس - يمين
-    \fancyhead[R]{\GovHeadRight}
-
-    % التذييل
-    \fancyfoot[L]{\GovFootLeft}
-
-    \fancyfoot[C]{\GovFootCenter}
-
-    \fancyfoot[R]{\GovFootRight}
-
-    \input{footer.tex}
-
-    \renewcommand{\headrulewidth}{6pt}
-    \renewcommand{\footrulewidth}{6pt}
+	\fancyhf{}
+	
+	% الرأس - يسار
+	\fancyhead[L]{\GovHeadLeft}
+	
+	% الرأس - وسط: الشعار
+	\fancyhead[C]{\GovHeadCenter}
+	
+	% الرأس - يمين
+	\fancyhead[R]{\GovHeadRight}
+	
+	% التذييل
+	\fancyfoot[L]{\GovFootLeft}
+	
+	\fancyfoot[C]{\GovFootCenter}
+	
+	\fancyfoot[R]{\GovFootRight}
+	
+	\input{footer.tex}
+	
+	\renewcommand{\headrulewidth}{6pt}
+	\renewcommand{\footrulewidth}{6pt}
 }
 
 %==================================================
@@ -281,14 +287,13 @@
 %==================================================
 
 \AtBeginDocument{%
-    \pagestyle{fancy}
-    \thispagestyle{fancy}
+	\pagestyle{fancy}
+	\thispagestyle{fancy}
 }
 
 %==================================================
 % تغيير حجم السكشن
 %==================================================
-\usepackage{titlesec}
 \titleformat*{\section}{\Large\bfseries\color{GovDeep}}
 \titleformat*{\subsection}{\Large\bfseries\color{GovBlue}}
 \titleformat*{\subsubsection}{\Large\bfseries\color{GovGray}}
@@ -296,17 +301,10 @@
 %==================================================
 % ادراج ملفات بي دي اف
 %==================================================
-\usepackage{pdfpages}
-
-%==================================================
 % التحكم في ارتفاع الجداول
 %==================================================
 \renewcommand{\arraystretch}{1}
 
 %==================================================
-% الحزم الخاصة بالجداول
-%==================================================
-\usepackage{color}
-\usepackage{rotating}
-\usepackage{tabularray}
+% الحزم الخاصة بالجداول% الخطوط واللغة
 \definecolor{Silver}{rgb}{0.752,0.752,0.752}
