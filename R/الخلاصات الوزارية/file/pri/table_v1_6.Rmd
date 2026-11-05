@@ -1,0 +1,33 @@
+```{r table_v1_6, include=FALSE}
+
+c11 <- nrow(df[which(df$q43 == "1"), ])
+c21 <- nrow(df[which(df$q43 == "2"), ])
+c31 <- nrow(df[which(df$q43 == "3"), ])
+
+
+c41 <- c11 + c21 + c31
+c51 <- nrow(df[which(df$q45a == "1"), ])
+c61 <- nrow(df[which(df$q45a == "2"), ])
+
+
+c71 <- nrow(df[which(df$q45a == "3"), ])
+c81 <- nrow(df[which(df$q45a == "4"), ])
+c91 <- nrow(df[which(df$q45a == "5"), ])
+
+
+c101 <- c51 + c61 + c71 + c81 + c91
+
+```
+
+
+\begin{table}[H]
+\centering
+\captionsetup{labelformat=empty}
+\caption{عدد الابنية المدرسية حسب عدد الطوابق وعدد الصفوف}
+\begin{tabular}{@{}|clclclcl|clclclclclcl|@{}}
+\toprule
+\multicolumn{8}{|c|}{\textbf{عدد الابنية حسب عدد الطوابق}}                                                                                                             & \multicolumn{12}{c|}{\textbf{عدد الابنية حسب عدد الصفوف}}                                                                                                                                                                                      \\ \midrule
+\multicolumn{2}{|c|}{\textbf{طابق واحد}} & \multicolumn{2}{c|}{\textbf{طابقين}}  & \multicolumn{2}{c|}{\textbf{ثلاثة   طوابق}} & \multicolumn{2}{c|}{\textbf{المجموع}} & \multicolumn{2}{c|}{\textbf{6 صف}}    & \multicolumn{2}{c|}{\textbf{9   صف}}  & \multicolumn{2}{c|}{\textbf{12   صف}} & \multicolumn{2}{c|}{\textbf{18   صف}} & \multicolumn{2}{c|}{\textbf{24 صف}}   & \multicolumn{2}{c|}{\textbf{المجموع}}  \\ \midrule
+\multicolumn{2}{|c|}{\textbf{`r c11`}}   & \multicolumn{2}{c|}{\textbf{`r c21`}} & \multicolumn{2}{c|}{\textbf{`r c31`}}       & \multicolumn{2}{c|}{\textbf{`r c41`}} & \multicolumn{2}{c|}{\textbf{`r c51`}} & \multicolumn{2}{c|}{\textbf{`r c61`}} & \multicolumn{2}{c|}{\textbf{`r c71`}} & \multicolumn{2}{c|}{\textbf{`r c81`}} & \multicolumn{2}{c|}{\textbf{`r c91`}} & \multicolumn{2}{c|}{\textbf{`r c101`}} \\ \bottomrule
+\end{tabular}
+\end{table}

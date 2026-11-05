@@ -1,0 +1,55 @@
+```{r table_v1_8, include=FALSE}
+
+c11 <- sum(as.numeric(df$table28_2), na.rm = TRUE)
+c21 <- sum(as.numeric(df$table28_3), na.rm = TRUE)
+c31 <- sum(as.numeric(df$table28_4), na.rm = TRUE)
+c41 <- sum(as.numeric(df$table28_sumrow1), na.rm = TRUE)
+
+c12 <- sum(as.numeric(df$table28_7), na.rm = TRUE)
+c22 <- sum(as.numeric(df$table28_8), na.rm = TRUE)
+c32 <- sum(as.numeric(df$table28_9), na.rm = TRUE)
+c42 <- sum(as.numeric(df$table28_sumrow2), na.rm = TRUE)
+
+c13 <- sum(as.numeric(df$table28_12), na.rm = TRUE)
+c23 <- sum(as.numeric(df$table28_13), na.rm = TRUE)
+c33 <- sum(as.numeric(df$table28_14), na.rm = TRUE)
+c43 <- sum(as.numeric(df$table28_sumrow3), na.rm = TRUE)
+
+c14 <- sum(as.numeric(df$table28_17), na.rm = TRUE)
+c24 <- sum(as.numeric(df$table28_18), na.rm = TRUE)
+c34 <- sum(as.numeric(df$table28_19), na.rm = TRUE)
+c44 <- sum(as.numeric(df$table28_sumrow4), na.rm = TRUE)
+
+c15 <- sum(as.numeric(df$table28_22), na.rm = TRUE)
+c25 <- sum(as.numeric(df$table28_23), na.rm = TRUE)
+c35 <- sum(as.numeric(df$table28_24), na.rm = TRUE)
+c45 <- sum(as.numeric(df$table28_sumrow5), na.rm = TRUE)
+
+c16 <- sum(as.numeric(df$table28_27), na.rm = TRUE)
+c26 <- sum(as.numeric(df$table28_28), na.rm = TRUE)
+c36 <- sum(as.numeric(df$table28_29), na.rm = TRUE)
+c46 <- sum(as.numeric(df$table28_sumrow6), na.rm = TRUE)
+
+c17 <- sum(as.numeric(df$table28_32), na.rm = TRUE)
+c27 <- sum(as.numeric(df$table28_33), na.rm = TRUE)
+c37 <- sum(as.numeric(df$table28_34), na.rm = TRUE)
+c47 <- sum(as.numeric(df$table28_sumrow7), na.rm = TRUE)
+```
+
+\begin{table}[H]
+\centering
+\caption{عدد الشعب حسب الجنس والصف}
+\label{tab:my-table}
+\begin{tabular}{@{}|c|cccc|@{}}
+\toprule
+\multirow{2}{*}{\textbf{الصف}} & \multicolumn{4}{c|}{\textbf{عدد الشعب حسب الصف والجنس}}                                                                           \\ \cmidrule(l){2-5} 
+                               & \multicolumn{1}{c|}{\textbf{بنون}} & \multicolumn{1}{c|}{\textbf{بنات}} & \multicolumn{1}{c|}{\textbf{مختلطة}} & \textbf{المجموع} \\ \midrule
+\textbf{الاول}                 & \multicolumn{1}{c|}{`r c11`}       & \multicolumn{1}{c|}{`r c21`}       & \multicolumn{1}{c|}{`r c31`}         & `r c41`          \\ \midrule
+\textbf{الثاني}                & \multicolumn{1}{c|}{`r c12`}       & \multicolumn{1}{c|}{`r c22`}       & \multicolumn{1}{c|}{`r c32`}         & `r c42`          \\ \midrule
+\textbf{الثالث}                & \multicolumn{1}{c|}{`r c13`}       & \multicolumn{1}{c|}{`r c23`}       & \multicolumn{1}{c|}{`r c33`}         & `r c43`          \\ \midrule
+\textbf{الرابع}                & \multicolumn{1}{c|}{`r c14`}       & \multicolumn{1}{c|}{`r c24`}       & \multicolumn{1}{c|}{`r c34`}         & `r c44`          \\ \midrule
+\textbf{الخامس}                & \multicolumn{1}{c|}{`r c15`}       & \multicolumn{1}{c|}{`r c25`}       & \multicolumn{1}{c|}{`r c35`}         & `r c45`          \\ \midrule
+\textbf{السادس}                & \multicolumn{1}{c|}{`r c16`}       & \multicolumn{1}{c|}{`r c26`}       & \multicolumn{1}{c|}{`r c36`}         & `r c46`          \\ \midrule
+\textbf{المجموع}               & \multicolumn{1}{c|}{`r c17`}       & \multicolumn{1}{c|}{`r c27`}       & \multicolumn{1}{c|}{`r c37`}         & `r c47`          \\ \bottomrule
+\end{tabular}%
+\end{table}

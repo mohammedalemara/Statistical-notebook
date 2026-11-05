@@ -1,7 +1,15 @@
 ```{r table1, include=FALSE}
 c11 <- nrow(df[which(df$book_class == "pri" & df$sch_env == "urb"), ])
 c12 <- nrow(df[which(df$book_class == "pri" & df$sch_env == "rur"), ])
+c13 <- c11 + c12
 ```
+
+
+
+
+
+
+
 
 ```{=latex}
 \begin{table}[H]
@@ -15,7 +23,7 @@ c12 <- nrow(df[which(df$book_class == "pri" & df$sch_env == "rur"), ])
                                                                          & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{مختلطة} & المجموع & \multicolumn{1}{c|}{بنون}                    & \multicolumn{1}{c|}{بنات}                    & المجموع                   & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & المجموع & \multicolumn{1}{c|}{ذكور} & \multicolumn{1}{c|}{اناث} & المجموع & \multicolumn{1}{c|}{اصلية}                              & ضيف                              & \multicolumn{1}{c|}{صباحاً} & \multicolumn{1}{c|}{ظهرا} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}صباحا\\ وظهرا\end{tabular}} & \multicolumn{1}{c|}{مساءاً} & المجموع &                                                                                 \\ \hline
 حضر                                                                      & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}       &         & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{}                        &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}                                   &                                  & \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                                      & \multicolumn{1}{c|}{}       &         &                                                                                 \\ \hline
 ريف                                                                      & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}       &         & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{}                        &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}                                   &                                  & \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                                      & \multicolumn{1}{c|}{}       &         &                                                                                 \\ \hline
-المجموع                                                                  & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}       &         & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{}                        &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}                                   &                                  & \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                                      & \multicolumn{1}{c|}{}       &         &                                                                                 \\ \hline
+المجموع                                                                  & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}       &         & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{}                        &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}                                   &                                  & \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                                      & \multicolumn{1}{c|}{}       &         &                                                                                 \\ \hline
 \end{tabular}
 }
 \end{table}

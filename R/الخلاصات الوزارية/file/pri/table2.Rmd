@@ -1,0 +1,22 @@
+```{r table2, include=FALSE}
+
+
+
+```
+\begin{table}[H]
+\centering
+\Large
+%\renewcommand{\arraystretch}{1.6}
+\caption{عدد التلامذة الجدد حسب العمر والجنس}
+
+\begin{tabular}{|c|cccccc|c|}
+\hline
+\multirow{2}{*}{الجنس} & \multicolumn{6}{c|}{الاعمار}                                                                                                                                                    & \multirow{2}{*}{المجموع} \\ \cline{2-7}
+                       & \multicolumn{1}{c|}{`r ad(5)`} & \multicolumn{1}{c|}{`r ad(6)`} & \multicolumn{1}{c|}{`r ad(7)`} & \multicolumn{1}{c|}{`r ad(8)`} & \multicolumn{1}{c|}{`r ad(9)`} & `r ad(10)` &                          \\ \hline
+بنون                   & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          &            &                          \\ \hline
+بنات                   & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          &            &                          \\ \hline
+المجموع                & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          &            &                          \\ \hline
+\end{tabular}
+\end{table}
+
+

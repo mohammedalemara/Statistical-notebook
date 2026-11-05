@@ -1,0 +1,88 @@
+```{r table_v1_10, include=FALSE}
+
+c11 <- sum(as.numeric(df$form6_11a1_2), na.rm = TRUE)
+c21 <- sum(as.numeric(df$form6_11a1_4), na.rm = TRUE)
+c31 <- sum(as.numeric(df$form6_11a1_6), na.rm = TRUE)
+c41 <- sum(as.numeric(df$form6_11a1_8), na.rm = TRUE)
+c51 <- sum(as.numeric(df$form6_11a1_10), na.rm = TRUE)
+c61 <- sum(as.numeric(df$form6_11a1_12), na.rm = TRUE)
+c71 <- sum(as.numeric(df$form6_11a1_14), na.rm = TRUE)
+c81 <- sum(as.numeric(df$form6_11a1_16), na.rm = TRUE)
+c91 <- sum(as.numeric(df$form6_11a1_18), na.rm = TRUE)
+c101 <- sum(as.numeric(df$form6_11a1_20), na.rm = TRUE)
+c111 <- sum(as.numeric(df$form6_11a1_22), na.rm = TRUE)
+c121 <- sum(as.numeric(df$form6_11a1_22), na.rm = TRUE)
+c131 <- sum(as.numeric(df$form6_12a1_2), na.rm = TRUE)
+c141 <- sum(as.numeric(df$form6_12a1_6), na.rm = TRUE)
+c151 <- sum(as.numeric(df$form6_12a1_8), na.rm = TRUE)
+c161 <- sum(as.numeric(df$form6_12a1_10), na.rm = TRUE)
+c171 <- sum(as.numeric(df$form6_12a1_12), na.rm = TRUE)
+c181 <- sum(as.numeric(df$form6_12a1_14), na.rm = TRUE)
+c191 <- sum(as.numeric(df$form6_12a1_16), na.rm = TRUE)
+c201 <- sum(as.numeric(df$form6_12a1_18), na.rm = TRUE)
+c211 <- sum(as.numeric(df$form6_12a1_20), na.rm = TRUE)
+c221 <- sum(as.numeric(df$form6_12a1_22), na.rm = TRUE)
+###########################################################
+c12 <- sum(as.numeric(df$form6_11a2_2), na.rm = TRUE)
+c22 <- sum(as.numeric(df$form6_11a2_4), na.rm = TRUE)
+c32 <- sum(as.numeric(df$form6_11a2_6), na.rm = TRUE)
+c42 <- sum(as.numeric(df$form6_11a2_8), na.rm = TRUE)
+c52 <- sum(as.numeric(df$form6_11a2_10), na.rm = TRUE)
+c62 <- sum(as.numeric(df$form6_11a2_12), na.rm = TRUE)
+c72 <- sum(as.numeric(df$form6_11a2_14), na.rm = TRUE)
+c82 <- sum(as.numeric(df$form6_11a2_16), na.rm = TRUE)
+c92 <- sum(as.numeric(df$form6_11a2_18), na.rm = TRUE)
+c102 <- sum(as.numeric(df$form6_11a2_20), na.rm = TRUE)
+c112 <- sum(as.numeric(df$form6_11a2_22), na.rm = TRUE)
+c122 <- sum(as.numeric(df$form6_11a2_22), na.rm = TRUE)
+c132 <- sum(as.numeric(df$form6_12a2_2), na.rm = TRUE)
+c142 <- sum(as.numeric(df$form6_12a2_6), na.rm = TRUE)
+c152 <- sum(as.numeric(df$form6_12a2_8), na.rm = TRUE)
+c162 <- sum(as.numeric(df$form6_12a2_10), na.rm = TRUE)
+c172 <- sum(as.numeric(df$form6_12a2_12), na.rm = TRUE)
+c182 <- sum(as.numeric(df$form6_12a2_14), na.rm = TRUE)
+c192 <- sum(as.numeric(df$form6_12a2_16), na.rm = TRUE)
+c202 <- sum(as.numeric(df$form6_12a2_18), na.rm = TRUE)
+c212 <- sum(as.numeric(df$form6_12a2_20), na.rm = TRUE)
+c222 <- sum(as.numeric(df$form6_12a2_22), na.rm = TRUE)
+
+###########################################################
+c13 <- sum(as.numeric(df$form6_11a3_2), na.rm = TRUE)
+c23 <- sum(as.numeric(df$form6_11a3_4), na.rm = TRUE)
+c33 <- sum(as.numeric(df$form6_11a3_6), na.rm = TRUE)
+c43 <- sum(as.numeric(df$form6_11a3_8), na.rm = TRUE)
+c53 <- sum(as.numeric(df$form6_11a3_10), na.rm = TRUE)
+c63 <- sum(as.numeric(df$form6_11a3_12), na.rm = TRUE)
+c73 <- sum(as.numeric(df$form6_11a3_14), na.rm = TRUE)
+c83 <- sum(as.numeric(df$form6_11a3_16), na.rm = TRUE)
+c93 <- sum(as.numeric(df$form6_11a3_18), na.rm = TRUE)
+c103 <- sum(as.numeric(df$form6_11a3_20), na.rm = TRUE)
+c113 <- sum(as.numeric(df$form6_11a3_22), na.rm = TRUE)
+c123 <- sum(as.numeric(df$form6_11a3_22), na.rm = TRUE)
+c133 <- sum(as.numeric(df$form6_12a3_2), na.rm = TRUE)
+c143 <- sum(as.numeric(df$form6_12a3_6), na.rm = TRUE)
+c153 <- sum(as.numeric(df$form6_12a3_8), na.rm = TRUE)
+c163 <- sum(as.numeric(df$form6_12a3_10), na.rm = TRUE)
+c173 <- sum(as.numeric(df$form6_12a3_12), na.rm = TRUE)
+c183 <- sum(as.numeric(df$form6_12a3_14), na.rm = TRUE)
+c193 <- sum(as.numeric(df$form6_12a3_16), na.rm = TRUE)
+c203 <- sum(as.numeric(df$form6_12a3_18), na.rm = TRUE)
+c213 <- sum(as.numeric(df$form6_12a3_20), na.rm = TRUE)
+c223 <- sum(as.numeric(df$form6_12a3_22), na.rm = TRUE)
+
+```
+
+\begin{table}[H]
+\centering
+\caption{عدد اعضاء الهئية التعليمية حسب التخصص والجنس}
+\label{tab:my-table}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|@{}}
+\toprule
+\textbf{الجنس}   & \textbf{\begin{tabular}[c]{@{}c@{}}التربية\\ الاسلامية\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}اللغة\\ العربية\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}اللغة\\ الانكليزية\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}اللغة\\ الكردية\end{tabular}} & \textbf{الرياضيات} & \textbf{\begin{tabular}[c]{@{}c@{}}علوم\\ علوم حياة\end{tabular}} & \textbf{كيمياء} & \textbf{فيزياء} & \textbf{اجتماعيات} & \textbf{تاريخ} & \textbf{جغرافية} & \textbf{\begin{tabular}[c]{@{}c@{}}اقتصاد\\ منزلي\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}التربية\\ خاصة\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}تربية\\ علم النفس\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}التربية\\ الرياضية\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}التربية\\ الفنية\end{tabular}} & \textbf{حاسوب} & \textbf{\begin{tabular}[c]{@{}c@{}}اللغة\\ التركمانية\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}اللغة\\ السريانية\end{tabular}} & \textbf{عام} & \textbf{اخرى} & \textbf{المجموع} \\ \midrule
+\textbf{ذكور}    & `r c11`                                                              & `r c21`                                                          & `r c31`                                                             & `r c41`                                                          & `r c51`            & `r c61`                                                           & `r c71`         & `r c81`         & `r c91`            & `r c101`       & `r c111`         & `r c121`                                                        & `r c131`                                                        & `r c141`                                                           & `r c151`                                                            & `r c161`                                                          & `r c171`       & `r c181`                                                            & `r c191`                                                           & `r c201`     & `r c211`      & `r c221`         \\ \midrule
+\textbf{اناث}    & `r c12`                                                              & `r c22`                                                          & `r c32`                                                             & `r c42`                                                          & `r c52`            & `r c62`                                                           & `r c72`         & `r c82`         & `r c92`            & `r c102`       & `r c112`         & `r c122`                                                        & `r c132`                                                        & `r c142`                                                           & `r c152`                                                            & `r c162`                                                          & `r c172`       & `r c182`                                                            & `r c192`                                                           & `r c202`     & `r c212`      & `r c222`         \\ \midrule
+\textbf{المجموع} & `r c13`                                                              & `r c23`                                                          & `r c33`                                                             & `r c43`                                                          & `r c53`            & `r c63`                                                           & `r c73`         & `r c83`         & `r c93`            & `r c103`       & `r c113`         & `r c123`                                                        & `r c133`                                                        & `r c143`                                                           & `r c153`                                                            & `r c163`                                                          & `r c173`       & `r c183`                                                            & `r c193`                                                           & `r c203`     & `r c213`      & `r c223`         \\ \bottomrule
+\end{tabular}%
+}
+\end{table}

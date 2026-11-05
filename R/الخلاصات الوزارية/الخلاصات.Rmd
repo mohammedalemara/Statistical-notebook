@@ -1,6 +1,7 @@
 ---
 title: ""
 documentclass: article
+microtypeoptions: "patch=none"
 output:
   pdf_document:
     latex_engine: xelatex
@@ -20,7 +21,7 @@ library(readxl)
 library(dplyr)
 
 # رابط ملف البيانات
-url <- "https://kf.kobotoolbox.org/api/v2/assets/akFULLhHuubDWuFd2icLho/export-settings/esU8F5EM7Xv7735XeGnFKaG/data.xlsx"
+url <- "https://kf.kobotoolbox.org/api/v2/assets/aJocfurrDafzzN82GZtDV4/export-settings/es5N5sREa9YyQRcoAU6MKNA/data.xlsx"
 
 # رمز الوصول
 my_token <- "ebf64ff6f976640feb272fc5d9c27eab5effeddd"
@@ -53,7 +54,7 @@ by <- "2027/2026"
 ```{=latex}
 \input{models//cover.tex}
 ```
--->
+
 
 
 ```{=latex}
@@ -117,6 +118,10 @@ df <- df_original %>%filter(book_class == "kg", ownership == "priv")
 ```
 ```{r, child='file//kg//table9.Rmd'}
 ```
+
+-->
+
+
 ```{=latex}
 \newpage
 \section{التعليم الابتدائي}
@@ -129,4 +134,8 @@ df <- df_original %>%filter(book_class == "pri", ownership == "gov")
 
 
 ```{r, child='file//pri//table1.Rmd'}
+```
+```{r, child='file//pri//table2.Rmd'}
+```
+```{r, child='file//pri//table3.Rmd'}
 ```
