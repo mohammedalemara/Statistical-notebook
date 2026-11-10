@@ -1,0 +1,88 @@
+```{r table7, include=FALSE}
+
+c11 <- sum(as.numeric(df$staff_state_active_male),  na.rm = TRUE)
+c21 <- sum(as.numeric(df$staff_state_active_female),  na.rm = TRUE)
+c31 <- c11 + c21
+
+c12 <- sum(as.numeric(df$staff_state_scholar_male),  na.rm = TRUE)
+c22 <- sum(as.numeric(df$staff_state_scholar_female),  na.rm = TRUE)
+c32 <- c12 + c22
+
+c13 <- sum(as.numeric(df$staff_state_study_male), na.rm = TRUE)
+c23 <- sum(as.numeric(df$staff_state_study_female),  na.rm = TRUE)
+c33 <- c13 + c23
+
+c14 <- sum(as.numeric(df$staff_state_escort_male), na.rm = TRUE)
+c24 <- sum(as.numeric(df$staff_state_escort_female), na.rm = TRUE)
+c34 <- c14 + c24
+
+c15 <- sum(as.numeric(df$staff_state_unpaid_male), na.rm = TRUE)
+c25 <- sum(as.numeric(df$staff_state_unpaid_female), na.rm = TRUE)
+c35 <- c15 + c25
+
+c16 <- sum(as.numeric(df$staff_state_sick_male), na.rm = TRUE)
+c26 <- sum(as.numeric(df$staff_state_sick_female), na.rm = TRUE)
+c36 <- c16 + c26
+
+c17 <- "///"
+c27 <- sum(as.numeric(df$staff_state_maternity_female), na.rm = TRUE)
+c37 <- c27            
+
+c18 <- sum(as.numeric(df$staff_state_seconded_male), na.rm = TRUE)
+c28 <- sum(as.numeric(df$staff_state_seconded_female), na.rm = TRUE)
+c38 <- c18 + c28
+
+c19 <- sum(as.numeric(df$staff_state_leave45_male), na.rm = TRUE)
+c29 <- sum(as.numeric(df$staff_state_leave45_female), na.rm = TRUE)
+c39 <- c19 + c29
+
+
+c110 <- c11 + c12 + c13 + c14 + c15 + c16 + c18 + c19   
+c210 <- c21 + c22 + c23 + c24 + c25 + c26 + c27 + c28 + c29
+c310 <- c110 + c210
+
+#########################################################
+
+v11 <- sum(as.numeric(df$staff_train_male_train), na.rm = TRUE)
+v12 <- sum(as.numeric(df$staff_train_female_train), na.rm = TRUE)
+v13 <- sum(as.numeric(df$staff_train_total_train_calc), na.rm = TRUE)
+
+
+```
+
+
+\begin{table}[H]
+\centering
+\Large
+% ملاحظة: تم وضع الـ label الأول داخل الميني بيج الأولى لمنع التداخل
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\caption{عدد اعضاء الهيئة التعليمية حسب الحالة الوظيفية}
+\begin{tabular}{|ccl|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{الحالة الوظيفية}                                                                  & ذكور         & اناث         & المجموع      \\ \hline
+\multicolumn{3}{|c|}{داخل قوة العمل}                                                                   & `r ad(c11)`  & `r ad(c21)`  & `r ad(c31)`  \\ \hline
+\multicolumn{1}{|c|}{\multirow{8}{*}{خارج قوة العمل}} & \multicolumn{2}{c|}{بعثة او زمالة دراسية}      & `r ad(c12)`  & `r ad(c22)`  & `r ad(c32)`  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                & \multicolumn{2}{c|}{اجازة دراسية}              & `r ad(c13)`  & `r ad(c23)`  & `r ad(c33)`  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                & \multicolumn{2}{c|}{اجازة مصاحبة}              & `r ad(c14)`  & `r ad(c24)`  & `r ad(c34)`  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                & \multicolumn{2}{c|}{اجازة بدون راتب}           & `r ad(c15)`  & `r ad(c25)`  & `r ad(c35)`  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                & \multicolumn{2}{c|}{اجازة مرضية طويلة}         & `r ad(c16)`  & `r ad(c26)`  & `r ad(c36)`  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                & \multicolumn{2}{c|}{اجازة امومة}               & `r ad(c17)`  & `r ad(c27)`  & `r ad(c37)`  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                & \multicolumn{2}{c|}{تنسيب الى جهات اخرى}       & `r ad(c18)`  & `r ad(c28)`  & `r ad(c38)`  \\ \cline{2-6} 
+\multicolumn{1}{|c|}{}                                & \multicolumn{2}{c|}{`r ad(4)`-`r ad(5)` سنوات} & `r ad(c19)`  & `r ad(c29)`  & `r ad(c39)`  \\ \hline
+\multicolumn{3}{|c|}{المجموع الكلي}                                                                    & `r ad(c110)` & `r ad(c210)` & `r ad(c310)` \\ \hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\caption{عدد اعضاء الهيئة التعليمية المشاركين في الدورات التدريبية}
+\begin{tabular}{|cl|cl|}
+\hline
+\multicolumn{2}{|c|}{الجنس}   & \multicolumn{2}{c|}{عدد المعلمين} \\ \hline
+\multicolumn{2}{|c|}{ذكور}    & \multicolumn{2}{c|}{`r ad(v11)`}  \\ \hline
+\multicolumn{2}{|c|}{اناث}    & \multicolumn{2}{c|}{`r ad(v12)`}  \\ \hline
+\multicolumn{2}{|c|}{المجموع} & \multicolumn{2}{c|}{`r ad(v13)`}  \\ \hline
+\end{tabular}
+\end{minipage}
+\end{table}

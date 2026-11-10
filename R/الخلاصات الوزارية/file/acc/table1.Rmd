@@ -1,0 +1,40 @@
+```{r table1, include=FALSE}
+
+c11 <- " النجف / الكوفة / المناذرة / المشخاب"
+c21 <- ""
+c31 <- nrow(df)
+c41 <- nrow(df[which(df$independent == "org"),])
+c51 <- nrow(df[which(df$independent == "gst"),])
+c61 <- nrow(df[which(df$sch_env == "urb"),])
+c71 <- nrow(df[which(df$sch_env == "rur"),])
+c81 <- nrow(df[which(df$gender == "boys"),])
+c91 <- nrow(df[which(df$gender == "girls"),])
+c101 <- nrow(df[which(df$gender == "mixed"),])
+c111 <- sum(as.numeric(df$staff_title_total_male_calc), na.rm = TRUE)
+c121 <- sum(as.numeric(df$staff_title_total_female_calc), na.rm = TRUE)
+c131 <- sum(as.numeric(df$staff_title_total_total_calc), na.rm = TRUE)
+```
+
+
+\begin{table}[H]
+\centering
+\Large
+\begin{tabular}{cccccccccccc}
+\cline{2-2} \cline{7-7} \cline{12-12}
+\multicolumn{1}{c|}{اسم المدرسة:} & \multicolumn{1}{c|}{محافظة النجف الاشرف} &  &  &  & \multicolumn{1}{c|}{القضاء:}  & \multicolumn{1}{c|}{`r ad(c11)`} &  &  &  & \multicolumn{1}{c|}{الناحية:} & \multicolumn{1}{c|}{`r ad(c21)`} \\ \cline{2-2} \cline{7-7} \cline{12-12} 
+                                  &                                          &  &  &  &                               &                                  &  &  &  &                               &                                  \\ \cline{2-2} \cline{7-7} \cline{12-12} 
+\multicolumn{1}{c|}{عدد المدارس:} & \multicolumn{1}{c|}{`r ad(c31)`}         &  &  &  & \multicolumn{1}{c|}{الاصلية:} & \multicolumn{1}{c|}{`r ad(c41)`} &  &  &  & \multicolumn{1}{c|}{الضيف:}   & \multicolumn{1}{c|}{`r ad(c51)`} \\ \cline{2-2} \cline{7-7} \cline{12-12} 
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\Large
+\begin{tabular}{|cc|cc|ccc|cc|ccc|}
+\cline{1-2} \cline{5-7} \cline{10-12}
+\multicolumn{2}{|c|}{الموقع البيئي للمدرسة}     &  &  & \multicolumn{3}{c|}{جنس المدرسة}                                                   &  &  & \multicolumn{3}{c|}{عدد اعضاء الهيئة التعليمية}                                      \\ \cline{1-2} \cline{5-7} \cline{10-12} 
+\multicolumn{1}{|c|}{حضر}         & ريف         &  &  & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & مختلط        &  &  & \multicolumn{1}{c|}{ذكور}         & \multicolumn{1}{c|}{اناث}         & المجموع      \\ \cline{1-2} \cline{5-7} \cline{10-12} 
+\multicolumn{1}{|c|}{`r ad(c61)`} & `r ad(c71)` &  &  & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & `r ad(c101)` &  &  & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & `r ad(c131)` \\ \cline{1-2} \cline{5-7} \cline{10-12} 
+\end{tabular}
+\end{table}

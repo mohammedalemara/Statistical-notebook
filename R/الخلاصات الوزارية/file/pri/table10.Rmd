@@ -1,0 +1,92 @@
+```{r table10, include=FALSE}
+
+c11  <- sum(as.numeric(df$staff_spec_male_islam),  na.rm = TRUE)
+c21  <- sum(as.numeric(df$staff_spec_male_arab),   na.rm = TRUE)
+c31  <- sum(as.numeric(df$staff_spec_male_eng),    na.rm = TRUE)
+c41  <- sum(as.numeric(df$staff_spec_male_kurd),   na.rm = TRUE)
+c51  <- sum(as.numeric(df$staff_spec_male_math),   na.rm = TRUE)
+c61  <- sum(as.numeric(df$staff_spec_male_bio),    na.rm = TRUE)
+c71  <- sum(as.numeric(df$staff_spec_male_chem),   na.rm = TRUE)
+c81  <- sum(as.numeric(df$staff_spec_male_phys),   na.rm = TRUE)
+c91  <- sum(as.numeric(df$staff_spec_male_soc),    na.rm = TRUE)
+c101 <- sum(as.numeric(df$staff_spec_male_hist),   na.rm = TRUE)
+c111 <- sum(as.numeric(df$staff_spec_male_geo),    na.rm = TRUE)
+c121 <- sum(as.numeric(df$staff_spec2_male_home),  na.rm = TRUE)
+c131 <- sum(as.numeric(df$staff_spec2_male_sped),  na.rm = TRUE)
+c141 <- sum(as.numeric(df$staff_spec2_male_psych), na.rm = TRUE)
+c151 <- sum(as.numeric(df$staff_spec2_male_art),   na.rm = TRUE)
+c161 <- sum(as.numeric(df$staff_spec2_male_sport), na.rm = TRUE)
+c171 <- sum(as.numeric(df$staff_spec2_male_comp),  na.rm = TRUE)
+c181 <- sum(as.numeric(df$staff_spec2_male_turk),  na.rm = TRUE)
+c191 <- sum(as.numeric(df$staff_spec2_male_syr),   na.rm = TRUE)
+c201 <- sum(as.numeric(df$staff_spec2_male_oth),   na.rm = TRUE)
+c211 <- sum(as.numeric(df$staff_spec2_male_hist),  na.rm = TRUE)
+c221 <- c11 + c21 + c31 + c41 + c51 + c61 + c71 + c81 + c91 +
+        c101 + c111 + c121 + c131 + c141 + c151 + c161 + c171 + c181 +
+        c191 + c201 + c211
+
+###########################################################
+c12  <- sum(as.numeric(df$staff_spec_female_islam),  na.rm = TRUE)
+c22  <- sum(as.numeric(df$staff_spec_female_arab),   na.rm = TRUE)
+c32  <- sum(as.numeric(df$staff_spec_female_eng),    na.rm = TRUE)
+c42  <- sum(as.numeric(df$staff_spec_female_kurd),   na.rm = TRUE)
+c52  <- sum(as.numeric(df$staff_spec_female_math),   na.rm = TRUE)
+c62  <- sum(as.numeric(df$staff_spec_female_bio),    na.rm = TRUE)
+c72  <- sum(as.numeric(df$staff_spec_female_chem),   na.rm = TRUE)
+c82  <- sum(as.numeric(df$staff_spec_female_phys),   na.rm = TRUE)
+c92  <- sum(as.numeric(df$staff_spec_female_soc),    na.rm = TRUE)
+c102 <- sum(as.numeric(df$staff_spec_female_hist),   na.rm = TRUE)
+c112 <- sum(as.numeric(df$staff_spec_female_geo),    na.rm = TRUE)
+c122 <- sum(as.numeric(df$staff_spec2_female_home),  na.rm = TRUE)
+c132 <- sum(as.numeric(df$staff_spec2_female_sped),  na.rm = TRUE)
+c142 <- sum(as.numeric(df$staff_spec2_female_psych), na.rm = TRUE)
+c152 <- sum(as.numeric(df$staff_spec2_female_art),   na.rm = TRUE)
+c162 <- sum(as.numeric(df$staff_spec2_female_sport), na.rm = TRUE)
+c172 <- sum(as.numeric(df$staff_spec2_female_comp),  na.rm = TRUE)
+c182 <- sum(as.numeric(df$staff_spec2_female_turk),  na.rm = TRUE)
+c192 <- sum(as.numeric(df$staff_spec2_female_syr),   na.rm = TRUE)
+c202 <- sum(as.numeric(df$staff_spec2_female_oth),   na.rm = TRUE)
+c212 <- sum(as.numeric(df$staff_spec2_female_hist),  na.rm = TRUE)
+c222 <- c12 + c22 + c32 + c42 + c52 + c62 + c72 + c82 + c92 +
+        c102 + c112 + c122 + c132 + c142 + c152 + c162 + c172 + c182 +
+        c192 + c202 + c212
+
+###########################################################
+c13  <- c11  + c12
+c23  <- c21  + c22
+c33  <- c31  + c32
+c43  <- c41  + c42
+c53  <- c51  + c52
+c63  <- c61  + c62
+c73  <- c71  + c72
+c83  <- c81  + c82
+c93  <- c91  + c92
+c103 <- c101 + c102
+c113 <- c111 + c112
+c123 <- c121 + c122
+c133 <- c131 + c132
+c143 <- c141 + c142
+c153 <- c151 + c152
+c163 <- c161 + c162
+c173 <- c171 + c172
+c183 <- c181 + c182
+c193 <- c191 + c192
+c203 <- c201 + c202
+c213 <- c211 + c212
+c223 <- c221 + c222
+
+```
+
+\begin{table}[H]
+\centering
+\caption{عدد اعضاء الهئية التعليمية حسب التخصص والجنس}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+الجنس   & \begin{tabular}[c]{@{}c@{}}التربية\\ الاسلامية\end{tabular} & \begin{tabular}[c]{@{}c@{}}اللغة\\ العربية\end{tabular} & \begin{tabular}[c]{@{}c@{}}اللغة\\ الانكليزية\end{tabular} & \begin{tabular}[c]{@{}c@{}}اللغة\\ الكردية\end{tabular} & الرياضيات   & \begin{tabular}[c]{@{}c@{}}علوم\\ علوم حياة\end{tabular} & كيمياء      & فيزياء      & اجتماعيات   & تاريخ        & جغرافية      & \begin{tabular}[c]{@{}c@{}}اقتصاد\\ منزلي\end{tabular} & \begin{tabular}[c]{@{}c@{}}التربية\\ خاصة\end{tabular} & \begin{tabular}[c]{@{}c@{}}تربية\\ علم النفس\end{tabular} & \begin{tabular}[c]{@{}c@{}}التربية\\ الرياضية\end{tabular} & \begin{tabular}[c]{@{}c@{}}التربية\\ الفنية\end{tabular} & حاسوب        & \begin{tabular}[c]{@{}c@{}}اللغة\\ التركمانية\end{tabular} & \begin{tabular}[c]{@{}c@{}}اللغة\\ السريانية\end{tabular} & عام          & اخرى         & المجموع      \\ \hline
+ذكور    & `r ad(c11)`                                                 & `r ad(c21)`                                             & `r ad(c31)`                                                & `r ad(c41)`                                             & `r ad(c51)` & `r ad(c61)`                                              & `r ad(c71)` & `r ad(c81)` & `r ad(c91)` & `r ad(c101)` & `r ad(c111)` & `r ad(c121)`                                           & `r ad(c131)`                                           & `r ad(c141)`                                              & `r ad(c151)`                                               & `r ad(c161)`                                             & `r ad(c171)` & `r ad(c181)`                                               & `r ad(c191)`                                              & `r ad(c201)` & `r ad(c211)` & `r ad(c221)` \\ \hline
+اناث    & `r ad(c12)`                                                 & `r ad(c22)`                                             & `r ad(c32)`                                                & `r ad(c42)`                                             & `r ad(c52)` & `r ad(c62)`                                              & `r ad(c72)` & `r ad(c82)` & `r ad(c92)` & `r ad(c102)` & `r ad(c112)` & `r ad(c122)`                                           & `r ad(c132)`                                           & `r ad(c142)`                                              & `r ad(c152)`                                               & `r ad(c162)`                                             & `r ad(c172)` & `r ad(c182)`                                               & `r ad(c192)`                                              & `r ad(c202)` & `r ad(c212)` & `r ad(c222)` \\ \hline
+المجموع & `r ad(c13)`                                                 & `r ad(c23)`                                             & `r ad(c33)`                                                & `r ad(c43)`                                             & `r ad(c53)` & `r ad(c63)`                                              & `r ad(c73)` & `r ad(c83)` & `r ad(c93)` & `r ad(c103)` & `r ad(c113)` & `r ad(c123)`                                           & `r ad(c133)`                                           & `r ad(c143)`                                              & `r ad(c153)`                                               & `r ad(c163)`                                             & `r ad(c173)` & `r ad(c183)`                                               & `r ad(c193)`                                              & `r ad(c203)` & `r ad(c213)` & `r ad(c223)` \\ \hline
+\end{tabular}
+}
+\end{table}

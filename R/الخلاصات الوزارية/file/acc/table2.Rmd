@@ -1,0 +1,40 @@
+```{r table2, include=FALSE}
+
+
+c11 <- sum(as.numeric(df$acc_cls_stg1_boys), na.rm = TRUE)
+c12 <- sum(as.numeric(df$acc_cls_stg1_girls), na.rm = TRUE)
+c13 <- sum(as.numeric(df$acc_cls_stg1_mixed), na.rm = TRUE)
+c14 <- c11 + c12 + c13
+
+
+c21 <- sum(as.numeric(df$acc_cls_stg2_boys), na.rm = TRUE)
+c22 <- sum(as.numeric(df$acc_cls_stg2_girls), na.rm = TRUE)
+c23 <- sum(as.numeric(df$acc_cls_stg2_mixed), na.rm = TRUE)
+c24 <- c21 + c22 + c23
+
+c31 <- sum(as.numeric(df$acc_cls_stg3_boys), na.rm = TRUE)
+c32 <- sum(as.numeric(df$acc_cls_stg3_girls), na.rm = TRUE)
+c33 <- sum(as.numeric(df$acc_cls_stg3_mixed), na.rm = TRUE)
+c34 <- c31 + c32 + c33
+
+c41 <- c11 + c21 + c31
+c42 <- c12 + c22 + c32
+c43 <- c13 + c23 + c33
+c44 <- c14 + c24 + c34
+
+```
+
+
+\begin{table}[H]
+\centering
+\Large
+\begin{tabular}{|ccccc|}
+\hline
+\multicolumn{5}{|c|}{عدد الشعب حسب المرحلة والجنس}                                                                                                           \\ \hline
+\multicolumn{1}{|c|}{المرحلة}         & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{مختلط}       & المجموع     \\ \hline
+\multicolumn{1}{|c|}{المرحلة الاولى}  & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` \\ \hline
+\multicolumn{1}{|c|}{المرحلة الثانية} & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & `r ad(c42)` \\ \hline
+\multicolumn{1}{|c|}{المرحلة الثالثة} & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & `r ad(c43)` \\ \hline
+\multicolumn{1}{|c|}{المجموع}         & \multicolumn{1}{c|}{`r ad(c14)`} & \multicolumn{1}{c|}{`r ad(c24)`} & \multicolumn{1}{c|}{`r ad(c34)`} & `r ad(c44)` \\ \hline
+\end{tabular}
+\end{table}

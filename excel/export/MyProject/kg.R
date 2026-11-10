@@ -244,7 +244,6 @@ selected_vars <- c(
   "sch_branch/sci",
   "sch_branch/art",
   "sch_env",
-  "sch_name",
   "sch_name_lbl",
   "sch_stat_no",
   "district",
@@ -275,31 +274,37 @@ selected_vars <- c(
   "special_cls_btu",
   "youth_cls",
   "accelerated_cls",
-  "registered_kg_lbl",
-  "reg_kg_age4_boys",
-  "reg_kg_age4_girls",
-  "reg_kg_age5_boys",
-  "reg_kg_age5_girls",
-  "reg_kg_total_boys",
-  "reg_kg_total_girls",
-  "reg_kg_total_boys_calc",
-  "reg_kg_total_girls_calc",
+################################
+# عدد اعدد الأطفال المسجلين في الروضة
+###############################
+"registered_kg_lbl",
+"reg_kg_age4_note",
+"reg_kg_age4_boys",
+"reg_kg_age4_girls",
+"reg_kg_age5_boys",
+"reg_kg_age5_girls",
+"reg_kg_total_boys_calc",
+"reg_kg_total_girls_calc",
+###############################
+# عدد الشعب في مرحلة رياض الأطفال
+###############################
   "classes_kg_lbl",
   "cls_kg_age4_cls_count",
   "cls_kg_age5_cls_count",
-  "cls_kg_total_cls_count",
   "cls_kg_total_cls_count_calc",
+##############################
+# عدد الأطفال التاركين في الروضة
+##############################
   "dropouts_kg_lbl",
   "drop_kg_age4_boys",
   "drop_kg_age4_girls",
   "drop_kg_age5_boys",
   "drop_kg_age5_girls",
-  "drop_kg_total_boys",
-  "drop_kg_total_girls",
   "drop_kg_total_boys_calc",
   "drop_kg_total_girls_calc",
   
   "staff_title_lbl",
+  "staff_title_mgr_title",
   "staff_title_mgr_male",
   "staff_title_mgr_female",
   "staff_title_asst_male",
@@ -596,6 +601,9 @@ selected_vars <- c(
   "lang_lab_room",
   "comp_lab_ind",
   "comp_lab_room",
+################################
+#معلومات اخرى
+################################
   "oth_info_lbl",
   "mgr_name",
   "asst_name",

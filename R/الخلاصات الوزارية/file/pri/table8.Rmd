@@ -1,0 +1,55 @@
+```{r table8, include=FALSE}
+
+c11 <- sum(as.numeric(df$cls_stg1_boys),  na.rm = TRUE)
+c21 <- sum(as.numeric(df$cls_stg1_girls), na.rm = TRUE)
+c31 <- sum(as.numeric(df$cls_stg1_mixed), na.rm = TRUE)
+c41 <- c11 + c21 + c31
+
+c12 <- sum(as.numeric(df$cls_stg2_boys),  na.rm = TRUE)
+c22 <- sum(as.numeric(df$cls_stg2_girls), na.rm = TRUE)
+c32 <- sum(as.numeric(df$cls_stg2_mixed), na.rm = TRUE)
+c42 <- c12 + c22 + c32
+
+c13 <- sum(as.numeric(df$cls_stg3_boys),  na.rm = TRUE)
+c23 <- sum(as.numeric(df$cls_stg3_girls), na.rm = TRUE)
+c33 <- sum(as.numeric(df$cls_stg3_mixed), na.rm = TRUE)
+c43 <- c13 + c23 + c33
+
+c14 <- sum(as.numeric(df$cls_stg4_boys),  na.rm = TRUE)
+c24 <- sum(as.numeric(df$cls_stg4_girls), na.rm = TRUE)
+c34 <- sum(as.numeric(df$cls_stg4_mixed), na.rm = TRUE)
+c44 <- c14 + c24 + c34
+
+c15 <- sum(as.numeric(df$cls_stg5_boys),  na.rm = TRUE)
+c25 <- sum(as.numeric(df$cls_stg5_girls), na.rm = TRUE)
+c35 <- sum(as.numeric(df$cls_stg5_mixed), na.rm = TRUE)
+c45 <- c15 + c25 + c35
+
+c16 <- sum(as.numeric(df$cls_stg6_boys),  na.rm = TRUE)
+c26 <- sum(as.numeric(df$cls_stg6_girls), na.rm = TRUE)
+c36 <- sum(as.numeric(df$cls_stg6_mixed), na.rm = TRUE)
+c46 <- c16 + c26 + c36
+
+c17 <- c11 + c12 + c13 + c14 + c15 + c16
+c27 <- c21 + c22 + c23 + c24 + c25 + c26
+c37 <- c31 + c32 + c33 + c34 + c35 + c36
+c47 <- c17 + c27 + c37
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد الشعب حسب الجنس والصف}
+\begin{tabular}{|c|cccc|}
+\hline
+\multirow{2}{*}{الصف} & \multicolumn{4}{c|}{عدد الشعب حسب الصف والجنس}                                                                       \\ \cline{2-5} 
+                      & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{مختلطة}      & المجموع     \\ \hline
+الاول                 & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` \\ \hline
+الثاني                & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & `r ad(c42)` \\ \hline
+الثالث                & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & `r ad(c43)` \\ \hline
+الرابع                & \multicolumn{1}{c|}{`r ad(c14)`} & \multicolumn{1}{c|}{`r ad(c24)`} & \multicolumn{1}{c|}{`r ad(c34)`} & `r ad(c44)` \\ \hline
+الخامس                & \multicolumn{1}{c|}{`r ad(c15)`} & \multicolumn{1}{c|}{`r ad(c25)`} & \multicolumn{1}{c|}{`r ad(c35)`} & `r ad(c45)` \\ \hline
+السادس                & \multicolumn{1}{c|}{`r ad(c16)`} & \multicolumn{1}{c|}{`r ad(c26)`} & \multicolumn{1}{c|}{`r ad(c36)`} & `r ad(c46)` \\ \hline
+المجموع               & \multicolumn{1}{c|}{`r ad(c17)`} & \multicolumn{1}{c|}{`r ad(c27)`} & \multicolumn{1}{c|}{`r ad(c37)`} & `r ad(c47)` \\ \hline
+\end{tabular}
+\end{table}

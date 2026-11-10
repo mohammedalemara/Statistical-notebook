@@ -1,0 +1,29 @@
+```{r table6, include=FALSE}
+
+c11 <- sum(as.numeric(df$floors == "f1"), na.rm = TRUE)
+c21 <- sum(as.numeric(df$floors == "f2"), na.rm = TRUE)
+c31 <- sum(as.numeric(df$floors == "f3"), na.rm = TRUE)
+c41 <- c11 + c21 + c31
+
+c51 <- sum(as.numeric(df$capacity == "c6"), na.rm = TRUE)
+c61 <- sum(as.numeric(df$capacity == "c9"), na.rm = TRUE)
+c71 <- sum(as.numeric(df$capacity == "c12"), na.rm = TRUE)
+c81 <- sum(as.numeric(df$capacity == "c18"), na.rm = TRUE)
+c91 <- sum(as.numeric(df$capacity == "c24"), na.rm = TRUE)
+c101 <- c51 + c61 + c71 + c81 + c91
+
+```
+
+
+\begin{table}[H]
+\centering
+\Large
+%\captionsetup{labelformat=empty}
+\caption{عدد الابنية المدرسية حسب عدد الطوابق وعدد الصفوف}
+\begin{tabular}{|clclclcl|clclclclclcl|}
+\hline
+\multicolumn{8}{|c|}{عدد الابنية حسب عدد الطوابق}                                                                                          & \multicolumn{12}{c|}{عدد الابنية حسب عدد الصفوف}                                                                                                                                                                         \\ \hline
+\multicolumn{2}{|c|}{طابق واحد}   & \multicolumn{2}{c|}{طابقين}      & \multicolumn{2}{c|}{ثلاثة طوابق} & \multicolumn{2}{c|}{المجموع}     & \multicolumn{2}{c|}{`r ad(6)` صف} & \multicolumn{2}{c|}{`r ad(9)` صف} & \multicolumn{2}{c|}{`r ad(12)` صف} & \multicolumn{2}{c|}{`r ad(18)` صف} & \multicolumn{2}{c|}{`r ad(24)` صف} & \multicolumn{2}{c|}{المجموع}      \\ \hline
+\multicolumn{2}{|c|}{`r ad(c11)`} & \multicolumn{2}{c|}{`r ad(c21)`} & \multicolumn{2}{c|}{`r ad(c31)`} & \multicolumn{2}{c|}{`r ad(c41)`} & \multicolumn{2}{c|}{`r ad(c51)`}  & \multicolumn{2}{c|}{`r ad(c61)`}  & \multicolumn{2}{c|}{`r ad(c71)`}   & \multicolumn{2}{c|}{`r ad(c81)`}   & \multicolumn{2}{c|}{`r ad(c91)`}   & \multicolumn{2}{c|}{`r ad(c101)`} \\ \hline
+\end{tabular}
+\end{table}

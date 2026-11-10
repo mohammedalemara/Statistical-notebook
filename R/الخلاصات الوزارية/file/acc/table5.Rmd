@@ -1,0 +1,112 @@
+```{r table5, include=FALSE}
+
+# ===== المرحلة الاولى: بنون =====
+c11 <- sum(as.numeric(df$acc_reg_stg1_age12_boys), na.rm = TRUE)
+c12 <- sum(as.numeric(df$acc_reg_stg1_age13_boys), na.rm = TRUE)
+c13 <- sum(as.numeric(df$acc_reg_stg1_age14_boys), na.rm = TRUE)
+c14 <- sum(as.numeric(df$acc_reg_stg1_age15_boys), na.rm = TRUE)
+c15 <- sum(as.numeric(df$acc_reg_stg1_age16_boys), na.rm = TRUE)
+c16 <- sum(as.numeric(df$acc_reg_stg1_age17_boys), na.rm = TRUE)
+c17 <- sum(as.numeric(df$acc_reg_stg1_age18_boys), na.rm = TRUE)
+c18 <- c11 + c12 + c13 + c14 + c15 + c16 + c17
+
+# ===== المرحلة الاولى: بنات =====
+c21 <- sum(as.numeric(df$acc_reg_stg1_age12_girls), na.rm = TRUE)
+c22 <- sum(as.numeric(df$acc_reg_stg1_age13_girls), na.rm = TRUE)
+c23 <- sum(as.numeric(df$acc_reg_stg1_age14_girls), na.rm = TRUE)
+c24 <- sum(as.numeric(df$acc_reg_stg1_age15_girls), na.rm = TRUE)
+c25 <- sum(as.numeric(df$acc_reg_stg1_age16_girls), na.rm = TRUE)
+c26 <- sum(as.numeric(df$acc_reg_stg1_age17_girls), na.rm = TRUE)
+c27 <- sum(as.numeric(df$acc_reg_stg1_age18_girls), na.rm = TRUE)
+c28 <- c21 + c22 + c23 + c24 + c25 + c26 + c27
+
+# ===== المرحلة الثانية: بنون =====
+c31 <- sum(as.numeric(df$acc_reg_stg2_age12_boys), na.rm = TRUE)
+c32 <- sum(as.numeric(df$acc_reg_stg2_age13_boys), na.rm = TRUE)
+c33 <- sum(as.numeric(df$acc_reg_stg2_age14_boys), na.rm = TRUE)
+c34 <- sum(as.numeric(df$acc_reg_stg2_age15_boys), na.rm = TRUE)
+c35 <- sum(as.numeric(df$acc_reg_stg2_age16_boys), na.rm = TRUE)
+c36 <- sum(as.numeric(df$acc_reg_stg2_age17_boys), na.rm = TRUE)
+c37 <- sum(as.numeric(df$acc_reg_stg2_age18_boys), na.rm = TRUE)
+c38 <- c31 + c32 + c33 + c34 + c35 + c36 + c37
+
+# ===== المرحلة الثانية: بنات =====
+c41 <- sum(as.numeric(df$acc_reg_stg2_age12_girls), na.rm = TRUE)
+c42 <- sum(as.numeric(df$acc_reg_stg2_age13_girls), na.rm = TRUE)
+c43 <- sum(as.numeric(df$acc_reg_stg2_age14_girls), na.rm = TRUE)
+c44 <- sum(as.numeric(df$acc_reg_stg2_age15_girls), na.rm = TRUE)
+c45 <- sum(as.numeric(df$acc_reg_stg2_age16_girls), na.rm = TRUE)
+c46 <- sum(as.numeric(df$acc_reg_stg2_age17_girls), na.rm = TRUE)
+c47 <- sum(as.numeric(df$acc_reg_stg2_age18_girls), na.rm = TRUE)
+c48 <- c41 + c42 + c43 + c44 + c45 + c46 + c47
+
+# ===== المرحلة الثالثة: بنون =====
+c51 <- sum(as.numeric(df$acc_reg_stg3_age12_boys), na.rm = TRUE)
+c52 <- sum(as.numeric(df$acc_reg_stg3_age13_boys), na.rm = TRUE)
+c53 <- sum(as.numeric(df$acc_reg_stg3_age14_boys), na.rm = TRUE)
+c54 <- sum(as.numeric(df$acc_reg_stg3_age15_boys), na.rm = TRUE)
+c55 <- sum(as.numeric(df$acc_reg_stg3_age16_boys), na.rm = TRUE)
+c56 <- sum(as.numeric(df$acc_reg_stg3_age17_boys), na.rm = TRUE)
+c57 <- sum(as.numeric(df$acc_reg_stg3_age18_boys), na.rm = TRUE)
+c58 <- c51 + c52 + c53 + c54 + c55 + c56 + c57
+
+# ===== المرحلة الثالثة: بنات =====
+c61 <- sum(as.numeric(df$acc_reg_stg3_age12_girls), na.rm = TRUE)
+c62 <- sum(as.numeric(df$acc_reg_stg3_age13_girls), na.rm = TRUE)
+c63 <- sum(as.numeric(df$acc_reg_stg3_age14_girls), na.rm = TRUE)
+c64 <- sum(as.numeric(df$acc_reg_stg3_age15_girls), na.rm = TRUE)
+c65 <- sum(as.numeric(df$acc_reg_stg3_age16_girls), na.rm = TRUE)
+c66 <- sum(as.numeric(df$acc_reg_stg3_age17_girls), na.rm = TRUE)
+c67 <- sum(as.numeric(df$acc_reg_stg3_age18_girls), na.rm = TRUE)
+c68 <- c61 + c62 + c63 + c64 + c65 + c66 + c67
+
+# ===== المجموع الكلي: بنون =====
+c71 <- c11 + c31 + c51
+c72 <- c12 + c32 + c52
+c73 <- c13 + c33 + c53
+c74 <- c14 + c34 + c54
+c75 <- c15 + c35 + c55
+c76 <- c16 + c36 + c56
+c77 <- c17 + c37 + c57
+c78 <- c18 + c38 + c58
+
+# ===== المجموع الكلي: بنات =====
+c81 <- c21 + c41 + c61
+c82 <- c22 + c42 + c62
+c83 <- c23 + c43 + c63
+c84 <- c24 + c44 + c64
+c85 <- c25 + c45 + c65
+c86 <- c26 + c46 + c66
+c87 <- c27 + c47 + c67
+c88 <- c28 + c48 + c68
+
+# ===== المجموع الكلي: المجموع =====
+c91 <- c71 + c81
+c92 <- c72 + c82
+c93 <- c73 + c83
+c94 <- c74 + c84
+c95 <- c75 + c85
+c96 <- c76 + c86
+c97 <- c77 + c87
+c98 <- c78 + c88
+
+```
+
+\begin{table}[H]
+\Large
+\centering
+\caption{خلاصة محافظة النجف الاشرف لمدارس التعليم المسرع}
+\begin{tabular}{|c|cc|cc|cc|ccc|}
+\hline
+\multirow{2}{*}{العمر} & \multicolumn{2}{c|}{المرحلة الاولى}            & \multicolumn{2}{c|}{المرحلة الثانية}           & \multicolumn{2}{c|}{المرحلة الثالثة}           & \multicolumn{3}{c|}{المجموع الكلي}                                                \\ \cline{2-10} 
+                       & \multicolumn{1}{c|}{بنون}        & بنات        & \multicolumn{1}{c|}{بنون}        & بنات        & \multicolumn{1}{c|}{بنون}        & بنات        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & المجموع     \\ \hline
+`r ad(12)` سنة         & \multicolumn{1}{c|}{`r ad(c11)`} & `r ad(c21)` & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` & \multicolumn{1}{c|}{`r ad(c51)`} & `r ad(c61)` & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & `r ad(c91)` \\ \hline
+`r ad(13)` سنة         & \multicolumn{1}{c|}{`r ad(c12)`} & `r ad(c22)` & \multicolumn{1}{c|}{`r ad(c32)`} & `r ad(c42)` & \multicolumn{1}{c|}{`r ad(c52)`} & `r ad(c62)` & \multicolumn{1}{c|}{`r ad(c72)`} & \multicolumn{1}{c|}{`r ad(c82)`} & `r ad(c92)` \\ \hline
+`r ad(14)` سنة         & \multicolumn{1}{c|}{`r ad(c13)`} & `r ad(c23)` & \multicolumn{1}{c|}{`r ad(c33)`} & `r ad(c43)` & \multicolumn{1}{c|}{`r ad(c53)`} & `r ad(c63)` & \multicolumn{1}{c|}{`r ad(c73)`} & \multicolumn{1}{c|}{`r ad(c83)`} & `r ad(c93)` \\ \hline
+`r ad(15)` سنة         & \multicolumn{1}{c|}{`r ad(c14)`} & `r ad(c24)` & \multicolumn{1}{c|}{`r ad(c34)`} & `r ad(c44)` & \multicolumn{1}{c|}{`r ad(c54)`} & `r ad(c64)` & \multicolumn{1}{c|}{`r ad(c74)`} & \multicolumn{1}{c|}{`r ad(c84)`} & `r ad(c94)` \\ \hline
+`r ad(16)` سنة         & \multicolumn{1}{c|}{`r ad(c15)`} & `r ad(c25)` & \multicolumn{1}{c|}{`r ad(c35)`} & `r ad(c45)` & \multicolumn{1}{c|}{`r ad(c55)`} & `r ad(c65)` & \multicolumn{1}{c|}{`r ad(c75)`} & \multicolumn{1}{c|}{`r ad(c85)`} & `r ad(c95)` \\ \hline
+`r ad(17)` سنة         & \multicolumn{1}{c|}{`r ad(c16)`} & `r ad(c26)` & \multicolumn{1}{c|}{`r ad(c36)`} & `r ad(c46)` & \multicolumn{1}{c|}{`r ad(c56)`} & `r ad(c66)` & \multicolumn{1}{c|}{`r ad(c76)`} & \multicolumn{1}{c|}{`r ad(c86)`} & `r ad(c96)` \\ \hline
+`r ad(18)` سنة         & \multicolumn{1}{c|}{`r ad(c17)`} & `r ad(c27)` & \multicolumn{1}{c|}{`r ad(c37)`} & `r ad(c47)` & \multicolumn{1}{c|}{`r ad(c57)`} & `r ad(c67)` & \multicolumn{1}{c|}{`r ad(c77)`} & \multicolumn{1}{c|}{`r ad(c87)`} & `r ad(c97)` \\ \hline
+المجموع                & \multicolumn{1}{c|}{`r ad(c18)`} & `r ad(c28)` & \multicolumn{1}{c|}{`r ad(c38)`} & `r ad(c48)` & \multicolumn{1}{c|}{`r ad(c58)`} & `r ad(c68)` & \multicolumn{1}{c|}{`r ad(c78)`} & \multicolumn{1}{c|}{`r ad(c88)`} & `r ad(c98)` \\ \hline
+\end{tabular}
+\end{table}

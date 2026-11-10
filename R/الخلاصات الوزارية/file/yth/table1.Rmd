@@ -1,0 +1,24 @@
+```{r table1, include=FALSE}
+
+
+c11 <- nrow(df[which(df$sch_env == "urb"),])
+c21 <- nrow(df[which(df$sch_env == "rur"),])
+c31 <- nrow(df[which(df$gender == "boys"),])
+c41 <- nrow(df[which(df$gender == "girls"),])
+c51 <- nrow(df[which(df$gender == "mixed"),])
+c61 <- nrow(df[which(df$sch_class == "yth"),])
+c71 <- nrow(df[which(df$youth_cls == "1"),])
+
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\begin{tabular}{|cc|ccc|clcll|}
+\hline
+\multicolumn{2}{|c|}{الموقع البيئي للمدرسة}     & \multicolumn{3}{c|}{جنس المدرسة}                                                  & \multicolumn{5}{c|}{المدرسة}                                                   \\ \hline
+\multicolumn{1}{|c|}{حضر}         & ريف         & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & مختلطة      & \multicolumn{2}{c|}{مخصصة لليافعين} & \multicolumn{3}{c|}{صفوف مخصصة لليافعين} \\ \hline
+\multicolumn{1}{|c|}{`r ad(c11)`} & `r ad(c21)` & \multicolumn{1}{c|}{`r ad(c31)`} & \multicolumn{1}{c|}{`r ad(c41)`} & `r ad(c51)` & \multicolumn{2}{c|}{`r ad(c61)`}    & \multicolumn{3}{c|}{`r ad(c71)`}         \\ \hline
+\end{tabular}
+\end{table}

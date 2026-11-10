@@ -1,0 +1,52 @@
+```{r table5, include=FALSE}
+
+# ذكور
+c11 <- sum(as.numeric(df$staff_title_mgr_male), na.rm = TRUE)
+c21 <- sum(as.numeric(df$staff_title_asst_male), na.rm = TRUE)
+c31 <- sum(as.numeric(df$staff_title_tchr_male), na.rm = TRUE)
+c41 <- sum(as.numeric(df$staff_title_cslr_male), na.rm = TRUE)
+c51 <- c11 + c21 + c31 + c41
+
+# اناث
+c12 <- sum(as.numeric(df$staff_title_mgr_female), na.rm = TRUE)
+c22 <- sum(as.numeric(df$staff_title_asst_female), na.rm = TRUE)
+c32 <- sum(as.numeric(df$staff_title_tchr_female), na.rm = TRUE)
+c42 <- sum(as.numeric(df$staff_title_cslr_female), na.rm = TRUE)
+c52 <- c12 + c22 + c32 + c42
+
+# المجموع
+c13 <- c11 + c12
+c23 <- c21 + c22
+c33 <- c31 + c32
+c43 <- c41 + c42
+c53 <- c51 + c52
+
+
+```
+\begin{table}[H]
+\centering
+\Large
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\caption{ملاك المدرسة الاداري والتعليمي}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+الجنس   & مدير        & معاون       & معلم        & مرشد        & المجموع     \\ \hline
+ذكور    & `r ad(c11)` & `r ad(c21)` & `r ad(c31)` & `r ad(c41)` & `r ad(c51)` \\ \hline
+اناث    & `r ad(c12)` & `r ad(c22)` & `r ad(c32)` & `r ad(c42)` & `r ad(c52)` \\ \hline
+المجموع & `r ad(c13)` & `r ad(c23)` & `r ad(c33)` & `r ad(c43)` & `r ad(c53)` \\ \hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\caption{عدد المحاضرين}
+\begin{tabular}{|c|c|}
+\hline
+الجنس   & العدد \\ \hline
+ذكور    &       \\ \hline
+اناث    &       \\ \hline
+المجموع &       \\ \hline
+\end{tabular}
+\end{minipage}
+\end{table}

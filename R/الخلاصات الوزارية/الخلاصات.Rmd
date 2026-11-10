@@ -54,7 +54,7 @@ by <- "2027/2026"
 ```{=latex}
 \input{models//cover.tex}
 ```
-
+-->
 
 
 ```{=latex}
@@ -119,7 +119,7 @@ df <- df_original %>%filter(book_class == "kg", ownership == "priv")
 ```{r, child='file//kg//table9.Rmd'}
 ```
 
--->
+
 
 
 ```{=latex}
@@ -129,7 +129,7 @@ df <- df_original %>%filter(book_class == "kg", ownership == "priv")
 \setcounter{table}{0}
 ```
 ```{r, include=FALSE}
-df <- df_original %>%filter(book_class == "pri", ownership == "gov")
+df <- df_original %>%filter(book_class == "pri", sch_class == "pri",ownership == "gov")
 ```
 
 
@@ -138,4 +138,133 @@ df <- df_original %>%filter(book_class == "pri", ownership == "gov")
 ```{r, child='file//pri//table2.Rmd'}
 ```
 ```{r, child='file//pri//table3.Rmd'}
+```
+```{r, child='file//pri//table4.Rmd'}
+```
+```{r, child='file//pri//table5.Rmd'}
+```
+```{r, child='file//pri//table6.Rmd'}
+```
+```{r, child='file//pri//table7.Rmd'}
+```
+```{r, child='file//pri//table8.Rmd'}
+```
+```{r, child='file//pri//table9.Rmd'}
+```
+```{r, child='file//pri//table10.Rmd'}
+```
+```{r, child='file//pri//table11.Rmd'}
+```
+```{r, child='file//pri//table12.Rmd'}
+```
+```{r, child='file//pri//table13.Rmd'}
+```
+```{r, child='file//pri//table14.Rmd'}
+```
+
+
+
+```{=latex}
+\newpage
+\subsection{التعليم الاهلي}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original %>%filter(book_class == "pri", sch_class == "pri", ownership == "priv")
+```
+
+
+```{r, child='file//pri//table1.Rmd'}
+```
+```{r, child='file//pri//table2.Rmd'}
+```
+```{r, child='file//pri//table3.Rmd'}
+```
+```{r, child='file//pri//table4.Rmd'}
+```
+```{r, child='file//pri//table5.Rmd'}
+```
+```{r, child='file//pri//table6.Rmd'}
+```
+```{r, child='file//pri//table7.Rmd'}
+```
+```{r, child='file//pri//table8.Rmd'}
+```
+```{r, child='file//pri//table9.Rmd'}
+```
+```{r, child='file//pri//table10.Rmd'}
+```
+```{r, child='file//pri//table11.Rmd'}
+```
+```{r, child='file//pri//table12.Rmd'}
+```
+```{r, child='file//pri//table13.Rmd'}
+```
+```{r, child='file//pri//table14.Rmd'}
+```
+
+
+```{=latex}
+\newpage
+\section{مدارس اليافعين}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original %>%filter(book_class == "pri", sch_class == "yth")
+```
+
+
+```{r, child='file//yth//table1.Rmd'}
+```
+```{r, child='file//yth//table2.Rmd'}
+```
+```{r, child='file//yth//table3.Rmd'}
+```
+```{r, child='file//yth//table4.Rmd'}
+```
+```{r, child='file//yth//table5.Rmd'}
+```
+```{r, child='file//yth//table6.Rmd'}
+```
+```{r, child='file//yth//table7.Rmd'}
+```
+```{r, child='file//yth//table8.Rmd'}
+```
+```{r, child='file//yth//table9.Rmd'}
+```
+
+
+
+```{=latex}
+\newpage
+\section{مدارس التعليم المسرع}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original %>%filter(book_class == "pri", sch_class == "acc")
+```
+
+```{r, child='file//acc//table1.Rmd'}
+```
+```{r, child='file//acc//table2.Rmd'}
+```
+```{r, child='file//acc//table3.Rmd'}
+```
+```{r, child='file//acc//table4.Rmd'}
+```
+```{r, child='file//acc//table5.Rmd'}
+```
+```{r, child='file//acc//table6.Rmd'}
+```
+
+```{=latex}
+\newpage
+\section{التربية الخاصة}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original %>%filter(special_cls_btu == "1")
+```
+
+```{r, child='file//special_cls//table1.Rmd'}
 ```

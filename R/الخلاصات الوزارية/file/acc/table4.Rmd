@@ -1,0 +1,43 @@
+```{r table4, include=FALSE}
+
+c11 <- sum(as.numeric(df$staff_qual_acc_male_tts), na.rm = TRUE)      # دور المعلمين والمعلمات
+c21 <- sum(as.numeric(df$staff_qual_acc_male_sec), na.rm = TRUE)      # الدراسة الاعدادية
+c31 <- sum(as.numeric(df$staff_qual_acc_male_voc), na.rm = TRUE)      # المدارس المهنية
+c41 <- sum(as.numeric(df$staff_qual_acc_male_tti), na.rm = TRUE)      # معاهد اعداد المعلمين
+c51 <- sum(as.numeric(df$staff_qual_acc_male_uni_edu), na.rm = TRUE)  # جامعية تربوية
+c61 <- sum(as.numeric(df$staff_qual_acc_male_uni), na.rm = TRUE)      # جامعية اخرى
+c71 <- sum(as.numeric(df$staff_qual_acc_male_oth), na.rm = TRUE)      # اخرى
+c81 <- c11 + c21 + c31 + c41 + c51 + c61 + c71
+
+
+c12 <- sum(as.numeric(df$staff_qual_acc_female_tts), na.rm = TRUE)
+c22 <- sum(as.numeric(df$staff_qual_acc_female_sec), na.rm = TRUE)
+c32 <- sum(as.numeric(df$staff_qual_acc_female_voc), na.rm = TRUE)
+c42 <- sum(as.numeric(df$staff_qual_acc_female_tti), na.rm = TRUE)
+c52 <- sum(as.numeric(df$staff_qual_acc_female_uni_edu), na.rm = TRUE)
+c62 <- sum(as.numeric(df$staff_qual_acc_female_uni), na.rm = TRUE)
+c72 <- sum(as.numeric(df$staff_qual_acc_female_oth), na.rm = TRUE)
+c82 <- c12 + c22 + c32 + c42 + c52 + c62 + c72
+
+
+c13 <- c11 + c12
+c23 <- c21 + c22
+c33 <- c31 + c32
+c43 <- c41 + c42
+c53 <- c51 + c52
+c63 <- c61 + c62
+c73 <- c71 + c72
+c83 <- c81 + c82
+```
+\begin{table}[H]
+\Large
+\centering
+\caption{عدد اعضاء الهيئة التعليمية حسب   الشهادة}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+اعلى شهادة تم الحصول عليها & \begin{tabular}[c]{@{}c@{}}دور المعلمين\\ والمعلمات\end{tabular} & \begin{tabular}[c]{@{}c@{}}الدراسة\\ الاعدادية\end{tabular} & \begin{tabular}[c]{@{}c@{}}المدارس\\ المهنية\end{tabular} & \begin{tabular}[c]{@{}c@{}}معاهد اعداد\\ المعلمين والمعلمات\end{tabular} & جامعية تربوية & جامعية اخرى & اخرى        & المجموع     \\ \hline
+ذكور                       & `r ad(c11)`                                                      & `r ad(c21)`                                                 & `r ad(c31)`                                               & `r ad(c41)`                                                              & `r ad(c51)`   & `r ad(c61)` & `r ad(c71)` & `r ad(c81)` \\ \hline
+اناث                       & `r ad(c12)`                                                      & `r ad(c22)`                                                 & `r ad(c32)`                                               & `r ad(c42)`                                                              & `r ad(c52)`   & `r ad(c62)` & `r ad(c72)` & `r ad(c82)` \\ \hline
+المجموع                    & `r ad(c13)`                                                      & `r ad(c23)`                                                 & `r ad(c33)`                                               & `r ad(c43)`                                                              & `r ad(c53)`   & `r ad(c63)` & `r ad(c73)` & `r ad(c83)` \\ \hline
+\end{tabular}
+\end{table}

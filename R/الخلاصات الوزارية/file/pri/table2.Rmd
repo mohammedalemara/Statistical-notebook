@@ -1,6 +1,31 @@
 ```{r table2, include=FALSE}
+c11 <- sum(as.numeric(df$new_g1_age5_boys), na.rm = TRUE)
+c12 <- sum(as.numeric(df$new_g1_age5_girls), na.rm = TRUE)
+c13 <- c11 + c12
 
+c21 <- sum(as.numeric(df$new_g1_age6_boys), na.rm = TRUE)
+c22 <- sum(as.numeric(df$new_g1_age6_girls), na.rm = TRUE)
+c23 <- c21 + c22
 
+c31 <- sum(as.numeric(df$new_g1_age7_boys), na.rm = TRUE)
+c32 <- sum(as.numeric(df$new_g1_age7_girls), na.rm = TRUE)
+c33 <- c31 + c32
+
+c41 <- sum(as.numeric(df$new_g1_age8_boys), na.rm = TRUE)
+c42 <- sum(as.numeric(df$new_g1_age8_girls), na.rm = TRUE)
+c43 <- c41 + c42
+
+c51 <- sum(as.numeric(df$new_g1_age9_boys), na.rm = TRUE)
+c52 <- sum(as.numeric(df$new_g1_age9_girls), na.rm = TRUE)
+c53 <- c51 + c52
+
+c61 <- sum(as.numeric(df$new_g1_age10_boys), na.rm = TRUE)
+c62 <- sum(as.numeric(df$new_g1_age10_girls), na.rm = TRUE)
+c63 <- c61 + c62
+
+c71 <- c11 + c21 + c31 + c41 + c51 + c61 
+c72 <- c12 + c22 + c32 + c42 + c52 + c62 
+c73 <- c71 + c72
 
 ```
 \begin{table}[H]
@@ -11,11 +36,11 @@
 
 \begin{tabular}{|c|cccccc|c|}
 \hline
-\multirow{2}{*}{الجنس} & \multicolumn{6}{c|}{الاعمار}                                                                                                                                                    & \multirow{2}{*}{المجموع} \\ \cline{2-7}
-                       & \multicolumn{1}{c|}{`r ad(5)`} & \multicolumn{1}{c|}{`r ad(6)`} & \multicolumn{1}{c|}{`r ad(7)`} & \multicolumn{1}{c|}{`r ad(8)`} & \multicolumn{1}{c|}{`r ad(9)`} & `r ad(10)` &                          \\ \hline
-بنون                   & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          &            &                          \\ \hline
-بنات                   & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          &            &                          \\ \hline
-المجموع                & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          & \multicolumn{1}{c|}{}          &            &                          \\ \hline
+\multirow{2}{*}{الجنس} & \multicolumn{6}{c|}{الاعمار}                                                                                                                                                               & \multirow{2}{*}{المجموع} \\ \cline{2-7}
+                       & \multicolumn{1}{c|}{`r ad(5)`}   & \multicolumn{1}{c|}{`r ad(6)`}   & \multicolumn{1}{c|}{`r ad(7)`}   & \multicolumn{1}{c|}{`r ad(8)`}   & \multicolumn{1}{c|}{`r ad(9)`}   & `r ad(10)`  &                          \\ \hline
+بنون                   & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & \multicolumn{1}{c|}{`r ad(c41)`} & \multicolumn{1}{c|}{`r ad(c51)`} & `r ad(c61)` & `r ad(c71)`              \\ \hline
+بنات                   & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & \multicolumn{1}{c|}{`r ad(c42)`} & \multicolumn{1}{c|}{`r ad(c52)`} & `r ad(c62)` & `r ad(c72)`              \\ \hline
+المجموع                & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & \multicolumn{1}{c|}{`r ad(c43)`} & \multicolumn{1}{c|}{`r ad(c53)`} & `r ad(c63)` & `r ad(c73)`              \\ \hline
 \end{tabular}
 \end{table}
 

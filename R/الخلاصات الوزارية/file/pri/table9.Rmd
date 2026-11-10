@@ -1,0 +1,175 @@
+```{r table9, include=FALSE}
+
+c11 <- sum(as.numeric(df$drop_stg1_boys),  na.rm = TRUE)
+c21 <- sum(as.numeric(df$drop_stg1_girls), na.rm = TRUE)
+c31 <- c11 + c21
+
+c12 <- sum(as.numeric(df$drop_stg2_boys),  na.rm = TRUE)
+c22 <- sum(as.numeric(df$drop_stg2_girls), na.rm = TRUE)
+c32 <- c12 + c22
+
+c13 <- sum(as.numeric(df$drop_stg3_boys),  na.rm = TRUE)
+c23 <- sum(as.numeric(df$drop_stg3_girls), na.rm = TRUE)
+c33 <- c13 + c23
+
+c14 <- sum(as.numeric(df$drop_stg4_boys),  na.rm = TRUE)
+c24 <- sum(as.numeric(df$drop_stg4_girls), na.rm = TRUE)
+c34 <- c14 + c24
+
+c15 <- sum(as.numeric(df$drop_stg5_boys),  na.rm = TRUE)
+c25 <- sum(as.numeric(df$drop_stg5_girls), na.rm = TRUE)
+c35 <- c15 + c25
+
+c16 <- sum(as.numeric(df$drop_stg6_boys),  na.rm = TRUE)
+c26 <- sum(as.numeric(df$drop_stg6_girls), na.rm = TRUE)
+c36 <- c16 + c26
+
+c17 <- c11 + c12 + c13 + c14 + c15 + c16
+c27 <- c21 + c22 + c23 + c24 + c25 + c26
+c37 <- c17 + c27
+
+##############################################################
+c41 <- sum(as.numeric(df$pass_stg1_boys),  na.rm = TRUE)
+c51 <- sum(as.numeric(df$pass_stg1_girls), na.rm = TRUE)
+c61 <- c41 + c51
+
+c42 <- sum(as.numeric(df$pass_stg2_boys),  na.rm = TRUE)
+c52 <- sum(as.numeric(df$pass_stg2_girls), na.rm = TRUE)
+c62 <- c42 + c52
+
+c43 <- sum(as.numeric(df$pass_stg3_boys),  na.rm = TRUE)
+c53 <- sum(as.numeric(df$pass_stg3_girls), na.rm = TRUE)
+c63 <- c43 + c53
+
+c44 <- sum(as.numeric(df$pass_stg4_boys),  na.rm = TRUE)
+c54 <- sum(as.numeric(df$pass_stg4_girls), na.rm = TRUE)
+c64 <- c44 + c54
+
+c45 <- sum(as.numeric(df$pass_stg5_boys),  na.rm = TRUE)
+c55 <- sum(as.numeric(df$pass_stg5_girls), na.rm = TRUE)
+c65 <- c45 + c55
+
+c46 <- sum(as.numeric(df$pass_stg6_boys),  na.rm = TRUE)
+c56 <- sum(as.numeric(df$pass_stg6_girls), na.rm = TRUE)
+c66 <- c46 + c56
+
+c47 <- c41 + c42 + c43 + c44 + c45 + c46
+c57 <- c51 + c52 + c53 + c54 + c55 + c56
+c67 <- c47 + c57
+
+##############################################################
+c71 <- sum(as.numeric(df$fail_stg1_boys),  na.rm = TRUE)
+c81 <- sum(as.numeric(df$fail_stg1_girls), na.rm = TRUE)
+
+c72 <- sum(as.numeric(df$fail_stg2_boys),  na.rm = TRUE)
+c82 <- sum(as.numeric(df$fail_stg2_girls), na.rm = TRUE)
+
+c73 <- sum(as.numeric(df$fail_stg3_boys),  na.rm = TRUE)
+c83 <- sum(as.numeric(df$fail_stg3_girls), na.rm = TRUE)
+
+c74 <- sum(as.numeric(df$fail_stg4_boys),  na.rm = TRUE)
+c84 <- sum(as.numeric(df$fail_stg4_girls), na.rm = TRUE)
+
+c75 <- sum(as.numeric(df$fail_stg5_boys),  na.rm = TRUE)
+c85 <- sum(as.numeric(df$fail_stg5_girls), na.rm = TRUE)
+
+c76 <- sum(as.numeric(df$fail_stg6_boys),  na.rm = TRUE)
+c86 <- sum(as.numeric(df$fail_stg6_girls), na.rm = TRUE)
+
+c77 <- c71 + c72 + c73 + c74 + c75 + c76
+c87 <- c81 + c82 + c83 + c84 + c85 + c86
+
+##############################################################
+c91  <- sum(as.numeric(df$limit_stg1_boys),  na.rm = TRUE)
+c101 <- sum(as.numeric(df$limit_stg1_girls), na.rm = TRUE)
+
+c92  <- sum(as.numeric(df$limit_stg2_boys),  na.rm = TRUE)
+c102 <- sum(as.numeric(df$limit_stg2_girls), na.rm = TRUE)
+
+c93  <- sum(as.numeric(df$limit_stg3_boys),  na.rm = TRUE)
+c103 <- sum(as.numeric(df$limit_stg3_girls), na.rm = TRUE)
+
+c94  <- sum(as.numeric(df$limit_stg4_boys),  na.rm = TRUE)
+c104 <- sum(as.numeric(df$limit_stg4_girls), na.rm = TRUE)
+
+c95  <- sum(as.numeric(df$limit_stg5_boys),  na.rm = TRUE)
+c105 <- sum(as.numeric(df$limit_stg5_girls), na.rm = TRUE)
+
+c96  <- sum(as.numeric(df$limit_stg6_boys),  na.rm = TRUE)
+c106 <- sum(as.numeric(df$limit_stg6_girls), na.rm = TRUE)
+
+c97  <- c91 + c92 + c93 + c94 + c95 + c96
+c107 <- c101 + c102 + c103 + c104 + c105 + c106
+##############################################################
+c111 <- sum(as.numeric(df$other_stg1_boys),  na.rm = TRUE)
+c121 <- sum(as.numeric(df$other_stg1_girls), na.rm = TRUE)
+
+c112 <- sum(as.numeric(df$other_stg2_boys),  na.rm = TRUE)
+c122 <- sum(as.numeric(df$other_stg2_girls), na.rm = TRUE)
+
+c113 <- sum(as.numeric(df$other_stg3_boys),  na.rm = TRUE)
+c123 <- sum(as.numeric(df$other_stg3_girls), na.rm = TRUE)
+
+c114 <- sum(as.numeric(df$other_stg4_boys),  na.rm = TRUE)
+c124 <- sum(as.numeric(df$other_stg4_girls), na.rm = TRUE)
+
+c115 <- sum(as.numeric(df$other_stg5_boys),  na.rm = TRUE)
+c125 <- sum(as.numeric(df$other_stg5_girls), na.rm = TRUE)
+
+c116 <- sum(as.numeric(df$other_stg6_boys),  na.rm = TRUE)
+c126 <- sum(as.numeric(df$other_stg6_girls), na.rm = TRUE)
+
+c117 <- c111 + c112 + c113 + c114 + c115 + c116
+c127 <- c121 + c122 + c123 + c124 + c125 + c126
+
+##############################################################
+c131 <- c71 + c91 + c111
+c141 <- c81 + c101 + c121
+c151 <- c131 + c141
+
+c132 <- c72 + c92 + c112
+c142 <- c82 + c102 + c122
+c152 <- c132 + c142
+
+c133 <- c73 + c93 + c113
+c143 <- c83 + c103 + c123
+c153 <- c133 + c143
+
+c134 <- c74 + c94 + c114
+c144 <- c84 + c104 + c124
+c154 <- c134 + c144
+
+c135 <- c75 + c95 + c115
+c145 <- c85 + c105 + c125
+c155 <- c135 + c145
+
+c136 <- c76 + c96 + c116
+c146 <- c86 + c106 + c126
+c156 <- c136 + c146
+
+c137 <- c131 + c132 + c133 + c134 + c135 + c136
+c147 <- c141 + c142 + c143 + c144 + c145 + c146
+c157 <- c137 + c147
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد الشعب حسب الجنس والصف}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|ccc|ccc|ccccccccc|}
+\hline
+\multirow{3}{*}{الصف} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}عدد التلامذة التاركون\\ حسب الصف والجنس\\ للعام الدراسي `r ad(by)`\end{tabular}} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}عدد التلامذة الناجحين للعام\\ الدراسي `r ad(ay)`\\ حسب الصف والجنس\end{tabular}} & \multicolumn{9}{c|}{\begin{tabular}[c]{@{}c@{}}عدد التلامذة الراسبين حسب اسباب الرسوب\\ والصف والجنس للعام الدراسي `r ad(ay)`\end{tabular}}                                                                                                                                                               \\ \cline{2-16} 
+                      & \multicolumn{1}{c|}{\multirow{2}{*}{بنين}}      & \multicolumn{1}{c|}{\multirow{2}{*}{بنات}}     & \multirow{2}{*}{المجموع}     & \multicolumn{1}{c|}{\multirow{2}{*}{بنين}}      & \multicolumn{1}{c|}{\multirow{2}{*}{بنات}}     & \multirow{2}{*}{المجموع}     & \multicolumn{2}{c|}{الفشل في الامتحان}                              & \multicolumn{2}{c|}{تجاوز ايام الغياب}                               & \multicolumn{2}{c|}{أسباب أخرى}                                       & \multicolumn{3}{c|}{المجموع}                                                         \\ \cline{8-16} 
+                      & \multicolumn{1}{c|}{}                           & \multicolumn{1}{c|}{}                          &                              & \multicolumn{1}{c|}{}                           & \multicolumn{1}{c|}{}                          &                              & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & المجموع      \\ \hline
+الاول                 & \multicolumn{1}{c|}{`r ad(c11)`}                & \multicolumn{1}{c|}{`r ad(c21)`}               & `r ad(c31)`                  & \multicolumn{1}{c|}{`r ad(c41)`}                & \multicolumn{1}{c|}{`r ad(c51)`}               & `r ad(c61)`                  & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & \multicolumn{1}{c|}{`r ad(c101)`} & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & \multicolumn{1}{c|}{`r ad(c131)`} & \multicolumn{1}{c|}{`r ad(c141)`} & `r ad(c151)` \\ \hline
+الثاني                & \multicolumn{1}{c|}{`r ad(c12)`}                & \multicolumn{1}{c|}{`r ad(c22)`}               & `r ad(c32)`                  & \multicolumn{1}{c|}{`r ad(c42)`}                & \multicolumn{1}{c|}{`r ad(c52)`}               & `r ad(c62)`                  & \multicolumn{1}{c|}{`r ad(c72)`} & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c92)`} & \multicolumn{1}{c|}{`r ad(c102)`} & \multicolumn{1}{c|}{`r ad(c112)`} & \multicolumn{1}{c|}{`r ad(c122)`} & \multicolumn{1}{c|}{`r ad(c132)`} & \multicolumn{1}{c|}{`r ad(c142)`} & `r ad(c152)` \\ \hline
+الثالث                & \multicolumn{1}{c|}{`r ad(c13)`}                & \multicolumn{1}{c|}{`r ad(c23)`}               & `r ad(c33)`                  & \multicolumn{1}{c|}{`r ad(c43)`}                & \multicolumn{1}{c|}{`r ad(c53)`}               & `r ad(c63)`                  & \multicolumn{1}{c|}{`r ad(c73)`} & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c93)`} & \multicolumn{1}{c|}{`r ad(c103)`} & \multicolumn{1}{c|}{`r ad(c113)`} & \multicolumn{1}{c|}{`r ad(c123)`} & \multicolumn{1}{c|}{`r ad(c133)`} & \multicolumn{1}{c|}{`r ad(c143)`} & `r ad(c153)` \\ \hline
+الرابع                & \multicolumn{1}{c|}{`r ad(c14)`}                & \multicolumn{1}{c|}{`r ad(c24)`}               & `r ad(c34)`                  & \multicolumn{1}{c|}{`r ad(c44)`}                & \multicolumn{1}{c|}{`r ad(c54)`}               & `r ad(c64)`                  & \multicolumn{1}{c|}{`r ad(c74)`} & \multicolumn{1}{c|}{`r ad(c84)`} & \multicolumn{1}{c|}{`r ad(c94)`} & \multicolumn{1}{c|}{`r ad(c104)`} & \multicolumn{1}{c|}{`r ad(c114)`} & \multicolumn{1}{c|}{`r ad(c124)`} & \multicolumn{1}{c|}{`r ad(c134)`} & \multicolumn{1}{c|}{`r ad(c144)`} & `r ad(c154)` \\ \hline
+الخامس                & \multicolumn{1}{c|}{`r ad(c15)`}                & \multicolumn{1}{c|}{`r ad(c25)`}               & `r ad(c35)`                  & \multicolumn{1}{c|}{`r ad(c45)`}                & \multicolumn{1}{c|}{`r ad(c55)`}               & `r ad(c65)`                  & \multicolumn{1}{c|}{`r ad(c75)`} & \multicolumn{1}{c|}{`r ad(c85)`} & \multicolumn{1}{c|}{`r ad(c95)`} & \multicolumn{1}{c|}{`r ad(c105)`} & \multicolumn{1}{c|}{`r ad(c115)`} & \multicolumn{1}{c|}{`r ad(c125)`} & \multicolumn{1}{c|}{`r ad(c135)`} & \multicolumn{1}{c|}{`r ad(c145)`} & `r ad(c155)` \\ \hline
+السادس                & \multicolumn{1}{c|}{`r ad(c16)`}                & \multicolumn{1}{c|}{`r ad(c26)`}               & `r ad(c36)`                  & \multicolumn{1}{c|}{`r ad(c46)`}                & \multicolumn{1}{c|}{`r ad(c56)`}               & `r ad(c66)`                  & \multicolumn{1}{c|}{`r ad(c76)`} & \multicolumn{1}{c|}{`r ad(c86)`} & \multicolumn{1}{c|}{`r ad(c96)`} & \multicolumn{1}{c|}{`r ad(c106)`} & \multicolumn{1}{c|}{`r ad(c116)`} & \multicolumn{1}{c|}{`r ad(c126)`} & \multicolumn{1}{c|}{`r ad(c136)`} & \multicolumn{1}{c|}{`r ad(c146)`} & `r ad(c156)` \\ \hline
+المجموع               & \multicolumn{1}{c|}{`r ad(c17)`}                & \multicolumn{1}{c|}{`r ad(c27)`}               & `r ad(c37)`                  & \multicolumn{1}{c|}{`r ad(c47)`}                & \multicolumn{1}{c|}{`r ad(c57)`}               & `r ad(c67)`                  & \multicolumn{1}{c|}{`r ad(c77)`} & \multicolumn{1}{c|}{`r ad(c87)`} & \multicolumn{1}{c|}{`r ad(c97)`} & \multicolumn{1}{c|}{`r ad(c107)`} & \multicolumn{1}{c|}{`r ad(c117)`} & \multicolumn{1}{c|}{`r ad(c127)`} & \multicolumn{1}{c|}{`r ad(c137)`} & \multicolumn{1}{c|}{`r ad(c147)`} & `r ad(c157)` \\ \hline
+\end{tabular}
+%}
+\end{table}

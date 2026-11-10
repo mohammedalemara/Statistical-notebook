@@ -24,6 +24,14 @@
 \usepackage{hyperref} % يجب تحميله قبل polyglossia/bidi
 \usepackage{fontspec}
 \usepackage{polyglossia}
+% [جديد] تحميل tocloft مع إخفاء تحذير "\@starttoc has already been redefined" (غير مؤثر: يعطّل فقط
+% خطافات cfttocprehook/posthook التي لا نستخدمها، وهو ناتج عن bidi/polyglossia في قالب pandoc)
+\makeatletter
+\let\GovOldPW\PackageWarning
+\def\PackageWarning#1#2{\def\GovPWa{#1}\def\GovPWb{tocloft}\ifx\GovPWa\GovPWb\else\GovOldPW{#1}{#2}\fi}
+\usepackage{tocloft}
+\let\PackageWarning\GovOldPW
+\makeatother
 
 \setdefaultlanguage[numerals=eastern]{arabic}
 \setotherlanguage{english}
@@ -31,16 +39,16 @@
 \setmainfont{Arial}
 
 %==================================================
-% [جديد] لوحة الألوان: أزرق سماوي مع رمادي
+% لوحة الألوان الرسمية: أزرق كحلي حكومي مع رمادي
 %==================================================
-\definecolor{GovBlue}{HTML}{1E88C8}    % أزرق سماوي: الهوية الأساسية
-\definecolor{GovDeep}{HTML}{14608F}    % [جديد] أزرق أغمق: للعناوين والتفاصيل
-\definecolor{GovSlate}{HTML}{22303C}   % رمادي مزرق داكن: النصوص
-\definecolor{GovSilver}{HTML}{8A96A3}  % رمادي: الخطوط الثانوية
-\definecolor{GovGray}{HTML}{6B7785}    % رمادي: النصوص الثانوية
-\definecolor{GovLight}{HTML}{E4F0F9}   % خلفية فاتحة: صفوف الجداول ومربع القسم
-\definecolor{GovTrack}{HTML}{D3DEE8}   % مسار شريط التقدم في التذييل
-\definecolor{GovTint}{HTML}{EEF6FC}    % [جديد] خلفية فاتحة جداً خلف الرأس والتذييل
+\definecolor{GovDeep}{HTML}{0F3A5F}    % كحلي حكومي: الهوية الأساسية (العناوين، الأشرطة، الإطارات)
+\definecolor{GovBlue}{HTML}{1F78B4}    % أزرق: الخطوط الثانوية والعناوين الفرعية
+\definecolor{GovSlate}{HTML}{1F2B37}   % رمادي مزرق داكن: النصوص
+\definecolor{GovSilver}{HTML}{9AA6B2}  % رمادي فاتح: الفواصل الرفيعة
+\definecolor{GovGray}{HTML}{5F6C79}    % رمادي: النصوص الثانوية
+\definecolor{GovLight}{HTML}{E7EFF7}   % خلفية فاتحة: صفوف الجداول
+\definecolor{GovTrack}{HTML}{D5DFE9}   % مسار شريط التقدم في التذييل
+\definecolor{GovTint}{HTML}{F4F8FC}    % خلفية فاتحة جداً خلف الرأس والتذييل
 % للتوافق مع الأسماء السابقة
 \colorlet{GovNavy}{GovSlate}
 \colorlet{GovTeal}{GovBlue}
@@ -77,7 +85,7 @@
 	font={Large,bf},
 	labelfont={color=GovSlate},    % [جديد]
 	textfont={color=GovSlate},   % [جديد]
-	skip=5pt
+	skip=-8pt
 }
 
 
@@ -125,7 +133,7 @@
 % \renewcommand{\GovLogoFile}{اسم_آخر.png}   \setlength{\GovLogoHeight}{1cm}
 \newcommand{\GovLogoFile}{image/moe_logo.png}
 \newlength{\GovLogoHeight}
-\setlength{\GovLogoHeight}{0.95cm}
+\setlength{\GovLogoHeight}{1cm}
 % [قديم] بقي معرّفاً للتوافق فقط
 \newcommand{\GovLogo}{}
 % شريط تقدم الصفحات في التذييل (يُقسم الخط إلى لونين): \GovProgresstrue لتفعيله
@@ -139,7 +147,7 @@
 \newlength{\GovFootBandH}
 \AtBeginDocument{%
 	\setlength{\GovHeadBandH}{\dimexpr1in+\voffset+\topmargin+\headheight\relax}%
-	\setlength{\GovFootBandH}{\dimexpr\paperheight-1in-\voffset-\topmargin-\headheight-\headsep-\textheight-\footskip+25pt\relax}%
+	\setlength{\GovFootBandH}{\dimexpr\paperheight-1in-\voffset-\topmargin-\headheight-\headsep-\textheight-\footskip+19.75pt\relax}%
 }
 \AddToShipoutPictureBG{%
 	\ifGovTint
@@ -156,40 +164,69 @@
 	\immediate\write\@auxout{\string\setcounter{GovTotal}{\number\numexpr\value{page}-1\relax}}%
 }
 
-% الرأس - يسار: اسم القسم الحالي داخل مربع مستدير (يختفي إن كان فارغاً)
+% ---------- توسيط العناصر رأسياً داخل شريطي الرأس والتذييل ----------
+% قاعدة صف الرأس تبعد عن أعلى خط الرأس بمقدار عمق الصف (8pt) + 0.25pt
+\newcommand{\GovHeadBase}{8.25pt}
+\newsavebox{\GovBoxA}
+\newlength{\GovShiftA}
+% الرأس: يرفع/يخفض الصندوق ليصبح مركزه في منتصف المسافة بين حافة الورقة العلوية وخط الرأس
+\newcommand{\GovHeadMid}[1]{%
+	\savebox{\GovBoxA}{#1}%
+	\setlength{\GovShiftA}{\dimexpr 0.5\GovHeadBandH-\GovHeadBase-0.5\ht\GovBoxA+0.5\dp\GovBoxA\relax}%
+	\raisebox{\GovShiftA}[0pt][0pt]{\usebox{\GovBoxA}}%
+}
+% التذييل: يوسّط الصندوق بين أسفل خط التذييل وحافة الورقة السفلية
+\newcommand{\GovFootMid}[1]{%
+	\savebox{\GovBoxA}{#1}%
+	\setlength{\GovShiftA}{\dimexpr -0.5\ht\GovBoxA+0.5\dp\GovBoxA-0.5\GovFootBandH+17.75pt\relax}%
+	\raisebox{\GovShiftA}[0pt][0pt]{\usebox{\GovBoxA}}%
+}
+
+% الرأس - يسار: اسم القسم الحالي داخل إطار رسمي (يختفي إن كان فارغاً)
 \newcommand{\GovHeadLeft}{%
 	\protected@edef\GovTmpMark{\rightmark}%
 	\ifx\GovTmpMark\@empty\else
-	\adjustbox{max width=0.24\headwidth}{%
-		\tikz[baseline=(GovHL.base)]\node[fill=white, draw=GovBlue!45, line width=0.6pt, text=GovDeep, rounded corners=3pt,
-		inner xsep=8pt, inner ysep=4pt, font=\normalsize\bfseries](GovHL){\RL{\nouppercase{\rightmark}}};}%
+	\GovHeadMid{\adjustbox{max width=0.30\headwidth}{%
+			\tikz[baseline=(GovHL.base)]{%
+				\node[fill=white, draw=GovDeep, line width=0.7pt, text=GovDeep,
+				inner xsep=11pt, inner ysep=4.5pt, font=\normalsize\bfseries](GovHL){\RL{\nouppercase{\rightmark}}};
+				\fill[GovBlue] (GovHL.north west) rectangle ([xshift=3.5pt]GovHL.south west);}}}%
 	\fi
 }
 \makeatother
-% الرأس - وسط: شعار وزارة التربية (صندوق بارتفاع صفري فلا يزيد ارتفاع الرأس)
+% الرأس - وسط: شعار وزارة التربية (والمسطرة الصفرية تثبّت ارتفاع صف الرأس فلا يتغير التخطيط)
 \newcommand{\GovHeadCenter}{%
+	\rule[-8pt]{0pt}{25pt}%
 	\IfFileExists{\GovLogoFile}{%
-		\raisebox{-3pt}[0pt][0pt]{\includegraphics[height=\GovLogoHeight]{\GovLogoFile}}%
+		\GovHeadMid{\includegraphics[height=\GovLogoHeight]{\GovLogoFile}}%
 	}{}%
 }
-% الرأس - يمين: الجهة في سطرين (المديرية ثم القسم والشعبة)
+% الرأس - يمين: ترويسة رسمية من ثلاثة أسطر مع فاصل رفيع جهة الشعار
 \newcommand{\GovHeadRight}{%
-	\raisebox{0pt}[17pt][8pt]{\adjustbox{max width=0.42\headwidth}{\bfseries\color{GovSlate}%
-			\shortstack{\fontsize{10.5}{11}\selectfont \RL{المديرية العامة للتربية في محافظة النجف الاشرف}\\[-1pt]
-				\fontsize{8.5}{9}\selectfont\color{GovDeep}\RL{قسم التخطيط التربوي\textcolor{GovBlue}{\ \textbullet\ }شعبة الاحصاء}}}}%
+	\GovHeadMid{\adjustbox{max width=0.46\headwidth}{%
+			\tikz[baseline=(GovLH.base)]{%
+				\node[align=center, inner sep=0pt, text=GovSlate, font=\bfseries](GovLH){%
+					\fontsize{8.5}{10}\selectfont\color{GovGray}\RL{جمهورية العراق\ \textbullet\ وزارة التربية}\\
+					\fontsize{10.5}{10.5}\selectfont\color{GovDeep}\RL{المديرية العامة للتربية في محافظة النجف الاشرف}\\
+					\fontsize{8.5}{10.5}\selectfont\color{GovBlue}\RL{قسم التخطيط التربوي\ \textbullet\ شعبة الاحصاء}};
+				\draw[GovSilver, line width=0.8pt] ([xshift=-10pt,yshift=-2pt]GovLH.south west) -- ([xshift=-10pt,yshift=2pt]GovLH.north west);}}}%
 }
-% التذييل - يسار: صفحة X من Y داخل مربع أزرق مستدير
+% التذييل - يسار: رقم الصفحة داخل مستطيل كحلي
 \newcommand{\GovFootLeft}{%
-	\tikz[baseline=(GovFL.base)]\node[fill=GovBlue, text=white, rounded corners=4pt,
-	inner xsep=10pt, inner ysep=4.5pt, font=\normalsize\bfseries](GovFL){\RL{صفحة\ \thepage\ من\ \GovLastPage}};%
+	\GovFootMid{\tikz[baseline=(GovFL.base)]{%
+			\node[fill=GovDeep, text=white, inner xsep=13pt, inner ysep=4.5pt,
+			font=\normalsize\bfseries](GovFL){\RL{صفحة\ \thepage\ من\ \GovLastPage}};
+			\fill[GovBlue] (GovFL.north west) rectangle ([xshift=3.5pt]GovFL.south west);}}%
 }
-% التذييل - وسط
+% التذييل - وسط (المسطرة الصفرية تثبّت ارتفاع صف التذييل فيبقى خط التذييل في مكانه)
 \newcommand{\GovFootCenter}{%
-	\normalsize\bfseries\color{GovGray}\RL{\FooterNote}%
+	\rule{0pt}{11.75pt}\normalsize\bfseries\color{GovGray}\RL{\FooterNote}%
 }
-% التذييل - يمين
+% التذييل - يمين: عنوان الكتاب مع شريط جانبي
 \newcommand{\GovFootRight}{%
-	\normalsize\bfseries\color{GovDeep}\RL{\FooterRightNote}%
+	\GovFootMid{\tikz[baseline=(GovFR.base)]{%
+			\node[text=GovDeep, inner xsep=0pt, inner ysep=3pt, font=\normalsize\bfseries](GovFR){\RL{\FooterRightNote}};
+			\fill[GovBlue] ([xshift=7pt]GovFR.north east) rectangle ([xshift=10.5pt]GovFR.south east);}}%
 }
 
 %==================================================
@@ -215,24 +252,24 @@
 
 \fancyfoot[R]{\GovFootRight}
 
-\input{models//footer.tex}
+\input{models/footer.tex}
 
 % خطوط الرأس والتذييل
 \renewcommand{\headrulewidth}{6pt}
 \renewcommand{\footrulewidth}{6pt}
 
-% [جديد] خط الرأس بعرض الورقة كاملة دون قطع: أزرق سميك ثم رمادي رفيع
+% خط الرأس بعرض الورقة كاملة دون قطع: كحلي سميك ثم أزرق رفيع
 \renewcommand{\headrule}{%
 	\hbox to\headwidth{\hss\vbox{\offinterlineskip
-			\hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 3pt depth 0pt}%
+			\hbox to\paperwidth{\color{GovDeep}\vrule width \paperwidth height 3pt depth 0pt}%
 			\vskip 1.5pt
-			\hbox to\paperwidth{\color{GovSilver}\vrule width \paperwidth height 1.5pt depth 0pt}%
+			\hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 1.5pt depth 0pt}%
 		}\hss}%
 	\vskip-\headrulewidth
 }
 
-% [جديد] خط التذييل بعرض الورقة كاملة دون قطع: رمادي رفيع ثم أزرق سميك
-% (إن فُعّل شريط التقدم يتحول الخط الأزرق إلى أزرق + مسار فاتح)
+% خط التذييل بعرض الورقة كاملة دون قطع: أزرق رفيع ثم كحلي سميك
+% (إن فُعّل شريط التقدم يتحول الخط الكحلي إلى كحلي + مسار فاتح)
 \renewcommand{\footrule}{%
 	\vskip-\footruleskip\vskip-\footrulewidth
 	\ifnum\value{GovTotal}>0
@@ -242,13 +279,13 @@
 	\GovProgDim=\paperwidth
 	\fi
 	\hbox to\headwidth{\hss\vbox{\offinterlineskip
-			\hbox to\paperwidth{\color{GovSilver}\vrule width \paperwidth height 1.5pt depth 0pt}%
+			\hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 1.5pt depth 0pt}%
 			\vskip 1.5pt
 			\ifGovProgress
-			\hbox to\paperwidth{\color{GovBlue}\vrule width \GovProgDim height 3pt depth 0pt%
+			\hbox to\paperwidth{\color{GovDeep}\vrule width \GovProgDim height 3pt depth 0pt%
 				\color{GovTrack}\vrule width \dimexpr\paperwidth-\GovProgDim\relax height 3pt depth 0pt}%
 			\else
-			\hbox to\paperwidth{\color{GovBlue}\vrule width \paperwidth height 3pt depth 0pt}%
+			\hbox to\paperwidth{\color{GovDeep}\vrule width \paperwidth height 3pt depth 0pt}%
 			\fi
 		}\hss}%
 	\vskip\footruleskip
@@ -277,7 +314,7 @@
 	
 	\fancyfoot[R]{\GovFootRight}
 	
-	\input{footer.tex}
+	\input{models/footer.tex}
 	
 	\renewcommand{\headrulewidth}{6pt}
 	\renewcommand{\footrulewidth}{6pt}
@@ -309,3 +346,84 @@
 %==================================================
 % الحزم الخاصة بالجداول% الخطوط واللغة
 \definecolor{Silver}{rgb}{0.752,0.752,0.752}
+
+%==================================================
+% تنسيق قائمة المحتويات والأشكال والجداول
+%==================================================
+% ---------- عناوين القوائم ----------
+\gappto\captionsarabic{%
+	\renewcommand{\contentsname}{قائمة المحتويات}%
+	\renewcommand{\listfigurename}{قائمة الأشكال}%
+	\renewcommand{\listtablename}{قائمة الجداول}%
+}
+
+% ---------- عنوان كل قائمة: وسط + كحلي + مسافات ----------
+\renewcommand{\cfttoctitlefont}{\hfill\Huge\bfseries\color{GovDeep}}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\Huge\bfseries\color{GovDeep}}
+\renewcommand{\cftafterlottitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\Huge\bfseries\color{GovDeep}}
+\renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{10pt}
+\setlength{\cftafterloftitleskip}{10pt}
+\setlength{\cftafterlottitleskip}{10pt}
+
+% ---------- النقاط: صغيرة، متقاربة، رمادية فاتحة ----------
+\renewcommand{\cftdotsep}{2.5}   % أصغر = أكثف (الافتراضي 4.5)
+\newcommand{\GovLeader}{\color{GovBlue}\normalsize\bfseries\cftdotfill{\cftdotsep}}   % نقاط بارزة: أزرق + غامق
+
+\renewcommand{\cftsecleader}{\GovLeader}
+\renewcommand{\cftsubsecleader}{\GovLeader}
+\renewcommand{\cftsubsubsecleader}{\GovLeader}
+\renewcommand{\cftfigleader}{\GovLeader}
+\renewcommand{\cfttableader}{\GovLeader}
+
+\renewcommand{\cftsecdotsep}{\cftdotsep}
+\renewcommand{\cftsubsecdotsep}{\cftdotsep}
+\renewcommand{\cftsubsubsecdotsep}{\cftdotsep}
+\renewcommand{\cftfigdotsep}{\cftdotsep}
+\renewcommand{\cfttabdotsep}{\cftdotsep}
+
+% ---------- الإزاحات (العناوين مرقّمة: --number-sections) ----------
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsubsecindent}{2.5em}
+\setlength{\cftsubsubsecindent}{6em}
+\setlength{\cftsecnumwidth}{2.5em}
+\setlength{\cftsubsecnumwidth}{3.5em}
+\setlength{\cftsubsubsecnumwidth}{4.5em}
+
+% ---------- خطوط وألوان المستويات (النص ورقم الصفحة) ----------
+\renewcommand{\cftsecfont}{\Large\bfseries\color{GovDeep}}
+\renewcommand{\cftsecpagefont}{\Large\bfseries\color{GovDeep}}
+\renewcommand{\cftsubsecfont}{\large\bfseries\color{GovBlue}}
+\renewcommand{\cftsubsecpagefont}{\large\bfseries\color{GovBlue}}
+\renewcommand{\cftsubsubsecfont}{\large\color{GovGray}}
+\renewcommand{\cftsubsubsecpagefont}{\large\color{GovGray}}
+
+% ---------- المسافات الرأسية بين الأسطر ----------
+\setlength{\cftbeforesecskip}{7pt}
+\setlength{\cftbeforesubsecskip}{3pt}
+\setlength{\cftbeforesubsubsecskip}{2pt}
+
+% ---------- قائمة الأشكال والجداول ----------
+\setlength{\cftfigindent}{0pt}
+\setlength{\cfttabindent}{0pt}
+\setlength{\cftfignumwidth}{5.5em}
+\setlength{\cfttabnumwidth}{5.5em}
+\renewcommand{\cftfigpresnum}{شكل~}
+\renewcommand{\cfttabpresnum}{جدول~}
+\renewcommand{\cftfigaftersnum}{\ :}
+\renewcommand{\cfttabaftersnum}{\ :}
+\renewcommand{\cftfigfont}{\large\color{GovSlate}}
+\renewcommand{\cfttabfont}{\large\color{GovSlate}}
+\renewcommand{\cftfigpagefont}{\large\bfseries\color{GovDeep}}
+\renewcommand{\cfttabpagefont}{\large\bfseries\color{GovDeep}}
+\setlength{\cftbeforefigskip}{4pt}
+\setlength{\cftbeforetabskip}{4pt}
+
+% ---------- ربط الأسطر بالصفحات + عمق الفهرس ----------
+\hypersetup{linktoc=all}
+\setcounter{tocdepth}{3}

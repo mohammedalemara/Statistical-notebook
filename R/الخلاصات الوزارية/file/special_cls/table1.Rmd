@@ -1,0 +1,25 @@
+```{r table1, include=FALSE}
+
+c11 <- nrow(df[which(df$sch_env == "urb"),])
+c21 <- nrow(df[which(df$sch_env == "rur"),])
+c31 <- nrow(df[which(df$gender == "boys"),])
+c41 <- nrow(df[which(df$gender == "girls"),])
+c51 <- nrow(df[which(df$gender == "mixed"),])
+c61 <- sum(as.numeric(df$staff_special2_male_total_calc), na.rm = TRUE)
+c71 <- sum(as.numeric(df$staff_special2_female_total_calc), na.rm = TRUE)
+c81 <- c61 + c71
+
+
+```
+
+\begin{table}[H]
+\Large
+\centering
+\caption{عدد اعضاء الهيئة التعليمية حسب سنوات العمر}
+\begin{tabular}{|cc|ccc|ccc|}
+\hline
+\multicolumn{1}{|l}{موقع المدرسة التي فيها} & \multicolumn{1}{r|}{صفوف التربية الخاصة} & \multicolumn{3}{c|}{جنس المدرسة}                                                  & \multicolumn{1}{l}{عدد اعضاء}    & \multicolumn{1}{r}{الهيئة التعليمية} & \multicolumn{1}{r|}{للتربية الخاصة} \\ \hline
+\multicolumn{1}{|c|}{حضر}                   & ريف                                      & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & مختلط       & \multicolumn{1}{c|}{ذكور}        & \multicolumn{1}{c|}{اناث}            & المجموع                             \\ \hline
+\multicolumn{1}{|c|}{`r ad(c11)`}           & `r ad(c21)`                              & \multicolumn{1}{c|}{`r ad(c31)`} & \multicolumn{1}{c|}{`r ad(c41)`} & `r ad(c51)` & \multicolumn{1}{c|}{`r ad(c61)`} & \multicolumn{1}{c|}{`r ad(c71)`}     & `r ad(c81)`                         \\ \hline
+\end{tabular}
+\end{table}

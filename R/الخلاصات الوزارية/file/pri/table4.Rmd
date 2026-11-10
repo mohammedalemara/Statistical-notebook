@@ -1,0 +1,98 @@
+
+```{r table4, include=FALSE}
+
+```{r table4, include=FALSE}
+
+c11 <- sum(as.numeric(df$staff_title_mgr_male), na.rm = TRUE)
+c12 <- sum(as.numeric(df$staff_title_mgr_female), na.rm = TRUE)
+c13 <- sum(as.numeric(df$staff_title_mgr_total_calc), na.rm = TRUE)
+
+c21 <- sum(as.numeric(df$staff_title_asst_male), na.rm = TRUE)
+c22 <- sum(as.numeric(df$staff_title_asst_female), na.rm = TRUE)
+c23 <- sum(as.numeric(df$staff_title_asst_total_calc), na.rm = TRUE)
+
+c31 <- sum(as.numeric(df$staff_title_tchr_male), na.rm = TRUE)
+c32 <- sum(as.numeric(df$staff_title_tchr_female), na.rm = TRUE)
+c33 <- sum(as.numeric(df$staff_title_tchr_total_calc), na.rm = TRUE)
+
+c41 <- sum(as.numeric(df$staff_title_cslr_male), na.rm = TRUE)
+c42 <- sum(as.numeric(df$staff_title_cslr_female), na.rm = TRUE)
+c43 <- sum(as.numeric(df$staff_title_cslr_total_calc), na.rm = TRUE)
+
+
+c51 <- c11 + c21 + c31 + c41
+c52 <- c12 + c22 + c32 + c42
+c53 <- c13 + c23 + c33 + c43
+###################################################
+
+c61 <- sum(as.numeric(df$staff_qual_male_train), na.rm = TRUE)
+c62 <- sum(as.numeric(df$staff_qual_female_train), na.rm = TRUE)
+c63 <- sum(as.numeric(df$staff_qual_total_train_calc), na.rm = TRUE)
+
+c71 <- sum(as.numeric(df$staff_qual_male_dip_edu), na.rm = TRUE)
+c72 <- sum(as.numeric(df$staff_qual_female_dip_edu), na.rm = TRUE)
+c73 <- sum(as.numeric(df$staff_qual_total_dip_edu_calc), na.rm = TRUE)
+
+c81 <- sum(as.numeric(df$staff_qual_male_dip), na.rm = TRUE)
+c82 <- sum(as.numeric(df$staff_qual_female_dip), na.rm = TRUE)
+c83 <- sum(as.numeric(df$staff_qual_total_dip_calc), na.rm = TRUE)
+
+
+c91 <- sum(as.numeric(df$staff_qual_male_dip_art), na.rm = TRUE)
+c92 <- sum(as.numeric(df$staff_qual_female_dip_art), na.rm = TRUE)
+c93 <- sum(as.numeric(df$staff_qual_total_dip_art_calc), na.rm = TRUE)
+
+
+c101 <- sum(as.numeric(df$staff_qual_male_ba_edu), na.rm = TRUE)
+c102 <- sum(as.numeric(df$staff_qual_female_ba_edu), na.rm = TRUE)
+c103 <- sum(as.numeric(df$staff_qual_total_ba_edu_calc), na.rm = TRUE)
+
+
+c111 <- sum(as.numeric(df$staff_qual_male_ba), na.rm = TRUE)
+c112 <- sum(as.numeric(df$staff_qual_female_ba), na.rm = TRUE)
+c113 <- sum(as.numeric(df$staff_qual_total_ba_calc), na.rm = TRUE)
+
+
+c121 <- sum(as.numeric(df$staff_qual_male_hdip), na.rm = TRUE)
+c122 <- sum(as.numeric(df$staff_qual_female_hdip), na.rm = TRUE)
+c123 <- sum(as.numeric(df$staff_qual_total_hdip_calc), na.rm = TRUE)
+
+
+c131 <- sum(as.numeric(df$staff_qual_male_msc), na.rm = TRUE)
+c132 <- sum(as.numeric(df$staff_qual_female_msc), na.rm = TRUE)
+c133 <- sum(as.numeric(df$staff_qual_total_msc_calc), na.rm = TRUE)
+
+
+c141 <- sum(as.numeric(df$staff_qual_male_phd), na.rm = TRUE)
+c142 <- sum(as.numeric(df$staff_qual_female_phd), na.rm = TRUE)
+c143 <- sum(as.numeric(df$staff_qual_total_phd_calc), na.rm = TRUE)
+
+
+c151 <- sum(as.numeric(df$staff_qual_male_oth), na.rm = TRUE)
+c152 <- sum(as.numeric(df$staff_qual_female_oth), na.rm = TRUE)
+c153 <- sum(as.numeric(df$staff_qual_total_oth_calc), na.rm = TRUE)
+
+
+c161 <- sum(as.numeric(df$staff_qual_male_total_calc), na.rm = TRUE)
+c162 <- sum(as.numeric(df$staff_qual_female_total_calc), na.rm = TRUE)
+c163 <- sum(as.numeric(df$staff_qual_total_total_calc), na.rm = TRUE)
+ 
+```
+
+
+
+\begin{table}[H]
+\centering
+\caption{عدد الهيئات التعليمية حسب العنوان الوظيفي والشهادة}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|ccccc|cccccccccccl|}
+\hline
+\multirow{3}{*}{الجنس} & \multicolumn{5}{c|}{\multirow{2}{*}{الهيئة التعليمية حسب العنوان الوظيفي}}                                                                              & \multicolumn{12}{c|}{الهيئة التعليمية حسب العنوان والشهادة}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \\ \cline{7-18} 
+                       & \multicolumn{5}{c|}{}                                                                                                                                   & \multicolumn{1}{c|}{\multirow{2}{*}{دورات تربوية}} & \multicolumn{1}{c|}{\multirow{2}{*}{دبلوم تعليمي}} & \multicolumn{1}{c|}{\multirow{2}{*}{دبلوم عام}} & \multicolumn{1}{c|}{\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}دبلوم فنون\\ جميلة\end{tabular}}} & \multicolumn{2}{c|}{جامعية}                                             & \multicolumn{3}{c|}{دراسات عليا}                                                                          & \multicolumn{1}{c|}{\multirow{2}{*}{اخــرى}} & \multicolumn{2}{c|}{\multirow{2}{*}{المجموع}} \\ \cline{2-6} \cline{11-15}
+                       & \multicolumn{1}{c|}{مدير}        & \multicolumn{1}{c|}{معاون}       & \multicolumn{1}{c|}{معلم}        & \multicolumn{1}{c|}{مرشد}        & المجموع     & \multicolumn{1}{c|}{}                              & \multicolumn{1}{c|}{}                              & \multicolumn{1}{c|}{}                           & \multicolumn{1}{c|}{}                                                                            & \multicolumn{1}{c|}{تربوية تعليمية} & \multicolumn{1}{c|}{غير تربوية}   & \multicolumn{1}{c|}{دبلوم عالي}   & \multicolumn{1}{c|}{ماجستير}      & \multicolumn{1}{c|}{دكتوراه}      & \multicolumn{1}{c|}{}                        & \multicolumn{2}{c|}{}                         \\ \hline
+ذكــــــور             & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & \multicolumn{1}{c|}{`r ad(c41)`} & `r ad(c51)` & \multicolumn{1}{c|}{`r ad(c61)`}                   & \multicolumn{1}{c|}{`r ad(c71)`}                   & \multicolumn{1}{c|}{`r ad(c81)`}                & \multicolumn{1}{c|}{`r ad(c91)`}                                                                 & \multicolumn{1}{c|}{`r ad(c101)`}   & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & \multicolumn{1}{c|}{`r ad(c131)`} & \multicolumn{1}{c|}{`r ad(c141)`} & \multicolumn{1}{c|}{`r ad(c151)`}            & \multicolumn{2}{c|}{`r ad(c161)`}             \\ \hline
+انــــــــاث           & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & \multicolumn{1}{c|}{`r ad(c42)`} & `r ad(c52)` & \multicolumn{1}{c|}{`r ad(c62)`}                   & \multicolumn{1}{c|}{`r ad(c72)`}                   & \multicolumn{1}{c|}{`r ad(c82)`}                & \multicolumn{1}{c|}{`r ad(c92)`}                                                                 & \multicolumn{1}{c|}{`r ad(c102)`}   & \multicolumn{1}{c|}{`r ad(c112)`} & \multicolumn{1}{c|}{`r ad(c122)`} & \multicolumn{1}{c|}{`r ad(c132)`} & \multicolumn{1}{c|}{`r ad(c142)`} & \multicolumn{1}{c|}{`r ad(c152)`}            & \multicolumn{2}{c|}{`r ad(c162)`}             \\ \hline
+المجموع                & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & \multicolumn{1}{c|}{`r ad(c43)`} & `r ad(c53)` & \multicolumn{1}{c|}{`r ad(c63)`}                   & \multicolumn{1}{c|}{`r ad(c73)`}                   & \multicolumn{1}{c|}{`r ad(c83)`}                & \multicolumn{1}{c|}{`r ad(c93)`}                                                                 & \multicolumn{1}{c|}{`r ad(c103)`}   & \multicolumn{1}{c|}{`r ad(c113)`} & \multicolumn{1}{c|}{`r ad(c123)`} & \multicolumn{1}{c|}{`r ad(c133)`} & \multicolumn{1}{c|}{`r ad(c143)`} & \multicolumn{1}{c|}{`r ad(c153)`}            & \multicolumn{2}{c|}{`r ad(c163)`}             \\ \hline
+\end{tabular}
+}
+\end{table}

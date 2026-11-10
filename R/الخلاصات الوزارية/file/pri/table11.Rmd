@@ -1,0 +1,28 @@
+```{r table11, include=FALSE}
+
+c11  <- nrow(df[which(df$app_guid == "1"), ])
+c21  <- nrow(df[which(df$app_comp == "1"), ])
+c31  <- nrow(df[which(df$app_net == "1"), ])
+c41  <- nrow(df[which(df$app_for_lang == "1"), ])
+c51  <- nrow(df[which(df$app_local_lang == "ku"), ])
+c61  <- nrow(df[which(df$app_local_lang == "tk"), ])
+c71  <- nrow(df[which(df$app_local_lang == "sy"), ])
+c81  <- nrow(df[which(df$app_feed == "1"), ])
+c91  <- nrow(df[which(df$shared_type == "sgl"), ])
+c101 <- nrow(df[which(df$shared_type == "self"), ])
+c111 <- nrow(df[which(df$shared_type == "shrd"), ])
+c121 <- nrow(df[which(df$shared_type == "both"), ])
+```
+
+\begin{table}[H]
+\centering
+\caption{المدارس المشمولة بــــــــــــــ}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|ccc|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{الارشاد التربوي} & \multirow{2}{*}{تدريس الحاسوب} & \multirow{2}{*}{خدمة الانترنت} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}تدريس اللغات الاجنبية\\ عدا اللغة الانكليزية\end{tabular}} & \multicolumn{3}{c|}{تدريس اللغات المحلية}                                         & \multirow{2}{*}{التغذية المدرسية} & \multirow{2}{*}{غيرمزدوجة} & \multirow{2}{*}{مزدوجة على نفسها} & \multirow{2}{*}{مزدوجة مع اخرى} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}مزدوجة مع نفسها\\ ومع اخرى\end{tabular}} \\ \cline{5-7}
+                                 &                                &                                &                                                                                                       & \multicolumn{1}{c|}{الكردي}      & \multicolumn{1}{c|}{التركماني}   & السرياني    &                                   &                            &                                   &                                 &                                                                                     \\ \hline
+`r ad(c11)`                      & `r ad(c21)`                    & `r ad(c31)`                    & `r ad(c41)`                                                                                           & \multicolumn{1}{c|}{`r ad(c51)`} & \multicolumn{1}{c|}{`r ad(c61)`} & `r ad(c71)` & `r ad(c81)`                       & `r ad(c91)`                & `r ad(c101)`                      & `r ad(c111)`                    & `r ad(c121)`                                                                        \\ \hline
+\end{tabular}
+}
+\end{table}

@@ -1,7 +1,111 @@
 ```{r table1, include=FALSE}
-c11 <- nrow(df[which(df$book_class == "pri" & df$sch_env == "urb"), ])
-c12 <- nrow(df[which(df$book_class == "pri" & df$sch_env == "rur"), ])
+c11 <- nrow(df[which(df$gender  == "boys" & df$sch_env == "urb"), ])
+c12 <- nrow(df[which(df$gender  == "boys" & df$sch_env == "rur"), ])
 c13 <- c11 + c12
+
+c21 <- nrow(df[which(df$gender  == "girls" & df$sch_env == "urb"), ])
+c22 <- nrow(df[which(df$gender  == "girls" & df$sch_env == "rur"), ])
+c23 <- c21 + c22
+
+c31 <- nrow(df[which(df$gender  == "mixed" & df$sch_env == "urb"), ])
+c32 <- nrow(df[which(df$gender  == "mixed" & df$sch_env == "rur"), ])
+c33 <- c31 + c32
+
+c41 <- c11 + c21 + c31 
+c42 <- c21 + c22 + c32
+c43 <- c41 + c42
+
+c51 <- sum(as.numeric(df$new_g1_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE)
+c52 <- sum(as.numeric(df$new_g1_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c53 <- c51 + c52
+
+c61 <- sum(as.numeric(df$new_g1_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE)
+c62 <- sum(as.numeric(df$new_g1_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c63 <- c61 + c62
+
+c71 <- c51 + c61
+c72 <- c52 + c62
+c73 <- c71 + c72
+
+c81 <- sum(as.numeric(df$reg_g1_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g2_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g3_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g4_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g5_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g6_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE)
+       
+c82 <- sum(as.numeric(df$reg_g1_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g2_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g3_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g4_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g5_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g6_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE)
+       
+c83 <- c81 + c82
+
+c91 <- sum(as.numeric(df$reg_g1_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g2_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g3_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g4_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g5_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g6_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE)
+       
+c92 <- sum(as.numeric(df$reg_g1_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g2_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g3_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g4_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g5_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+       sum(as.numeric(df$reg_g6_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) 
+       
+c93 <- c91 + c92
+
+c101 <- c81 + c91
+c102 <- c82 + c92
+c103 <- c101 + c102
+
+c111 <- sum(as.numeric(df$staff_title_total_male_calc[df$sch_env == "urb"]), na.rm = TRUE)
+c112 <- sum(as.numeric(df$staff_title_total_male_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c113 <- c111 + c112
+
+c121 <- sum(as.numeric(df$staff_title_total_female_calc[df$sch_env == "urb"]), na.rm = TRUE)
+c122 <- sum(as.numeric(df$staff_title_total_female_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c123 <- c121 + c122
+
+c131 <- c111 + c121
+c132 <- c112 + c122
+c133 <- c131 + c132
+
+c141 <- nrow(df[which(df$independent  == "org" & df$sch_env == "urb"), ])
+c142 <- nrow(df[which(df$independent  == "org" & df$sch_env == "rur"), ])
+c143 <- c141 + c142
+
+c151 <- nrow(df[which(df$independent  == "gst" & df$sch_env == "urb"), ])
+c152 <- nrow(df[which(df$independent  == "gst" & df$sch_env == "rur"), ])
+c153 <- c151 + c152
+
+c161 <- nrow(df[which(df$shift   == "am" & df$sch_env == "urb"), ])
+c162 <- nrow(df[which(df$shift   == "am" & df$sch_env == "rur"), ])
+c163 <- c161 + c162
+
+c171 <- nrow(df[which(df$shift   == "pm" & df$sch_env == "urb"), ])
+c172 <- nrow(df[which(df$shift   == "pm" & df$sch_env == "rur"), ])
+c173 <- c171 + c172
+
+c181 <- nrow(df[which(df$shift   == "am-pm" & df$sch_env == "urb"), ])
+c182 <- nrow(df[which(df$shift   == "am-pm" & df$sch_env == "rur"), ])
+c183 <- c181 + c182
+
+c191 <- nrow(df[which(df$shift   == "eve" & df$sch_env == "urb"), ])
+c192 <- nrow(df[which(df$shift   == "eve" & df$sch_env == "rur"), ])
+c193 <- c191 + c192
+
+c201 <- c161 + c171 + c181 + c191
+c202 <- c162 + c172 + c182 + c192
+c203 <- c201 + c202
+
+c211 <- nrow(df[which(df$is_new   == "1" & df$sch_env == "urb"), ])
+c212 <- nrow(df[which(df$is_new   == "1" & df$sch_env == "rur"), ])
+c213 <- c211 + c212
 ```
 
 
@@ -19,11 +123,11 @@ c13 <- c11 + c12
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{|c|cccc|ccc|ccc|ccc|cc|ccccc|c|}
 \hline
-\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}الموقع\\ البيئي\end{tabular}} & \multicolumn{4}{c|}{عدد المدارس}                                                                     & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}عدد التلامذة المقبولين\\ (الجدد)\\ في الصف الاول الابتدائي\end{tabular}} & \multicolumn{3}{c|}{عدد التلامذة الموجودين}                     & \multicolumn{3}{c|}{عدد اعضاء الهيئة التعليمية}                 & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}عدد المدارس\\ حسب الاستقلالية\end{tabular}} & \multicolumn{5}{c|}{عدد المدارس حسب الدوام}                                                                                                                                  & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}مدارس\\ الفتح\\ الجديد\end{tabular}} \\ \cline{2-21}
-                                                                         & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{مختلطة} & المجموع & \multicolumn{1}{c|}{بنون}                    & \multicolumn{1}{c|}{بنات}                    & المجموع                   & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & المجموع & \multicolumn{1}{c|}{ذكور} & \multicolumn{1}{c|}{اناث} & المجموع & \multicolumn{1}{c|}{اصلية}                              & ضيف                              & \multicolumn{1}{c|}{صباحاً} & \multicolumn{1}{c|}{ظهرا} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}صباحا\\ وظهرا\end{tabular}} & \multicolumn{1}{c|}{مساءاً} & المجموع &                                                                                 \\ \hline
-حضر                                                                      & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}       &         & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{}                        &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}                                   &                                  & \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                                      & \multicolumn{1}{c|}{}       &         &                                                                                 \\ \hline
-ريف                                                                      & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}       &         & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{}                        &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}                                   &                                  & \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                                      & \multicolumn{1}{c|}{}       &         &                                                                                 \\ \hline
-المجموع                                                                  & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}       &         & \multicolumn{1}{c|}{}                        & \multicolumn{1}{c|}{}                        &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}                                   &                                  & \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}                                                      & \multicolumn{1}{c|}{}       &         &                                                                                 \\ \hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}الموقع\\ البيئي\end{tabular}} & \multicolumn{4}{c|}{عدد المدارس}                                                                                     & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}عدد التلامذة المقبولين\\ (الجدد)\\ في الصف الاول الابتدائي\end{tabular}} & \multicolumn{3}{c|}{عدد التلامذة الموجودين}                                        & \multicolumn{3}{c|}{عدد اعضاء الهيئة التعليمية}                                      & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}عدد المدارس\\ حسب الاستقلالية\end{tabular}} & \multicolumn{5}{c|}{عدد المدارس حسب الدوام}                                                                                                                                                           & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}مدارس\\ الفتح\\ الجديد\end{tabular}} \\ \cline{2-21}
+                                                                         & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{مختلطة}      & المجموع     & \multicolumn{1}{c|}{بنون}                     & \multicolumn{1}{c|}{بنات}                     & المجموع                 & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & المجموع      & \multicolumn{1}{c|}{ذكور}         & \multicolumn{1}{c|}{اناث}         & المجموع      & \multicolumn{1}{c|}{اصلية}                             & ضيف                               & \multicolumn{1}{c|}{صباحاً}       & \multicolumn{1}{c|}{ظهرا}         & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}صباحا\\ وظهرا\end{tabular}} & \multicolumn{1}{c|}{مساءاً}       & المجموع      &                                                                                 \\ \hline
+حضر                                                                      & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` & \multicolumn{1}{c|}{`r ad(c51)`}              & \multicolumn{1}{c|}{`r ad(c61)`}              & `r ad(c71)`             & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & `r ad(c101)` & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & `r ad(c131)` & \multicolumn{1}{c|}{`r ad(c141)`}                      & `r ad(c151)`                      & \multicolumn{1}{c|}{`r ad(c161)`} & \multicolumn{1}{c|}{`r ad(c171)`} & \multicolumn{1}{c|}{`r ad(c181)`}                                          & \multicolumn{1}{c|}{`r ad(c191)`} & `r ad(c201)` & `r ad(c211)`                                                                    \\ \hline
+ريف                                                                      & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & `r ad(c42)` & \multicolumn{1}{c|}{`r ad(c52)`}              & \multicolumn{1}{c|}{`r ad(c62)`}              & `r ad(c72)`             & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c92)`} & `r ad(c102)` & \multicolumn{1}{c|}{`r ad(c112)`} & \multicolumn{1}{c|}{`r ad(c122)`} & `r ad(c132)` & \multicolumn{1}{c|}{`r ad(c142)`}                      & `r ad(c152)`                      & \multicolumn{1}{c|}{`r ad(c162)`} & \multicolumn{1}{c|}{`r ad(c172)`} & \multicolumn{1}{c|}{`r ad(c182)`}                                          & \multicolumn{1}{c|}{`r ad(c192)`} & `r ad(c202)` & `r ad(c212)`                                                                    \\ \hline
+المجموع                                                                  & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & `r ad(c43)` & \multicolumn{1}{c|}{`r ad(c53)`}              & \multicolumn{1}{c|}{`r ad(c63)`}              & `r ad(c73)`             & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c93)`} & `r ad(c103)` & \multicolumn{1}{c|}{`r ad(c113)`} & \multicolumn{1}{c|}{`r ad(c123)`} & `r ad(c133)` & \multicolumn{1}{c|}{`r ad(c143)`}                      & `r ad(c153)`                      & \multicolumn{1}{c|}{`r ad(c163)`} & \multicolumn{1}{c|}{`r ad(c173)`} & \multicolumn{1}{c|}{`r ad(c183)`}                                          & \multicolumn{1}{c|}{`r ad(c193)`} & `r ad(c203)` & `r ad(c213)`                                                                    \\ \hline
 \end{tabular}
 }
 \end{table}

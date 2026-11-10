@@ -1,0 +1,41 @@
+```{r table4, include=FALSE}
+
+# ===== المرحلة 1 =====
+c11 <- sum(as.numeric(df$youth_cls_stg1_boys),  na.rm = TRUE)
+c21 <- sum(as.numeric(df$youth_cls_stg1_girls), na.rm = TRUE)
+c31 <- sum(as.numeric(df$youth_cls_stg1_mixed), na.rm = TRUE)
+
+# ===== المرحلة 2 =====
+c41 <- sum(as.numeric(df$youth_cls_stg2_boys),  na.rm = TRUE)
+c51 <- sum(as.numeric(df$youth_cls_stg2_girls), na.rm = TRUE)
+c61 <- sum(as.numeric(df$youth_cls_stg2_mixed), na.rm = TRUE)
+
+# ===== المرحلة 3 =====
+c71 <- sum(as.numeric(df$youth_cls_stg3_boys),  na.rm = TRUE)
+c81 <- sum(as.numeric(df$youth_cls_stg3_girls), na.rm = TRUE)
+c91 <- sum(as.numeric(df$youth_cls_stg3_mixed), na.rm = TRUE)
+
+# ===== المرحلة 4 =====
+c101 <- sum(as.numeric(df$youth_cls_stg4_boys),  na.rm = TRUE)
+c111 <- sum(as.numeric(df$youth_cls_stg4_girls), na.rm = TRUE)
+c121 <- sum(as.numeric(df$youth_cls_stg4_mixed), na.rm = TRUE)
+
+# ===== المجموع (ثلاث قيم) =====
+c131 <- c11 + c41 + c71 + c101    # مجموع البنين
+c141 <- c21 + c51 + c81 + c111    # مجموع البنات
+c151 <- c31 + c61 + c91 + c121    # مجموع المختلط
+c161 <- c131 + c141 + c151
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد الشعب}
+\begin{tabular}{|ccc|ccc|ccc|ccc|cccc|}
+\hline
+\multicolumn{3}{|c|}{المرحلة الاولى}                                               & \multicolumn{3}{c|}{المرحلة الثانية}                                              & \multicolumn{3}{c|}{المرحلة الثالثة}                                              & \multicolumn{3}{c|}{المرحلة الرابعة}                                                 & \multicolumn{4}{c|}{المجموع}                                                                                             \\ \hline
+\multicolumn{1}{|c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & مختلط       & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & مختلط       & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & مختلط       & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & مختلط        & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{مختلط}        & المجموع      \\ \hline
+\multicolumn{1}{|c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & `r ad(c31)` & \multicolumn{1}{c|}{`r ad(c41)`} & \multicolumn{1}{c|}{`r ad(c51)`} & `r ad(c61)` & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & `r ad(c91)` & \multicolumn{1}{c|}{`r ad(c101)`} & \multicolumn{1}{c|}{`r ad(c111)`} & `r ad(c121)` & \multicolumn{1}{c|}{`r ad(c131)`} & \multicolumn{1}{c|}{`r ad(c141)`} & \multicolumn{1}{c|}{`r ad(c151)`} & `r ad(c161)` \\ \hline
+\end{tabular}
+\end{table}
