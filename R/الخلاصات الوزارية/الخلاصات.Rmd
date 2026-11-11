@@ -268,3 +268,24 @@ df <- df_original %>%filter(special_cls_btu == "1")
 
 ```{r, child='file//special_cls//table1.Rmd'}
 ```
+```{r, child='file//special_cls//table2.Rmd'}
+```
+```{r, child='file//special_cls//table3.Rmd'}
+```
+```{r, child='file//special_cls//table4.Rmd'}
+```
+
+
+
+
+```{=latex}
+\newpage
+\section{إحصاءات أعداد المدارس بحسب الوحدات الإدارية}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original
+```
+
+```{r, child='file//school//table1.Rmd'}
+```

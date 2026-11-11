@@ -1,0 +1,58 @@
+```{r table3, include=FALSE}
+
+# الصف الاول
+c11 <- sum(as.numeric(df$special_cls_stg1_boys), na.rm = TRUE)
+c12 <- sum(as.numeric(df$special_cls_stg1_girls), na.rm = TRUE)
+c13 <- sum(as.numeric(df$special_cls_stg1_mixed), na.rm = TRUE)
+c14 <- c11 + c12 + c13
+
+# الصف الثاني
+c21 <- sum(as.numeric(df$special_cls_stg2_boys), na.rm = TRUE)
+c22 <- sum(as.numeric(df$special_cls_stg2_girls), na.rm = TRUE)
+c23 <- sum(as.numeric(df$special_cls_stg2_mixed), na.rm = TRUE)
+c24 <- c21 + c22 + c23
+
+# الصف الثالث
+c31 <- sum(as.numeric(df$special_cls_stg3_boys), na.rm = TRUE)
+c32 <- sum(as.numeric(df$special_cls_stg3_girls), na.rm = TRUE)
+c33 <- sum(as.numeric(df$special_cls_stg3_mixed), na.rm = TRUE)
+c34 <- c31 + c32 + c33
+
+# الصف الرابع
+c41 <- sum(as.numeric(df$special_cls_stg4_boys), na.rm = TRUE)
+c42 <- sum(as.numeric(df$special_cls_stg4_girls), na.rm = TRUE)
+c43 <- sum(as.numeric(df$special_cls_stg4_mixed), na.rm = TRUE)
+c44 <- c41 + c42 + c43
+
+# الصف الخامس
+c51 <- sum(as.numeric(df$special_cls_stg5_boys), na.rm = TRUE)
+c52 <- sum(as.numeric(df$special_cls_stg5_girls), na.rm = TRUE)
+c53 <- sum(as.numeric(df$special_cls_stg5_mixed), na.rm = TRUE)
+c54 <- c51 + c52 + c53
+
+# الصف السادس
+c61 <- sum(as.numeric(df$special_cls_stg6_boys), na.rm = TRUE)
+c62 <- sum(as.numeric(df$special_cls_stg6_girls), na.rm = TRUE)
+c63 <- sum(as.numeric(df$special_cls_stg6_mixed), na.rm = TRUE)
+c64 <- c61 + c62 + c63
+
+# المجموع
+c71 <- c11 + c21 + c31 + c41 + c51 + c61
+c72 <- c12 + c22 + c32 + c42 + c52 + c62
+c73 <- c13 + c23 + c33 + c43 + c53 + c63
+c74 <- c71 + c72 + c73
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد الشعب لصفوف التربية الخاصة}
+\begin{tabular}{|c|cl|cl|cl|cl|cl|cl|cl|}
+\hline
+الجنس   & \multicolumn{2}{c|}{الصف الاول}  & \multicolumn{2}{c|}{الصف الثاني} & \multicolumn{2}{c|}{الصف الثالث} & \multicolumn{2}{c|}{الصف الرابع} & \multicolumn{2}{c|}{الصف الخامس} & \multicolumn{2}{c|}{الصف السادس} & \multicolumn{2}{c|}{المجموع}     \\ \hline
+بنون    & \multicolumn{2}{c|}{`r ad(c11)`} & \multicolumn{2}{c|}{`r ad(c21)`} & \multicolumn{2}{c|}{`r ad(c31)`} & \multicolumn{2}{c|}{`r ad(c41)`} & \multicolumn{2}{c|}{`r ad(c51)`} & \multicolumn{2}{c|}{`r ad(c61)`} & \multicolumn{2}{c|}{`r ad(c71)`} \\ \hline
+بنات    & \multicolumn{2}{c|}{`r ad(c12)`} & \multicolumn{2}{c|}{`r ad(c22)`} & \multicolumn{2}{c|}{`r ad(c32)`} & \multicolumn{2}{c|}{`r ad(c42)`} & \multicolumn{2}{c|}{`r ad(c52)`} & \multicolumn{2}{c|}{`r ad(c62)`} & \multicolumn{2}{c|}{`r ad(c72)`} \\ \hline
+مختلط   & \multicolumn{2}{c|}{`r ad(c13)`} & \multicolumn{2}{c|}{`r ad(c23)`} & \multicolumn{2}{c|}{`r ad(c33)`} & \multicolumn{2}{c|}{`r ad(c43)`} & \multicolumn{2}{c|}{`r ad(c53)`} & \multicolumn{2}{c|}{`r ad(c63)`} & \multicolumn{2}{c|}{`r ad(c73)`} \\ \hline
+المجموع & \multicolumn{2}{c|}{`r ad(c14)`} & \multicolumn{2}{c|}{`r ad(c24)`} & \multicolumn{2}{c|}{`r ad(c34)`} & \multicolumn{2}{c|}{`r ad(c44)`} & \multicolumn{2}{c|}{`r ad(c54)`} & \multicolumn{2}{c|}{`r ad(c64)`} & \multicolumn{2}{c|}{`r ad(c74)`} \\ \hline
+\end{tabular}
+\end{table}

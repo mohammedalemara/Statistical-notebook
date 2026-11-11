@@ -1,0 +1,198 @@
+```{r table2, include=FALSE}
+
+c11 <- sum(as.numeric(df$special_cls_g1_age5_boys), na.rm = TRUE)
+c12 <- sum(as.numeric(df$special_cls_g1_age6_boys), na.rm = TRUE) 
+c13 <- sum(as.numeric(df$special_cls_g1_age7_boys), na.rm = TRUE) 
+c14 <- sum(as.numeric(df$special_cls_g1_age8_boys), na.rm = TRUE) 
+c15 <- sum(as.numeric(df$special_cls_g1_age9_boys), na.rm = TRUE) 
+c16 <- sum(as.numeric(df$special_cls_g1_age10_boys), na.rm = TRUE)
+c17 <- c11 + c12 + c13 + c14 + c15 + c16
+
+c21 <- sum(as.numeric(df$special_cls_g1_age5_girls), na.rm = TRUE)
+c22 <- sum(as.numeric(df$special_cls_g1_age6_girls), na.rm = TRUE) 
+c23 <- sum(as.numeric(df$special_cls_g1_age7_girls), na.rm = TRUE) 
+c24 <- sum(as.numeric(df$special_cls_g1_age8_girls), na.rm = TRUE) 
+c25 <- sum(as.numeric(df$special_cls_g1_age9_girls), na.rm = TRUE) 
+c26 <- sum(as.numeric(df$special_cls_g1_age10_girls), na.rm = TRUE)
+c27 <- c21 + c22 + c23 + c24 + c25 + c26
+
+c31 <- sum(as.numeric(df$special_cls_g2_age7_boys), na.rm = TRUE)
+c32 <- sum(as.numeric(df$special_cls_g2_age8_boys), na.rm = TRUE) 
+c33 <- sum(as.numeric(df$special_cls_g2_age9_boys), na.rm = TRUE) 
+c34 <- sum(as.numeric(df$special_cls_g2_age10_boys), na.rm = TRUE) 
+c35 <- sum(as.numeric(df$special_cls_g2_age11_boys), na.rm = TRUE) 
+c36 <- c31 + c32 + c13 + c34 + c35
+
+c41 <- sum(as.numeric(df$special_cls_g2_age7_girls), na.rm = TRUE)
+c42 <- sum(as.numeric(df$special_cls_g2_age8_girls), na.rm = TRUE) 
+c43 <- sum(as.numeric(df$special_cls_g2_age9_girls), na.rm = TRUE) 
+c44 <- sum(as.numeric(df$special_cls_g2_age10_girls), na.rm = TRUE) 
+c45 <- sum(as.numeric(df$special_cls_g2_age11_girls), na.rm = TRUE) 
+c46 <- c41 + c42 + c43 + c44 + c45 
+
+c51 <- sum(as.numeric(df$special_cls_g3_age8_boys), na.rm = TRUE)
+c52 <- sum(as.numeric(df$special_cls_g3_age9_boys), na.rm = TRUE) 
+c53 <- sum(as.numeric(df$special_cls_g3_age10_boys), na.rm = TRUE) 
+c54 <- sum(as.numeric(df$special_cls_g3_age11_boys), na.rm = TRUE) 
+c55 <- sum(as.numeric(df$special_cls_g3_age12_boys), na.rm = TRUE) 
+c56 <- c51 + c52 + c53 + c54 + c55
+
+c61 <- sum(as.numeric(df$special_cls_g3_age8_girls), na.rm = TRUE)
+c62 <- sum(as.numeric(df$special_cls_g3_age9_girls), na.rm = TRUE) 
+c63 <- sum(as.numeric(df$special_cls_g3_age10_girls), na.rm = TRUE) 
+c64 <- sum(as.numeric(df$special_cls_g3_age11_girls), na.rm = TRUE) 
+c65 <- sum(as.numeric(df$special_cls_g3_age12_girls), na.rm = TRUE) 
+c66 <- c61 + c62 + c63 + c64 + c65 
+
+c71 <- sum(as.numeric(df$special_cls_g4_age9_boys), na.rm = TRUE)
+c72 <- sum(as.numeric(df$special_cls_g4_age10_boys), na.rm = TRUE) 
+c73 <- sum(as.numeric(df$special_cls_g4_age11_boys), na.rm = TRUE) 
+c74 <- sum(as.numeric(df$special_cls_g4_age12_boys), na.rm = TRUE) 
+c75 <- sum(as.numeric(df$special_cls_g4_age13_boys), na.rm = TRUE) 
+c76 <- c71 + c72 + c73 + c74 + c75
+
+c81 <- sum(as.numeric(df$special_cls_g4_age9_girls), na.rm = TRUE)
+c82 <- sum(as.numeric(df$special_cls_g4_age10_girls), na.rm = TRUE) 
+c83 <- sum(as.numeric(df$special_cls_g4_age11_girls), na.rm = TRUE) 
+c84 <- sum(as.numeric(df$special_cls_g4_age12_girls), na.rm = TRUE) 
+c85 <- sum(as.numeric(df$special_cls_g4_age13_girls), na.rm = TRUE) 
+c86 <- c81 + c82 + c83 + c84 + c85 
+
+c91 <- sum(as.numeric(df$special_cls_g5_age10_boys), na.rm = TRUE)
+c92 <- sum(as.numeric(df$special_cls_g5_age11_boys), na.rm = TRUE) 
+c93 <- sum(as.numeric(df$special_cls_g5_age12_boys), na.rm = TRUE) 
+c94 <- sum(as.numeric(df$special_cls_g5_age13_boys), na.rm = TRUE) 
+c95 <- sum(as.numeric(df$special_cls_g5_age14_boys), na.rm = TRUE) 
+c96 <- c91 + c92 + c93 + c94 + c95
+
+c101 <- sum(as.numeric(df$special_cls_g5_age10_girls), na.rm = TRUE)
+c102 <- sum(as.numeric(df$special_cls_g5_age11_girls), na.rm = TRUE) 
+c103 <- sum(as.numeric(df$special_cls_g5_age12_girls), na.rm = TRUE) 
+c104 <- sum(as.numeric(df$special_cls_g5_age13_girls), na.rm = TRUE) 
+c105 <- sum(as.numeric(df$special_cls_g5_age14_girls), na.rm = TRUE) 
+c106 <- c101 + c102 + c103 + c104 + c105 
+
+c111 <- sum(as.numeric(df$special_cls_g6_age11_boys), na.rm = TRUE)
+c112 <- sum(as.numeric(df$special_cls_g6_age12_boys), na.rm = TRUE) 
+c113 <- sum(as.numeric(df$special_cls_g6_age13_boys), na.rm = TRUE) 
+c114 <- sum(as.numeric(df$special_cls_g6_age14_boys), na.rm = TRUE) 
+c115 <- sum(as.numeric(df$special_cls_g6_age15_boys), na.rm = TRUE) 
+c116 <- c111 + c112 + c113 + c114 + c115
+
+c121 <- sum(as.numeric(df$special_cls_g6_age11_girls), na.rm = TRUE)
+c122 <- sum(as.numeric(df$special_cls_g6_age12_girls), na.rm = TRUE) 
+c123 <- sum(as.numeric(df$special_cls_g6_age13_girls), na.rm = TRUE) 
+c124 <- sum(as.numeric(df$special_cls_g6_age14_girls), na.rm = TRUE) 
+c125 <- sum(as.numeric(df$special_cls_g6_age15_girls), na.rm = TRUE) 
+c126 <- c121 + c122 + c123 + c124 + c125 
+
+c131  <- c11
+c132  <- c12
+c133  <- c13 + c31
+c134  <- c14 + c32 + c51
+c135  <- c15 + c33 + c52 + c71
+c136  <- c16 + c34 + c53 + c72 + c91
+c137  <- c35 + c54 + c73 + c92 + c111
+c138  <- c55 + c74 + c93 + c112
+c139  <- c75 + c94 + c113
+c1310 <- c95 + c114
+c1311 <- c115
+c1312 <- c17 + c36 + c56 + c76 + c96 + c116
+
+c141  <- c21
+c142  <- c22
+c143  <- c23 + c41
+c144  <- c24 + c42 + c61
+c145  <- c25 + c43 + c62 + c81
+c146  <- c26 + c44 + c63 + c82 + c101
+c147  <- c45 + c64 + c83 + c102 + c121
+c148  <- c65 + c84 + c103 + c122
+c149  <- c85 + c104 + c123
+c1410 <- c105 + c124
+c1411 <- c125
+c1412 <- c27 + c46 + c66 + c86 + c106 + c126
+
+c151  <- c131 + c141
+c152  <- c132 + c142
+c153  <- c133 + c143
+c154  <- c134 + c144
+c155  <- c135 + c145
+c156  <- c136 + c146
+c157  <- c137 + c147
+c158  <- c138 + c148
+c159  <- c139 + c149
+c1510 <- c1310 + c1410
+c1511 <- c1311 + c1411
+c1512 <- c1312 + c1412
+
+#####################################
+#column1 (بنين)
+v11 <- sum(as.numeric(df$dis_phys_dis_boys),   na.rm = TRUE)
+v12 <- sum(as.numeric(df$dis_vis_dis_boys),    na.rm = TRUE)
+v13 <- sum(as.numeric(df$dis_hear_dis_boys),   na.rm = TRUE)
+v14 <- sum(as.numeric(df$dis_intel_dis_boys),  na.rm = TRUE)
+v15 <- sum(as.numeric(df$dis_psych_case_boys), na.rm = TRUE)
+v16 <- sum(as.numeric(df$dis_slow_lr_boys),    na.rm = TRUE)
+v17 <- sum(as.numeric(df$dis_total_boys),      na.rm = TRUE)
+###########################################
+#column2 (بنات)
+v21 <- sum(as.numeric(df$dis_phys_dis_girls),   na.rm = TRUE)
+v22 <- sum(as.numeric(df$dis_vis_dis_girls),    na.rm = TRUE)
+v23 <- sum(as.numeric(df$dis_hear_dis_girls),   na.rm = TRUE)
+v24 <- sum(as.numeric(df$dis_intel_dis_girls),  na.rm = TRUE)
+v25 <- sum(as.numeric(df$dis_psych_case_girls), na.rm = TRUE)
+v26 <- sum(as.numeric(df$dis_slow_lr_girls),    na.rm = TRUE)
+v27 <- sum(as.numeric(df$dis_total_girls),      na.rm = TRUE)
+###########################################
+#column3 (المجموع)
+v31 <- v11 + v21
+v32 <- v12 + v22
+v33 <- v13 + v23
+v34 <- v14 + v24
+v35 <- v15 + v25
+v36 <- v16 + v26
+v37 <- v17 + v27
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\begin{minipage}[t]{0.6\textwidth}
+\centering
+\caption{عدد التلامذة المسجلين في صفوف التربية الخاصة حسب الصف والعمروالجنس}
+\begin{tabular}{|c|cccccccccccc|ccc|}
+\hline
+الصف                 & \multicolumn{2}{c|}{الأول}                                          & \multicolumn{2}{c|}{الثاني}                                         & \multicolumn{2}{c|}{الثالث}                                         & \multicolumn{2}{c|}{الرابع}                                         & \multicolumn{2}{c|}{الخامس}                                          & \multicolumn{2}{c|}{السادس}                      & \multicolumn{3}{c|}{المجموع}                                                            \\ \hline
+الجنس                & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & بنات         & \multicolumn{1}{c|}{بنون}          & \multicolumn{1}{c|}{بنات}          & المجموع       \\ \hline
+عمر `r ad(5)`        & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} &                                  & \textbf{}                        &                                  & \textbf{}                        &                                  & \textbf{}                        &                                  & \textbf{}                         &                                   & \textbf{}    & \multicolumn{1}{c|}{`r ad(c131)`}  & \multicolumn{1}{c|}{`r ad(c141)`}  & `r ad(c151)`  \\ \cline{1-3} \cline{14-16} 
+عمر `r ad(6)`        & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                         & \textbf{}                         & \textbf{}    & \multicolumn{1}{c|}{`r ad(c132)`}  & \multicolumn{1}{c|}{`r ad(c142)`}  & `r ad(c152)`  \\ \cline{1-5} \cline{14-16} 
+عمر `r ad(7)`        & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c31)`} & \multicolumn{1}{c|}{`r ad(c41)`} & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                         & \textbf{}                         & \textbf{}    & \multicolumn{1}{c|}{`r ad(c133)`}  & \multicolumn{1}{c|}{`r ad(c143)`}  & `r ad(c153)`  \\ \cline{1-7} \cline{14-16} 
+عمر `r ad(8)`        & \multicolumn{1}{c|}{`r ad(c14)`} & \multicolumn{1}{c|}{`r ad(c24)`} & \multicolumn{1}{c|}{`r ad(c32)`} & \multicolumn{1}{c|}{`r ad(c42)`} & \multicolumn{1}{c|}{`r ad(c51)`} & \multicolumn{1}{c|}{`r ad(c61)`} & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                         & \textbf{}                         & \textbf{}    & \multicolumn{1}{c|}{`r ad(c134)`}  & \multicolumn{1}{c|}{`r ad(c144)`}  & `r ad(c154)`  \\ \cline{1-9} \cline{14-16} 
+عمر `r ad(9)`        & \multicolumn{1}{c|}{`r ad(c15)`} & \multicolumn{1}{c|}{`r ad(c25)`} & \multicolumn{1}{c|}{`r ad(c33)`} & \multicolumn{1}{c|}{`r ad(c43)`} & \multicolumn{1}{c|}{`r ad(c52)`} & \multicolumn{1}{c|}{`r ad(c62)`} & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & \textbf{}                        & \textbf{}                         & \textbf{}                         & \textbf{}    & \multicolumn{1}{c|}{`r ad(c135)`}  & \multicolumn{1}{c|}{`r ad(c145)`}  & `r ad(c155)`  \\ \cline{1-11} \cline{14-16} 
+عمر `r ad(10)`       & \multicolumn{1}{c|}{`r ad(c16)`} & \multicolumn{1}{c|}{`r ad(c26)`} & \multicolumn{1}{c|}{`r ad(c34)`} & \multicolumn{1}{c|}{`r ad(c44)`} & \multicolumn{1}{c|}{`r ad(c53)`} & \multicolumn{1}{c|}{`r ad(c63)`} & \multicolumn{1}{c|}{`r ad(c72)`} & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c91)`} & \multicolumn{1}{c|}{`r ad(c101)`} & \textbf{}                         & \textbf{}    & \multicolumn{1}{c|}{`r ad(c136)`}  & \multicolumn{1}{c|}{`r ad(c146)`}  & `r ad(c156)`  \\ \hline
+عمر `r ad(11)`       &                                  & \multicolumn{1}{c|}{\textbf{}}   & \multicolumn{1}{c|}{`r ad(c35)`} & \multicolumn{1}{c|}{`r ad(c45)`} & \multicolumn{1}{c|}{`r ad(c54)`} & \multicolumn{1}{c|}{`r ad(c64)`} & \multicolumn{1}{c|}{`r ad(c73)`} & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c92)`} & \multicolumn{1}{c|}{`r ad(c102)`} & \multicolumn{1}{c|}{`r ad(c111)`} & `r ad(c121)` & \multicolumn{1}{c|}{`r ad(c137)`}  & \multicolumn{1}{c|}{`r ad(c147)`}  & `r ad(c157)`  \\ \cline{1-1} \cline{4-16} 
+عمر `r ad(12)`       & \textbf{}                        & \textbf{}                        &                                  & \multicolumn{1}{c|}{\textbf{}}   & \multicolumn{1}{c|}{`r ad(c55)`} & \multicolumn{1}{c|}{`r ad(c65)`} & \multicolumn{1}{c|}{`r ad(c74)`} & \multicolumn{1}{c|}{`r ad(c84)`} & \multicolumn{1}{c|}{`r ad(c93)`} & \multicolumn{1}{c|}{`r ad(c103)`} & \multicolumn{1}{c|}{`r ad(c112)`} & `r ad(c122)` & \multicolumn{1}{c|}{`r ad(c138)`}  & \multicolumn{1}{c|}{`r ad(c148)`}  & `r ad(c158)`  \\ \cline{1-1} \cline{6-16} 
+عمر `r ad(13)`       & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        &                                  & \multicolumn{1}{c|}{\textbf{}}   & \multicolumn{1}{c|}{`r ad(c75)`} & \multicolumn{1}{c|}{`r ad(c85)`} & \multicolumn{1}{c|}{`r ad(c94)`} & \multicolumn{1}{c|}{`r ad(c104)`} & \multicolumn{1}{c|}{`r ad(c113)`} & `r ad(c123)` & \multicolumn{1}{c|}{`r ad(c139)`}  & \multicolumn{1}{c|}{`r ad(c149)`}  & `r ad(c159)`  \\ \cline{1-1} \cline{8-16} 
+عمر `r ad(14)`       & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        &                                  & \multicolumn{1}{c|}{\textbf{}}   & \multicolumn{1}{c|}{`r ad(c95)`} & \multicolumn{1}{c|}{`r ad(c105)`} & \multicolumn{1}{c|}{`r ad(c114)`} & `r ad(c124)` & \multicolumn{1}{c|}{`r ad(c1310)`} & \multicolumn{1}{c|}{`r ad(c1410)`} & `r ad(c1510)` \\ \cline{1-1} \cline{10-16} 
+عمر `r ad(15)` فأكثر & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        & \textbf{}                        &                                  & \multicolumn{1}{c|}{\textbf{}}    & \multicolumn{1}{c|}{`r ad(c115)`} & `r ad(c125)` & \multicolumn{1}{c|}{`r ad(c1311)`} & \multicolumn{1}{c|}{`r ad(c1411)`} & `r ad(c1511)` \\ \hline
+المجموع              & \multicolumn{1}{c|}{`r ad(c17)`} & \multicolumn{1}{c|}{`r ad(c27)`} & \multicolumn{1}{c|}{`r ad(c36)`} & \multicolumn{1}{c|}{`r ad(c46)`} & \multicolumn{1}{c|}{`r ad(c56)`} & \multicolumn{1}{c|}{`r ad(c66)`} & \multicolumn{1}{c|}{`r ad(c76)`} & \multicolumn{1}{c|}{`r ad(c86)`} & \multicolumn{1}{c|}{`r ad(c96)`} & \multicolumn{1}{c|}{`r ad(c106)`} & \multicolumn{1}{c|}{`r ad(c116)`} & `r ad(c126)` & \multicolumn{1}{c|}{`r ad(c1312)`} & \multicolumn{1}{c|}{`r ad(c1412)`} & `r ad(c1512)` \\ \hline
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\textwidth}
+\caption{عدد التلامذة المسجلين في صفوف التربية الخاصة حسب نوع العوق}
+\centering
+\begin{tabular}{|cl|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{نوع العوق}     & ذكور        & اناث        & المجموع     \\ \hline
+\multicolumn{2}{|c|}{فيزياويا}      & `r ad(v11)` & `r ad(v21)` & `r ad(v31)` \\ \hline
+\multicolumn{2}{|c|}{بصريا}         & `r ad(v12)` & `r ad(v22)` & `r ad(v32)` \\ \hline
+\multicolumn{2}{|c|}{سمعياً}        & `r ad(v13)` & `r ad(v23)` & `r ad(v33)` \\ \hline
+\multicolumn{2}{|c|}{ذهنياً}        & `r ad(v14)` & `r ad(v24)` & `r ad(v34)` \\ \hline
+\multicolumn{2}{|c|}{حالات نفسية}   & `r ad(v15)` & `r ad(v25)` & `r ad(v35)` \\ \hline
+\multicolumn{2}{|c|}{بطيء التعلم}   & `r ad(v16)` & `r ad(v26)` & `r ad(v36)` \\ \hline
+\multicolumn{2}{|c|}{المجموع الكلي} & `r ad(v17)` & `r ad(v27)` & `r ad(v37)` \\ \hline
+\end{tabular}
+\end{minipage}
+\end{table}
