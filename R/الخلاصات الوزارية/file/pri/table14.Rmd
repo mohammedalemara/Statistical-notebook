@@ -8,8 +8,8 @@ c51 <- sum(as.numeric(df$staff_age_y40_49_male), na.rm = TRUE)
 c61 <- sum(as.numeric(df$staff_age_y40_49_female), na.rm = TRUE)
 c71 <- sum(as.numeric(df$staff_age_y50_59_male), na.rm = TRUE)
 c81 <- sum(as.numeric(df$staff_age_y50_59_female), na.rm = TRUE)
-c91 <- "///"
-c101 <- "///"
+c91 <- sum(as.numeric(df$staff_age_y60_male), na.rm = TRUE)
+c101 <- sum(as.numeric(df$staff_age_y60_female), na.rm = TRUE)
 c111 <- sum(as.numeric(df$staff_age_total_male_calc), na.rm = TRUE)
 c121 <- sum(as.numeric(df$staff_age_total_female_calc), na.rm = TRUE)
 c131 <- sum(as.numeric(df$staff_age_total_total_calc), na.rm = TRUE)

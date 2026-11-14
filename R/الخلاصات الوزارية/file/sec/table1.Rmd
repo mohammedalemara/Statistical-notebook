@@ -1,0 +1,190 @@
+```{r table1, include=FALSE}
+
+c11 <- nrow(df[which(df$sch_class == "mid"  & df$gender == "boys"),])
+c12 <- nrow(df[which(df$sch_class == "sec"  & df$gender == "boys"),])
+c13 <- nrow(df[which(df$sch_class == "high" & df$gender == "boys"),])
+c14 <- c11 + c12 + c13
+
+c21 <- nrow(df[which(df$sch_class == "mid"  & df$gender == "girls"),])
+c22 <- nrow(df[which(df$sch_class == "sec"  & df$gender == "girls"),])
+c23 <- nrow(df[which(df$sch_class == "high" & df$gender == "girls"),])
+c24 <- c21 + c22 + c23
+
+c31 <- nrow(df[which(df$sch_class == "mid"  & df$gender == "mixed"),])
+c32 <- nrow(df[which(df$sch_class == "sec"  & df$gender == "mixed"),])
+c33 <- nrow(df[which(df$sch_class == "high" & df$gender == "mixed"),])
+c34 <- c31 + c32 + c33
+
+c41 <- c11 + c21 + c31
+c42 <- c12 + c22 + c32
+c43 <- c13 + c23 + c33
+c44 <- c41 + c42 + c43
+
+c51 <-  sum(as.numeric(df$reg_g7_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE)
+
+c52 <-  sum(as.numeric(df$reg_g7_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE)
+
+c53 <-  sum(as.numeric(df$reg_g7_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE)
+
+c54 <- c51 + c52 + c53
+
+c61 <-  sum(as.numeric(df$reg_g7_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE)
+
+c62 <-  sum(as.numeric(df$reg_g7_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE)
+
+c63 <-  sum(as.numeric(df$reg_g7_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE)
+
+c64 <- c61 + c62 + c63
+
+c71 <- c51 + c61 + c71
+c72 <- c52 + c62 + c72
+c73 <- c53 + c63 + c73
+c74 <- c71 + c72 + c73
+
+c81 <-  sum(as.numeric(df$staff_title_total_male_calc[df$sch_class == "mid"]), na.rm = TRUE)
+c82 <-  sum(as.numeric(df$staff_title_total_male_calc[df$sch_class == "sec"]), na.rm = TRUE)
+c83 <-  sum(as.numeric(df$staff_title_total_male_calc[df$sch_class == "high"]), na.rm = TRUE)
+c84 <- c81 + c82 + c83
+
+c91 <-  sum(as.numeric(df$staff_title_total_female_calc[df$sch_class == "mid"]), na.rm = TRUE)
+c92 <-  sum(as.numeric(df$staff_title_total_female_calc[df$sch_class == "sec"]), na.rm = TRUE)
+c93 <-  sum(as.numeric(df$staff_title_total_female_calc[df$sch_class == "high"]), na.rm = TRUE)
+c94 <- c91 + c92 + c93
+
+c101 <- c81 + c91
+c102 <- c82 + c92
+c103 <- c83 + c93
+c104 <- c101 + c102 + c103
+
+c111 <- nrow(df[which(df$sch_class == "mid"  & df$independent == "org"),])
+c112 <- nrow(df[which(df$sch_class == "sec"  & df$independent == "org"),])
+c113 <- nrow(df[which(df$sch_class == "high" & df$independent == "org"),])
+c114 <- c111 + c112 + c113
+
+c121 <- nrow(df[which(df$sch_class == "mid"  & df$independent == "gst"),])
+c122 <- nrow(df[which(df$sch_class == "sec"  & df$independent == "gst"),])
+c123 <- nrow(df[which(df$sch_class == "high" & df$independent == "gst"),])
+c124 <- c121 + c122 + c123
+
+c131 <- nrow(df[which(df$sch_class == "mid"  & df$independent == "hst"),])
+c132 <- nrow(df[which(df$sch_class == "sec"  & df$independent == "hst"),])
+c133 <- nrow(df[which(df$sch_class == "high" & df$independent == "hst"),])
+c134 <- c131 + c132 + c133
+
+
+c141 <- nrow(df[which(df$sch_class == "mid"  & df$shift == "am"),])
+c142 <- nrow(df[which(df$sch_class == "sec"  & df$shift == "am"),])
+c143 <- nrow(df[which(df$sch_class == "high" & df$shift == "am"),])
+c144 <- c141 + c142 + c143
+
+c151 <- nrow(df[which(df$sch_class == "mid"  & df$shift == "pm"),])
+c152 <- nrow(df[which(df$sch_class == "sec"  & df$shift == "pm"),])
+c153 <- nrow(df[which(df$sch_class == "high" & df$shift == "pm"),])
+c154 <- c151 + c152 + c153
+
+c161 <- nrow(df[which(df$sch_class == "mid"  & df$shift == "am-pm"),])
+c162 <- nrow(df[which(df$sch_class == "sec"  & df$shift == "am-pm"),])
+c163 <- nrow(df[which(df$sch_class == "high" & df$shift == "am-pm"),])
+c164 <- c161 + c162 + c163
+
+c171 <- nrow(df[which(df$sch_class == "mid"  & df$shift == "eve"),])
+c172 <- nrow(df[which(df$sch_class == "sec"  & df$shift == "eve"),])
+c173 <- nrow(df[which(df$sch_class == "high" & df$shift == "eve"),])
+c174 <- c171 + c172 + c173
+
+c181 <-  sum(as.numeric(df$cls_total_boys_calc[df$sch_class == "mid"]), na.rm = TRUE)
+c182 <-  sum(as.numeric(df$cls_total_boys_calc[df$sch_class == "sec"]), na.rm = TRUE)
+c183 <-  sum(as.numeric(df$cls_total_boys_calc[df$sch_class == "high"]), na.rm = TRUE)
+c184 <- c181 + c182 + c183
+
+c191 <-  sum(as.numeric(df$cls_total_girls_calc[df$sch_class == "mid"]), na.rm = TRUE)
+c192 <-  sum(as.numeric(df$cls_total_girls_calc[df$sch_class == "sec"]), na.rm = TRUE)
+c193 <-  sum(as.numeric(df$cls_total_girls_calc[df$sch_class == "high"]), na.rm = TRUE)
+c194 <- c191 + c192 + c193
+
+c201 <-  sum(as.numeric(df$cls_total_mixed_calc[df$sch_class == "mid"]), na.rm = TRUE)
+c202 <-  sum(as.numeric(df$cls_total_mixed_calc[df$sch_class == "sec"]), na.rm = TRUE)
+c203 <-  sum(as.numeric(df$cls_total_mixed_calc[df$sch_class == "high"]), na.rm = TRUE)
+c204 <- c201 + c202 + c203
+
+c211 <-  c181 + c191 + c201
+c212 <-  c182 + c192 + c202
+c213 <-  c183 + c193 + c203
+c214 <- c211 + c212 + c213
+
+c221 <- nrow(df[which(df$sch_class == "mid"  & df$is_new == "1"),])
+c222 <- nrow(df[which(df$sch_class == "sec"  & df$is_new == "1"),])
+c223 <- nrow(df[which(df$sch_class == "high" & df$is_new == "1"),])
+c224 <- c221 + c222 + c223
+
+c231 <- nrow(df[which(df$sch_class == "mid"  & df$is_new == "0"),])
+c232 <- nrow(df[which(df$sch_class == "sec"  & df$is_new == "0"),])
+c233 <- nrow(df[which(df$sch_class == "high" & df$is_new == "0"),])
+c234 <- c231 + c232 + c233
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد المدارس والطلبة الموجودين وعدد اعضاء الهيئة التدريسية واستقلالية المدرسة ومدارس الفتح الجديد (الصباحي والمسائي)}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|cccc|ccc|ccc|ccc|cccc|cccc|cc|}
+\hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}درجة\\ المدرسة\end{tabular}} & \multicolumn{4}{c|}{عدد المدارس}                                                                                     & \multicolumn{3}{c|}{عدد الطلبة الموجودين}                                         & \multicolumn{3}{c|}{عدد اعضاء الهيئة التدريسية}                                    & \multicolumn{3}{c|}{استقلالية المدرسة}                                               & \multicolumn{4}{c|}{عدد المدارس حسب نوع الدوام}                                                                                                                    & \multicolumn{4}{c|}{عدد الشعب}                                                                                           & \multicolumn{2}{c|}{\begin{tabular}[c]{@{}c@{}}مدارس\\ الفتح الجديد\end{tabular}} \\ \cline{2-24} 
+                                                                        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{مختلط}       & المجموع     & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & المجموع     & \multicolumn{1}{c|}{ذكور}        & \multicolumn{1}{c|}{اناث}        & المجموع      & \multicolumn{1}{c|}{اصلية}        & \multicolumn{1}{c|}{ضيف}          & استضافة      & \multicolumn{1}{c|}{صباحاً}       & \multicolumn{1}{c|}{ظهراً}        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}صباح\\  وظهراً\end{tabular}} & مساءاً       & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{مختلط}        & المجموع      & \multicolumn{1}{c|}{نعم}                           & كلا                          \\ \hline
+متوسطة                                                                  & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` & \multicolumn{1}{c|}{`r ad(c51)`} & \multicolumn{1}{c|}{`r ad(c61)`} & `r ad(c71)` & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & `r ad(c101)` & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & `r ad(c131)` & \multicolumn{1}{c|}{`r ad(c141)`} & \multicolumn{1}{c|}{`r ad(c151)`} & \multicolumn{1}{c|}{`r ad(c161)`}                                           & `r ad(c171)` & \multicolumn{1}{c|}{`r ad(c181)`} & \multicolumn{1}{c|}{`r ad(c191)`} & \multicolumn{1}{c|}{`r ad(c201)`} & `r ad(c211)` & \multicolumn{1}{c|}{`r ad(c221)`}                  & `r ad(c231)`                 \\ \hline
+اعدادي                                                                  & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & `r ad(c42)` & \multicolumn{1}{c|}{`r ad(c52)`} & \multicolumn{1}{c|}{`r ad(c62)`} & `r ad(c72)` & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c92)`} & `r ad(c102)` & \multicolumn{1}{c|}{`r ad(c112)`} & \multicolumn{1}{c|}{`r ad(c122)`} & `r ad(c132)` & \multicolumn{1}{c|}{`r ad(c142)`} & \multicolumn{1}{c|}{`r ad(c152)`} & \multicolumn{1}{c|}{`r ad(c162)`}                                           & `r ad(c172)` & \multicolumn{1}{c|}{`r ad(c182)`} & \multicolumn{1}{c|}{`r ad(c192)`} & \multicolumn{1}{c|}{`r ad(c202)`} & `r ad(c212)` & \multicolumn{1}{c|}{`r ad(c222)`}                  & `r ad(c232)`                 \\ \hline
+ثانوي                                                                   & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & `r ad(c43)` & \multicolumn{1}{c|}{`r ad(c53)`} & \multicolumn{1}{c|}{`r ad(c63)`} & `r ad(c73)` & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c93)`} & `r ad(c103)` & \multicolumn{1}{c|}{`r ad(c113)`} & \multicolumn{1}{c|}{`r ad(c123)`} & `r ad(c133)` & \multicolumn{1}{c|}{`r ad(c143)`} & \multicolumn{1}{c|}{`r ad(c153)`} & \multicolumn{1}{c|}{`r ad(c163)`}                                           & `r ad(c173)` & \multicolumn{1}{c|}{`r ad(c183)`} & \multicolumn{1}{c|}{`r ad(c193)`} & \multicolumn{1}{c|}{`r ad(c203)`} & `r ad(c213)` & \multicolumn{1}{c|}{`r ad(c223)`}                  & `r ad(c233)`                 \\ \hline
+المجموع                                                                 & \multicolumn{1}{c|}{`r ad(c14)`} & \multicolumn{1}{c|}{`r ad(c24)`} & \multicolumn{1}{c|}{`r ad(c34)`} & `r ad(c44)` & \multicolumn{1}{c|}{`r ad(c54)`} & \multicolumn{1}{c|}{`r ad(c64)`} & `r ad(c74)` & \multicolumn{1}{c|}{`r ad(c84)`} & \multicolumn{1}{c|}{`r ad(c94)`} & `r ad(c104)` & \multicolumn{1}{c|}{`r ad(c114)`} & \multicolumn{1}{c|}{`r ad(c124)`} & `r ad(c134)` & \multicolumn{1}{c|}{`r ad(c144)`} & \multicolumn{1}{c|}{`r ad(c154)`} & \multicolumn{1}{c|}{`r ad(c164)`}                                           & `r ad(c174)` & \multicolumn{1}{c|}{`r ad(c184)`} & \multicolumn{1}{c|}{`r ad(c194)`} & \multicolumn{1}{c|}{`r ad(c204)`} & `r ad(c214)` & \multicolumn{1}{c|}{`r ad(c224)`}                  & `r ad(c234)`                 \\ \hline
+\end{tabular}
+}
+\end{table}

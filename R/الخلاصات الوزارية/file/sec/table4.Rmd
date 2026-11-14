@@ -1,0 +1,56 @@
+```{r table4, include=FALSE}
+
+c11 <- nrow(df[which(df$q6 == "1" &df$q20 == "1"),])
+c12 <- nrow(df[which(df$q6 == "2" &df$q20 == "1"),])
+c13 <- c11 + c12
+
+c21 <- nrow(df[which(df$q6 == "1" &df$q20 == "2"),])
+c22 <- nrow(df[which(df$q6 == "2" &df$q20 == "2"),])
+c23 <- c21 + c22
+
+c31 <- nrow(df[which(df$q6 == "1" &df$q20 == "3"),])
+c32 <- nrow(df[which(df$q6 == "2" &df$q20 == "3"),])
+c33 <- c31 + c32 
+
+c41 <- c11 + c21 + c31
+c42 <- c12 + c22 + c32
+c43 <- c41 + c42 
+
+c51 <- sum(df$table25a_32[df$q6 == "1"], na.rm = TRUE)
+c52 <- sum(df$table25a_32[df$q6 == "2"], na.rm = TRUE)
+c53 <- c51 + c52
+
+c61 <- sum(df$table25a_33[df$q6 == "1"], na.rm = TRUE)
+c62 <- sum(df$table25a_33[df$q6 == "2"], na.rm = TRUE)
+c63 <- c61 + c62
+
+c71 <- c51 + c61
+c72 <- c52 + c62
+c73 <- c71 + c72
+
+
+
+```
+
+\begin{table}[H]
+\centering
+\caption{عدد الطلبة الموجودين حسب العمر والصف والجنس (الصباحي والمسائي)}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|cccccccccccccccccccccccc|ccc|}
+\hline
+\multirow{2}{*}{العمر} & \multicolumn{2}{c|}{الاول المتوسط}                      & \multicolumn{2}{c|}{الثاني المتوسط}                     & \multicolumn{2}{c|}{الثالث المتوسط}                     & \multicolumn{2}{c|}{الرابع العلمي}                      & \multicolumn{2}{c|}{الرابع الادبي}                    & \multicolumn{2}{c|}{الرابع الفنون}                    & \multicolumn{2}{c|}{الخامس العلمي}                     & \multicolumn{2}{c|}{الخامس الفنون}                    & \multicolumn{2}{c|}{الخامس الادبي}                    & \multicolumn{2}{c|}{السادس العلمي}                      & \multicolumn{2}{c|}{السادس الفنون}                    & \multicolumn{2}{c|}{السادس الادبي} & \multicolumn{3}{c|}{المجموع}                                       \\ \cline{2-28} 
+                       & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}  & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}  & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}  & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}  & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات}  & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}  & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون}  & بنات  & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}   & المجموع \\ \hline
+عمر 12                 & \multicolumn{1}{c|}{6731}  & \multicolumn{1}{c|}{8496}  &                            &                            &                            &                            &                            &                            &                           &                           &                           &                           &                           &                            &                           &                           &                           &                           &                            &                            &                           &                           &                            &       & \multicolumn{1}{c|}{6731}  & \multicolumn{1}{c|}{8496}   & 15227   \\ \cline{1-5} \cline{26-28} 
+عمر 13                 & \multicolumn{1}{c|}{6465}  & \multicolumn{1}{c|}{6980}  & \multicolumn{1}{c|}{5742}  & \multicolumn{1}{c|}{8501}  &                            &                            &                            &                            &                           &                           &                           &                           &                           &                            &                           &                           &                           &                           &                            &                            &                           &                           &                            &       & \multicolumn{1}{c|}{12207} & \multicolumn{1}{c|}{15481}  & 27688   \\ \cline{1-7} \cline{26-28} 
+عمر 14                 & \multicolumn{1}{c|}{3999}  & \multicolumn{1}{c|}{3086}  & \multicolumn{1}{c|}{5146}  & \multicolumn{1}{c|}{5983}  & \multicolumn{1}{c|}{4940}  & \multicolumn{1}{c|}{7864}  &                            &                            &                           &                           &                           &                           &                           &                            &                           &                           &                           &                           &                            &                            &                           &                           &                            &       & \multicolumn{1}{c|}{14085} & \multicolumn{1}{c|}{16933}  & 31018   \\ \cline{1-13} \cline{26-28} 
+عمر 15                 & \multicolumn{1}{c|}{2426}  & \multicolumn{1}{c|}{1721}  & \multicolumn{1}{c|}{3238}  & \multicolumn{1}{c|}{2715}  & \multicolumn{1}{c|}{5068}  & \multicolumn{1}{c|}{5685}  & \multicolumn{1}{c|}{4396}  & \multicolumn{1}{c|}{7148}  & \multicolumn{1}{c|}{333}  & \multicolumn{1}{c|}{350}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    &                           &                            &                           &                           &                           &                           &                            &                            &                           &                           &                            &       & \multicolumn{1}{c|}{15461} & \multicolumn{1}{c|}{17619}  & 33080   \\ \cline{1-19} \cline{26-28} 
+عمر 16                 & \multicolumn{1}{c|}{1927}  & \multicolumn{1}{c|}{1190}  & \multicolumn{1}{c|}{2109}  & \multicolumn{1}{c|}{1463}  & \multicolumn{1}{c|}{3194}  & \multicolumn{1}{c|}{2609}  & \multicolumn{1}{c|}{4074}  & \multicolumn{1}{c|}{5154}  & \multicolumn{1}{c|}{267}  & \multicolumn{1}{c|}{314}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{3748} & \multicolumn{1}{c|}{5639}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{154}  & \multicolumn{1}{c|}{200}  &                            &                            &                           &                           &                            &       & \multicolumn{1}{c|}{15473} & \multicolumn{1}{c|}{16569}  & 32042   \\ \hline
+عمر 17                 &                            & \multicolumn{1}{c|}{}      & \multicolumn{1}{c|}{1181}  & \multicolumn{1}{c|}{1015}  & \multicolumn{1}{c|}{2236}  & \multicolumn{1}{c|}{1448}  & \multicolumn{1}{c|}{2023}  & \multicolumn{1}{c|}{2419}  & \multicolumn{1}{c|}{230}  & \multicolumn{1}{c|}{231}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{2586} & \multicolumn{1}{c|}{3547}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{99}   & \multicolumn{1}{c|}{145}  & \multicolumn{1}{c|}{2416}  & \multicolumn{1}{c|}{2662}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{189}   & 123   & \multicolumn{1}{c|}{10960} & \multicolumn{1}{c|}{11590}  & 22550   \\ \cline{1-1} \cline{4-28} 
+عمر 18                 &                            &                            &                            & \multicolumn{1}{c|}{}      & \multicolumn{1}{c|}{1882}  & \multicolumn{1}{c|}{953}   & \multicolumn{1}{c|}{1181}  & \multicolumn{1}{c|}{1402}  & \multicolumn{1}{c|}{156}  & \multicolumn{1}{c|}{139}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{1365} & \multicolumn{1}{c|}{1805}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{86}   & \multicolumn{1}{c|}{151}  & \multicolumn{1}{c|}{2698}  & \multicolumn{1}{c|}{3367}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{151}   & 162   & \multicolumn{1}{c|}{7519}  & \multicolumn{1}{c|}{7979}   & 15498   \\ \cline{1-1} \cline{6-28} 
+عمر 19                 &                            &                            &                            &                            &                            & \multicolumn{1}{c|}{}      & \multicolumn{1}{c|}{760}   & \multicolumn{1}{c|}{775}   & \multicolumn{1}{c|}{167}  & \multicolumn{1}{c|}{101}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{710}  & \multicolumn{1}{c|}{955}   & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{62}   & \multicolumn{1}{c|}{101}  & \multicolumn{1}{c|}{1796}  & \multicolumn{1}{c|}{2623}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{124}   & 118   & \multicolumn{1}{c|}{3619}  & \multicolumn{1}{c|}{4673}   & 8292    \\ \cline{1-1} \cline{8-28} 
+عمر 20                 &                            &                            &                            &                            &                            &                            &                            &                            &                           &                           &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{402}  & \multicolumn{1}{c|}{510}   & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{100}  & \multicolumn{1}{c|}{76}   & \multicolumn{1}{c|}{1701}  & \multicolumn{1}{c|}{1941}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{174}   & 72    & \multicolumn{1}{c|}{2377}  & \multicolumn{1}{c|}{2599}   & 4976    \\ \cline{1-1} \cline{14-28} 
+عمر 21 فاكثر           &                            &                            &                            &                            &                            &                            &                            &                            &                           &                           &                           &                           &                           &                            &                           &                           &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{1587}  & \multicolumn{1}{c|}{1454}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{225}   & 55    & \multicolumn{1}{c|}{1812}  & \multicolumn{1}{c|}{1509}   & 3321    \\ \hline
+المجموع                & \multicolumn{1}{c|}{21548} & \multicolumn{1}{c|}{21473} & \multicolumn{1}{c|}{17416} & \multicolumn{1}{c|}{19677} & \multicolumn{1}{c|}{17320} & \multicolumn{1}{c|}{18559} & \multicolumn{1}{c|}{12434} & \multicolumn{1}{c|}{16898} & \multicolumn{1}{c|}{1153} & \multicolumn{1}{c|}{1135} & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{8811} & \multicolumn{1}{c|}{12456} & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{501}  & \multicolumn{1}{c|}{673}  & \multicolumn{1}{c|}{10198} & \multicolumn{1}{c|}{12047} & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{863}   & 530   & \multicolumn{1}{c|}{90244} & \multicolumn{1}{c|}{103448} & 193692  \\ \hline
+\end{tabular}
+}
+\end{table}

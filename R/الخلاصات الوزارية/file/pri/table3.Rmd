@@ -21,7 +21,7 @@ c32 <- sum(as.numeric(df$reg_g2_age8_boys), na.rm = TRUE)
 c33 <- sum(as.numeric(df$reg_g2_age9_boys), na.rm = TRUE) 
 c34 <- sum(as.numeric(df$reg_g2_age10_boys), na.rm = TRUE) 
 c35 <- sum(as.numeric(df$reg_g2_age11_boys), na.rm = TRUE) 
-c36 <- c31 + c32 + c13 + c34 + c35
+c36 <- c31 + c32 + c33 + c34 + c35
 
 c41 <- sum(as.numeric(df$reg_g2_age7_girls), na.rm = TRUE)
 c42 <- sum(as.numeric(df$reg_g2_age8_girls), na.rm = TRUE) 

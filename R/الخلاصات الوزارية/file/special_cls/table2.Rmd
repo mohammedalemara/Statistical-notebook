@@ -133,7 +133,7 @@ v13 <- sum(as.numeric(df$dis_hear_dis_boys),   na.rm = TRUE)
 v14 <- sum(as.numeric(df$dis_intel_dis_boys),  na.rm = TRUE)
 v15 <- sum(as.numeric(df$dis_psych_case_boys), na.rm = TRUE)
 v16 <- sum(as.numeric(df$dis_slow_lr_boys),    na.rm = TRUE)
-v17 <- sum(as.numeric(df$dis_total_boys),      na.rm = TRUE)
+v17 <- sum(as.numeric(df$dis_total_boys_calc),      na.rm = TRUE)
 ###########################################
 #column2 (بنات)
 v21 <- sum(as.numeric(df$dis_phys_dis_girls),   na.rm = TRUE)
@@ -142,7 +142,7 @@ v23 <- sum(as.numeric(df$dis_hear_dis_girls),   na.rm = TRUE)
 v24 <- sum(as.numeric(df$dis_intel_dis_girls),  na.rm = TRUE)
 v25 <- sum(as.numeric(df$dis_psych_case_girls), na.rm = TRUE)
 v26 <- sum(as.numeric(df$dis_slow_lr_girls),    na.rm = TRUE)
-v27 <- sum(as.numeric(df$dis_total_girls),      na.rm = TRUE)
+v27 <- sum(as.numeric(df$dis_total_girls_calc),      na.rm = TRUE)
 ###########################################
 #column3 (المجموع)
 v31 <- v11 + v21

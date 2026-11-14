@@ -233,30 +233,6 @@ df <- df_original %>%filter(book_class == "pri", sch_class == "yth")
 ```{r, child='file//yth//table9.Rmd'}
 ```
 
-
-
-```{=latex}
-\newpage
-\section{مدارس التعليم المسرع}
-\setcounter{table}{0}
-```
-```{r, include=FALSE}
-df <- df_original %>%filter(book_class == "pri", sch_class == "acc")
-```
-
-```{r, child='file//acc//table1.Rmd'}
-```
-```{r, child='file//acc//table2.Rmd'}
-```
-```{r, child='file//acc//table3.Rmd'}
-```
-```{r, child='file//acc//table4.Rmd'}
-```
-```{r, child='file//acc//table5.Rmd'}
-```
-```{r, child='file//acc//table6.Rmd'}
-```
-
 ```{=latex}
 \newpage
 \section{التربية الخاصة}
@@ -275,8 +251,26 @@ df <- df_original %>%filter(special_cls_btu == "1")
 ```{r, child='file//special_cls//table4.Rmd'}
 ```
 
+```{=latex}
+\newpage
+\section{التعليم الثانوي}
+\subsection{التعليم الحكومي}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original %>%filter(book_class == "sec", ownership == "gov")
+```
 
-
+```{r, child='file//sec//table1.Rmd'}
+```
+```{r, child='file//sec//table2.Rmd'}
+```
+```{r, child='file//sec//table3.Rmd'}
+```
+```{r, child='file//sec//table4.Rmd'}
+```
+```{r, child='file//sec//table5.Rmd'}
+```
 
 ```{=latex}
 \newpage

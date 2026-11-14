@@ -31,7 +31,7 @@ c35 <- sum(as.numeric(df$staff_state_unpaid_total_calc), na.rm = TRUE)
 c36 <- sum(as.numeric(df$staff_state_sick_total_calc), na.rm = TRUE)
 c37 <- sum(as.numeric(df$staff_state_maternity_total_calc), na.rm = TRUE)
 c38 <- sum(as.numeric(df$staff_state_seconded_total_calc), na.rm = TRUE)
-c39 <- sum(as.numeric(df$staff_state_leave45_total), na.rm = TRUE)
+c39 <- sum(as.numeric(df$staff_state_leave45_total_calc), na.rm = TRUE)
 c310 <- c31 + c32 + c33 + c34 + c35 + c36 + c37 + c38 + c39
 
 ```
