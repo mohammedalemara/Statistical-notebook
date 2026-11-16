@@ -44,17 +44,17 @@ c111 <- sum(as.numeric(df$new_g10art_total_girls_calc[df$sch_env == "urb"]), na.
 c112 <- sum(as.numeric(df$new_g10art_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE)
 c113 <- c111 + c112
 
-c121 <- "///"
-c122 <- "///"
-c123 <- "///"
+c121 <- "—"
+c122 <- "—"
+c123 <- "—"
 
-c131 <- "///"
-c132 <- "///"
-c133 <- "///"
+c131 <- "—"
+c132 <- "—"
+c133 <- "—"
 
-c141 <-  c81 + c101
-c142 <-  c82 + c102
-c143 <-  c83 + c103
+c141 <-  c51 + c81 + c101
+c142 <-  c52 + c82 + c102
+c143 <-  c53 + c83 + c103
 
 c151 <-  c91 + c111
 c152 <-  c92 + c112
@@ -64,7 +64,63 @@ c161 <-  c141 + c151
 c162 <-  c142 + c152
 c163 <-  c143 + c153
 
+c171 <- sum(as.numeric(df$reg_g7_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE) 
+        
+c172 <- sum(as.numeric(df$reg_g7_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c173 <- c171 + c172
 
+c181 <- sum(as.numeric(df$reg_g7_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE) 
+        
+c182 <- sum(as.numeric(df$reg_g7_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g8_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g9_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10sci_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g10art_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11sci_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g11art_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12sci_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE) +
+        sum(as.numeric(df$reg_g12art_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c183 <- c181 + c182
+
+c191 <- c171 + c181
+c192 <- c172 + c182
+c193 <- c173 + c183
+
+c201 <- sum(as.numeric(df$staff_spec_sec2_male_total_calc[df$sch_env == "urb"]), na.rm = TRUE)
+c202 <- sum(as.numeric(df$staff_spec_sec2_male_total_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c203 <- c201 + c202
+
+c211 <- sum(as.numeric(df$staff_spec_sec2_female_total_calc[df$sch_env == "urb"]), na.rm = TRUE)
+c212 <- sum(as.numeric(df$staff_spec_sec2_female_total_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c213 <- c211 + c212
+
+c221 <- c201 + c211 
+c222 <- c202 + c212
+c223 <- c221 + c222
 ```
 
 \begin{table}[H]
@@ -73,13 +129,14 @@ c163 <-  c143 + c153
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|cccc|cccccccccccc|ccc|ccc|}
 \hline
-\multirow{4}{*}{الموقع البيئي} & \multicolumn{4}{c|}{\multirow{3}{*}{عدد المدارس}}                                                                    & \multicolumn{12}{c|}{عدد الطلبة المقبولين الجدد}                                                                                                                                                                                                                                                                                                                                                                    & \multicolumn{3}{c|}{\multirow{3}{*}{عدد الطلبة الموجودين}}      & \multicolumn{3}{c|}{\multirow{3}{*}{عدد اعضاء الهئية التدريسية}} \\ \cline{6-17}
-                               & \multicolumn{4}{c|}{}                                                                                                & \multicolumn{3}{c|}{\multirow{2}{*}{الاول المتوسط}}                                                    & \multicolumn{9}{c|}{الرابع الاعدادي}                                                                                                                                                                                                                                                                       & \multicolumn{3}{c|}{}                                           & \multicolumn{3}{c|}{}                                            \\ \cline{9-17}
-                               & \multicolumn{4}{c|}{}                                                                                                & \multicolumn{3}{c|}{}                                                                                  & \multicolumn{2}{c|}{العلمي}                                         & \multicolumn{2}{c|}{الادبي}                                           & \multicolumn{2}{c|}{الفنون}                                           & \multicolumn{3}{c|}{المجموع}                                                         & \multicolumn{3}{c|}{}                                           & \multicolumn{3}{c|}{}                                            \\ \cline{2-23} 
-                               & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{مختلط}       & المجموع     & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{المجموع}     & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & المجموع      & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & المجموع & \multicolumn{1}{c|}{ذكور}  & \multicolumn{1}{c|}{اناث} & المجموع \\ \hline
-حضر                            & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` & \multicolumn{1}{c|}{`r ad(c51)`} & \multicolumn{1}{c|}{`r ad(c61)`} & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & \multicolumn{1}{c|}{`r ad(c101)`} & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & \multicolumn{1}{c|}{`r ad(c131)`} & \multicolumn{1}{c|}{`r ad(c141)`} & \multicolumn{1}{c|}{`r ad(c151)`} & `r ad(c161)` & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}      & \multicolumn{1}{c|}{}     &         \\ \hline
-ريف                            & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & `r ad(c42)` & \multicolumn{1}{c|}{`r ad(c52)`} & \multicolumn{1}{c|}{`r ad(c62)`} & \multicolumn{1}{c|}{`r ad(c72)`} & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c92)`} & \multicolumn{1}{c|}{`r ad(c102)`} & \multicolumn{1}{c|}{`r ad(c112)`} & \multicolumn{1}{c|}{`r ad(c122)`} & \multicolumn{1}{c|}{`r ad(c132)`} & \multicolumn{1}{c|}{`r ad(c142)`} & \multicolumn{1}{c|}{`r ad(c152)`} & `r ad(c162)` & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}      & \multicolumn{1}{c|}{}     &         \\ \hline
-المجموع                        & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & `r ad(c43)` & \multicolumn{1}{c|}{`r ad(c53)`} & \multicolumn{1}{c|}{`r ad(c63)`} & \multicolumn{1}{c|}{`r ad(c73)`} & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c93)`} & \multicolumn{1}{c|}{`r ad(c103)`} & \multicolumn{1}{c|}{`r ad(c113)`} & \multicolumn{1}{c|}{`r ad(c123)`} & \multicolumn{1}{c|}{`r ad(c133)`} & \multicolumn{1}{c|}{`r ad(c143)`} & \multicolumn{1}{c|}{`r ad(c153)`} & `r ad(c163)` & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         & \multicolumn{1}{c|}{}      & \multicolumn{1}{c|}{}     &         \\ \hline
+\multirow{4}{*}{الموقع البيئي} & \multicolumn{4}{c|}{\multirow{3}{*}{عدد المدارس}}                                                                    & \multicolumn{12}{c|}{عدد الطلبة المقبولين الجدد}                                                                                                                                                                                                                                                                                                                                                                    & \multicolumn{3}{c|}{\multirow{3}{*}{عدد الطلبة الموجودين}}                           & \multicolumn{3}{c|}{\multirow{3}{*}{عدد اعضاء الهئية التدريسية}}                     \\ \cline{6-17}
+                               & \multicolumn{4}{c|}{}                                                                                                & \multicolumn{3}{c|}{\multirow{2}{*}{الاول المتوسط}}                                                    & \multicolumn{9}{c|}{الرابع الاعدادي}                                                                                                                                                                                                                                                                       & \multicolumn{3}{c|}{}                                                                & \multicolumn{3}{c|}{}                                                                \\ \cline{9-17}
+                               & \multicolumn{4}{c|}{}                                                                                                & \multicolumn{3}{c|}{}                                                                                  & \multicolumn{2}{c|}{العلمي}                                         & \multicolumn{2}{c|}{الادبي}                                           & \multicolumn{2}{c|}{الفنون}                                           & \multicolumn{3}{c|}{المجموع}                                                         & \multicolumn{3}{c|}{}                                                                & \multicolumn{3}{c|}{}                                                                \\ \cline{2-23} 
+                               & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{مختلط}       & المجموع     & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{المجموع}     & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & المجموع      & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & المجموع      & \multicolumn{1}{c|}{ذكور}         & \multicolumn{1}{c|}{اناث}         & المجموع      \\ \hline
+حضر                            & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` & \multicolumn{1}{c|}{`r ad(c51)`} & \multicolumn{1}{c|}{`r ad(c61)`} & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & \multicolumn{1}{c|}{`r ad(c101)`} & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & \multicolumn{1}{c|}{`r ad(c131)`} & \multicolumn{1}{c|}{`r ad(c141)`} & \multicolumn{1}{c|}{`r ad(c151)`} & `r ad(c161)` & \multicolumn{1}{c|}{`r ad(c171)`} & \multicolumn{1}{c|}{`r ad(c181)`} & `r ad(c191)` & \multicolumn{1}{c|}{`r ad(c201)`} & \multicolumn{1}{c|}{`r ad(c211)`} & `r ad(c221)` \\ \hline
+ريف                            & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c32)`} & `r ad(c42)` & \multicolumn{1}{c|}{`r ad(c52)`} & \multicolumn{1}{c|}{`r ad(c62)`} & \multicolumn{1}{c|}{`r ad(c72)`} & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c92)`} & \multicolumn{1}{c|}{`r ad(c102)`} & \multicolumn{1}{c|}{`r ad(c112)`} & \multicolumn{1}{c|}{`r ad(c122)`} & \multicolumn{1}{c|}{`r ad(c132)`} & \multicolumn{1}{c|}{`r ad(c142)`} & \multicolumn{1}{c|}{`r ad(c152)`} & `r ad(c162)` & \multicolumn{1}{c|}{`r ad(c172)`} & \multicolumn{1}{c|}{`r ad(c182)`} & `r ad(c192)` & \multicolumn{1}{c|}{`r ad(c202)`} & \multicolumn{1}{c|}{`r ad(c212)`} & `r ad(c222)` \\ \hline
+المجموع                        & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c33)`} & `r ad(c43)` & \multicolumn{1}{c|}{`r ad(c53)`} & \multicolumn{1}{c|}{`r ad(c63)`} & \multicolumn{1}{c|}{`r ad(c73)`} & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c93)`} & \multicolumn{1}{c|}{`r ad(c103)`} & \multicolumn{1}{c|}{`r ad(c113)`} & \multicolumn{1}{c|}{`r ad(c123)`} & \multicolumn{1}{c|}{`r ad(c133)`} & \multicolumn{1}{c|}{`r ad(c143)`} & \multicolumn{1}{c|}{`r ad(c153)`} & `r ad(c163)` & \multicolumn{1}{c|}{`r ad(c173)`} & \multicolumn{1}{c|}{`r ad(c183)`} & `r ad(c193)` & \multicolumn{1}{c|}{`r ad(c203)`} & \multicolumn{1}{c|}{`r ad(c213)`} & `r ad(c223)` \\ \hline
 \end{tabular}
 }
 \end{table}
+

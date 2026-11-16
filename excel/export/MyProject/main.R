@@ -166,7 +166,8 @@ data <- read_delim(
   delim = data_delimiter,
   trim_ws = TRUE,
   show_col_types = FALSE,
-  name_repair = "minimal"
+  name_repair = "minimal",
+  locale = locale(encoding = "UTF-8")
 )
 
 cat("عدد السجلات المستوردة:", nrow(data), "\n")
@@ -177,7 +178,7 @@ cat("عدد السجلات المستوردة:", nrow(data), "\n")
 
 data_filtered <- data %>%
   filter(
-    book_class == "kg",
+    book_class == "pri",
     ownership == "gov"
   )
 
