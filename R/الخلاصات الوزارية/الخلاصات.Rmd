@@ -283,3 +283,5 @@ df <- df_original
 
 ```{r, child='file//school//table1.Rmd'}
 ```
+```{r, child='file//school//table2.Rmd'}
+```

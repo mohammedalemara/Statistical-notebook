@@ -1,53 +1,109 @@
 ```{r table3, include=FALSE}
 
-c11 <- nrow(df[which(df$q6 == "1" &df$q20 == "1"),])
-c12 <- nrow(df[which(df$q6 == "2" &df$q20 == "1"),])
-c13 <- c11 + c12
+c11 <- sum(as.numeric(df$new_g7_age12_boys), na.rm = TRUE)
+c12 <- sum(as.numeric(df$new_g7_age13_boys), na.rm = TRUE)
+c13 <- sum(as.numeric(df$new_g7_age14_boys), na.rm = TRUE)
+c14 <- sum(as.numeric(df$new_g7_age15_boys), na.rm = TRUE)
+c15 <- sum(as.numeric(df$new_g7_age16_boys), na.rm = TRUE)
+c16 <- c11 + c12 + c13 + c14 + c15
 
-c21 <- nrow(df[which(df$q6 == "1" &df$q20 == "2"),])
-c22 <- nrow(df[which(df$q6 == "2" &df$q20 == "2"),])
-c23 <- c21 + c22
+c21 <- sum(as.numeric(df$new_g7_age12_girls), na.rm = TRUE)
+c22 <- sum(as.numeric(df$new_g7_age13_girls), na.rm = TRUE)
+c23 <- sum(as.numeric(df$new_g7_age14_girls), na.rm = TRUE)
+c24 <- sum(as.numeric(df$new_g7_age15_girls), na.rm = TRUE)
+c25 <- sum(as.numeric(df$new_g7_age16_girls), na.rm = TRUE)
+c26 <- c21 + c22 + c23 + c24 + c25
 
-c31 <- nrow(df[which(df$q6 == "1" &df$q20 == "3"),])
-c32 <- nrow(df[which(df$q6 == "2" &df$q20 == "3"),])
-c33 <- c31 + c32 
+c31 <- c11 + c21
+c32 <- c12 + c22
+c33 <- c13 + c23
+c34 <- c14 + c24
+c35 <- c15 + c25
+c36 <- c31 + c32 + c33 + c34 + c35
 
-c41 <- c11 + c21 + c31
-c42 <- c12 + c22 + c32
-c43 <- c41 + c42 
+c41 <- sum(as.numeric(df$new_g10sci_age15_boys), na.rm = TRUE)
+c42 <- sum(as.numeric(df$new_g10sci_age16_boys), na.rm = TRUE)
+c43 <- sum(as.numeric(df$new_g10sci_age17_boys), na.rm = TRUE)
+c44 <- sum(as.numeric(df$new_g10sci_age18_boys), na.rm = TRUE)
+c45 <- sum(as.numeric(df$new_g10sci_age19_boys), na.rm = TRUE)
+c46 <- c41 + c42 + c43 + c44 + c45
 
-c51 <- sum(df$table25a_32[df$q6 == "1"], na.rm = TRUE)
-c52 <- sum(df$table25a_32[df$q6 == "2"], na.rm = TRUE)
-c53 <- c51 + c52
+c51 <- sum(as.numeric(df$new_g10sci_age15_girls), na.rm = TRUE)
+c52 <- sum(as.numeric(df$new_g10sci_age16_girls), na.rm = TRUE)
+c53 <- sum(as.numeric(df$new_g10sci_age17_girls), na.rm = TRUE)
+c54 <- sum(as.numeric(df$new_g10sci_age18_girls), na.rm = TRUE)
+c55 <- sum(as.numeric(df$new_g10sci_age19_girls), na.rm = TRUE)
+c56 <- c51 + c52 + c53 + c54 + c55
 
-c61 <- sum(df$table25a_33[df$q6 == "1"], na.rm = TRUE)
-c62 <- sum(df$table25a_33[df$q6 == "2"], na.rm = TRUE)
-c63 <- c61 + c62
+c61 <- sum(as.numeric(df$new_g10art_age15_boys), na.rm = TRUE)
+c62 <- sum(as.numeric(df$new_g10art_age16_boys), na.rm = TRUE)
+c63 <- sum(as.numeric(df$new_g10art_age17_boys), na.rm = TRUE)
+c64 <- sum(as.numeric(df$new_g10art_age18_boys), na.rm = TRUE)
+c65 <- sum(as.numeric(df$new_g10art_age19_boys), na.rm = TRUE)
+c66 <- c61 + c62 + c63 + c64 + c65
 
-c71 <- c51 + c61
-c72 <- c52 + c62
-c73 <- c71 + c72
+c71 <- sum(as.numeric(df$new_g10art_age15_girls), na.rm = TRUE)
+c72 <- sum(as.numeric(df$new_g10art_age16_girls), na.rm = TRUE)
+c73 <- sum(as.numeric(df$new_g10art_age17_girls), na.rm = TRUE)
+c74 <- sum(as.numeric(df$new_g10art_age18_girls), na.rm = TRUE)
+c75 <- sum(as.numeric(df$new_g10art_age19_girls), na.rm = TRUE)
+c76 <- c71 + c72 + c73 + c74 + c75
+
+c81 <- "—"
+c82 <- "—"
+c83 <- "—"
+c84 <- "—"
+c85 <- "—"
+c86 <- "—"
+
+c91 <- "—"
+c92 <- "—"
+c93 <- "—"
+c94 <- "—"
+c95 <- "—"
+c96 <- "—"
 
 
+c101 <- c41 + c61
+c102 <- c42 + c62
+c103 <- c43 + c63
+c104 <- c44 + c64
+c105 <- c45 + c65
+c106 <- c46 + c66
 
+
+c111 <- c51 + c71
+c112 <- c52 + c72
+c113 <- c53 + c73
+c114 <- c54 + c74
+c115 <- c55 + c75
+c116 <- c56 + c76
+
+c121 <- c101 + c111
+c122 <- c102 + c112
+c123 <- c103 + c113
+c124 <- c104 + c114
+c125 <- c105 + c115
+c126 <- c106 + c116
 ```
 
 \begin{table}[H]
 \centering
+\Large
 \caption{عدد الطلبة المقبولين الجدد في الاول المتوسط والرابع العلمي والادبي حسب العمر والجنس (الصباحي والمسائي)}
 \begin{tabular}{|c|ccc|ccccccccc|}
 \hline
-\multirow{3}{*}{العمر} & \multicolumn{3}{c|}{الطلبة الجدد في الاول المتوسط}                                                                 & \multicolumn{9}{c|}{الطلبة الجدد في الرابع الاعدادي}                                                                                                                                                                                        \\ \cline{2-13} 
-                       & \multicolumn{1}{c|}{\multirow{2}{*}{بنون}} & \multicolumn{1}{c|}{\multirow{2}{*}{بنات}} & \multirow{2}{*}{المجموع} & \multicolumn{2}{c|}{الرابع العلمي}                      & \multicolumn{2}{c|}{الرابع الادبي}                    & \multicolumn{2}{c|}{الرابع الفنون}                    & \multicolumn{3}{c|}{المجموع}                                      \\ \cline{5-13} 
-                       & \multicolumn{1}{c|}{}                      & \multicolumn{1}{c|}{}                      &                          & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}  & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون}  & \multicolumn{1}{c|}{بنات}  & المجموع \\ \hline
-عمر 12                 & \multicolumn{1}{c|}{6731}                  & \multicolumn{1}{c|}{8496}                  & 15227                    & \multicolumn{9}{c|}{\multirow{3}{*}{}}                                                                                                                                                                                                      \\ \cline{1-4}
-عمر 13                 & \multicolumn{1}{c|}{5928}                  & \multicolumn{1}{c|}{6423}                  & 12351                    & \multicolumn{9}{c|}{}                                                                                                                                                                                                                       \\ \cline{1-4}
-عمر 14                 & \multicolumn{1}{c|}{3533}                  & \multicolumn{1}{c|}{2714}                  & 6247                     & \multicolumn{9}{c|}{}                                                                                                                                                                                                                       \\ \hline
-عمر 15                 & \multicolumn{1}{c|}{2077}                  & \multicolumn{1}{c|}{1456}                  & 3533                     & \multicolumn{1}{c|}{4396}  & \multicolumn{1}{c|}{7148}  & \multicolumn{1}{c|}{333}  & \multicolumn{1}{c|}{350}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{4729}  & \multicolumn{1}{c|}{7498}  & 12227   \\ \hline
-عمر 16                 & \multicolumn{1}{c|}{1784}                  & \multicolumn{1}{c|}{880}                   & 2664                     & \multicolumn{1}{c|}{3893}  & \multicolumn{1}{c|}{5042}  & \multicolumn{1}{c|}{259}  & \multicolumn{1}{c|}{301}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{4152}  & \multicolumn{1}{c|}{5343}  & 9495    \\ \hline
-عمر 17                 & \multicolumn{3}{c|}{\multirow{3}{*}{}}                                                                             & \multicolumn{1}{c|}{1819}  & \multicolumn{1}{c|}{2331}  & \multicolumn{1}{c|}{198}  & \multicolumn{1}{c|}{209}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{2017}  & \multicolumn{1}{c|}{2540}  & 4557    \\ \cline{1-1} \cline{5-13} 
-عمر 18                 & \multicolumn{3}{c|}{}                                                                                              & \multicolumn{1}{c|}{984}   & \multicolumn{1}{c|}{1246}  & \multicolumn{1}{c|}{138}  & \multicolumn{1}{c|}{129}  & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{1122}  & \multicolumn{1}{c|}{1375}  & 2497    \\ \cline{1-1} \cline{5-13} 
-عمر 19                 & \multicolumn{3}{c|}{}                                                                                              & \multicolumn{1}{c|}{660}   & \multicolumn{1}{c|}{681}   & \multicolumn{1}{c|}{157}  & \multicolumn{1}{c|}{94}   & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{817}   & \multicolumn{1}{c|}{775}   & 1592    \\ \hline
-المجموع                & \multicolumn{1}{c|}{20053}                 & \multicolumn{1}{c|}{19969}                 & 40022                    & \multicolumn{1}{c|}{11752} & \multicolumn{1}{c|}{16448} & \multicolumn{1}{c|}{1085} & \multicolumn{1}{c|}{1083} & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{12837} & \multicolumn{1}{c|}{17531} & 30368   \\ \hline
+\multirow{3}{*}{العمر} & \multicolumn{3}{c|}{الطلبة الجدد في الاول المتوسط}                                                                 & \multicolumn{9}{c|}{الطلبة الجدد في الرابع الاعدادي}                                                                                                                                                                                                                                                   \\ \cline{2-13} 
+                       & \multicolumn{1}{c|}{\multirow{2}{*}{بنون}} & \multicolumn{1}{c|}{\multirow{2}{*}{بنات}} & \multirow{2}{*}{المجموع} & \multicolumn{2}{c|}{الرابع العلمي}                                  & \multicolumn{2}{c|}{الرابع الادبي}                                  & \multicolumn{2}{c|}{الرابع الفنون}                                  & \multicolumn{3}{c|}{المجموع}                                                         \\ \cline{5-13} 
+                       & \multicolumn{1}{c|}{}                      & \multicolumn{1}{c|}{}                      &                          & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & المجموع      \\ \hline
+عمر `r ad(12)`         & \multicolumn{1}{c|}{`r ad(c11)`}           & \multicolumn{1}{c|}{`r ad(c21)`}           & `r ad(c31)`              & \multicolumn{9}{c|}{\multirow{3}{*}{}}                                                                                                                                                                                                                                                                 \\ \cline{1-4}
+عمر `r ad(13)`         & \multicolumn{1}{c|}{`r ad(c12)`}           & \multicolumn{1}{c|}{`r ad(c22)`}           & `r ad(c32)`              & \multicolumn{9}{c|}{}                                                                                                                                                                                                                                                                                  \\ \cline{1-4}
+عمر `r ad(14)`         & \multicolumn{1}{c|}{`r ad(c13)`}           & \multicolumn{1}{c|}{`r ad(c23)`}           & `r ad(c33)`              & \multicolumn{9}{c|}{}                                                                                                                                                                                                                                                                                  \\ \hline
+عمر `r ad(15)`         & \multicolumn{1}{c|}{`r ad(c14)`}           & \multicolumn{1}{c|}{`r ad(c24)`}           & `r ad(c34)`              & \multicolumn{1}{c|}{`r ad(c41)`} & \multicolumn{1}{c|}{`r ad(c51)`} & \multicolumn{1}{c|}{`r ad(c61)`} & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & \multicolumn{1}{c|}{`r ad(c101)`} & \multicolumn{1}{c|}{`r ad(c111)`} & `r ad(c121)` \\ \hline
+عمر `r ad(16)`         & \multicolumn{1}{c|}{`r ad(c15)`}           & \multicolumn{1}{c|}{`r ad(c25)`}           & `r ad(c35)`              & \multicolumn{1}{c|}{`r ad(c42)`} & \multicolumn{1}{c|}{`r ad(c52)`} & \multicolumn{1}{c|}{`r ad(c62)`} & \multicolumn{1}{c|}{`r ad(c72)`} & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c92)`} & \multicolumn{1}{c|}{`r ad(c102)`} & \multicolumn{1}{c|}{`r ad(c112)`} & `r ad(c122)` \\ \hline
+عمر `r ad(17)`         & \multicolumn{3}{c|}{\multirow{3}{*}{}}                                                                             & \multicolumn{1}{c|}{`r ad(c43)`} & \multicolumn{1}{c|}{`r ad(c53)`} & \multicolumn{1}{c|}{`r ad(c63)`} & \multicolumn{1}{c|}{`r ad(c73)`} & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c93)`} & \multicolumn{1}{c|}{`r ad(c103)`} & \multicolumn{1}{c|}{`r ad(c113)`} & `r ad(c123)` \\ \cline{1-1} \cline{5-13} 
+عمر `r ad(18)`         & \multicolumn{3}{c|}{}                                                                                              & \multicolumn{1}{c|}{`r ad(c44)`} & \multicolumn{1}{c|}{`r ad(c54)`} & \multicolumn{1}{c|}{`r ad(c64)`} & \multicolumn{1}{c|}{`r ad(c74)`} & \multicolumn{1}{c|}{`r ad(c84)`} & \multicolumn{1}{c|}{`r ad(c94)`} & \multicolumn{1}{c|}{`r ad(c104)`} & \multicolumn{1}{c|}{`r ad(c114)`} & `r ad(c124)` \\ \cline{1-1} \cline{5-13} 
+عمر `r ad(19)`         & \multicolumn{3}{c|}{}                                                                                              & \multicolumn{1}{c|}{`r ad(c45)`} & \multicolumn{1}{c|}{`r ad(c55)`} & \multicolumn{1}{c|}{`r ad(c65)`} & \multicolumn{1}{c|}{`r ad(c75)`} & \multicolumn{1}{c|}{`r ad(c85)`} & \multicolumn{1}{c|}{`r ad(c95)`} & \multicolumn{1}{c|}{`r ad(c105)`} & \multicolumn{1}{c|}{`r ad(c115)`} & `r ad(c125)` \\ \hline
+المجموع                & \multicolumn{1}{c|}{`r ad(c16)`}           & \multicolumn{1}{c|}{`r ad(c26)`}           & `r ad(c36)`              & \multicolumn{1}{c|}{`r ad(c46)`} & \multicolumn{1}{c|}{`r ad(c56)`} & \multicolumn{1}{c|}{`r ad(c66)`} & \multicolumn{1}{c|}{`r ad(c76)`} & \multicolumn{1}{c|}{`r ad(c86)`} & \multicolumn{1}{c|}{`r ad(c96)`} & \multicolumn{1}{c|}{`r ad(c106)`} & \multicolumn{1}{c|}{`r ad(c116)`} & `r ad(c126)` \\ \hline
 \end{tabular}
 \end{table}

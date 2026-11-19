@@ -1,0 +1,185 @@
+```{r table1, include=FALSE}
+
+
+# ===== بنين (العمود 1) =====
+c11  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "njf_c" & df$gender == "boys" & df$ownership == "gov"), ])
+c12  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hyd"   & df$gender == "boys" & df$ownership == "gov"), ])
+c13  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "shb"   & df$gender == "boys" & df$ownership == "gov"), ])
+c14  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "rdw"   & df$gender == "boys" & df$ownership == "gov"), ])
+c15  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "nur"   & df$gender == "boys" & df$ownership == "gov"), ])
+c16  <- c11 + c12 + c13 + c14 + c15
+c17  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "kfa_c" & df$gender == "boys" & df$ownership == "gov"), ])
+c18  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "abb"   & df$gender == "boys" & df$ownership == "gov"), ])
+c19  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hry"   & df$gender == "boys" & df$ownership == "gov"), ])
+c110 <- c17 + c18 + c19
+c111 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "mnd_c" & df$gender == "boys" & df$ownership == "gov"), ])
+c112 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hir"   & df$gender == "boys" & df$ownership == "gov"), ])
+c113 <- c111 + c112
+c114 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "msh_c" & df$gender == "boys" & df$ownership == "gov"), ])
+c115 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "qds"   & df$gender == "boys" & df$ownership == "gov"), ])
+c116 <- c114 + c115
+c117 <- c16 + c110 + c113 + c116
+
+# ===== بنات (العمود 2) =====
+c21  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "njf_c" & df$gender == "girls" & df$ownership == "gov"), ])
+c22  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hyd"   & df$gender == "girls" & df$ownership == "gov"), ])
+c23  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "shb"   & df$gender == "girls" & df$ownership == "gov"), ])
+c24  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "rdw"   & df$gender == "girls" & df$ownership == "gov"), ])
+c25  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "nur"   & df$gender == "girls" & df$ownership == "gov"), ])
+c26  <- c21 + c22 + c23 + c24 + c25
+c27  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "kfa_c" & df$gender == "girls" & df$ownership == "gov"), ])
+c28  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "abb"   & df$gender == "girls" & df$ownership == "gov"), ])
+c29  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hry"   & df$gender == "girls" & df$ownership == "gov"), ])
+c210 <- c27 + c28 + c29
+c211 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "mnd_c" & df$gender == "girls" & df$ownership == "gov"), ])
+c212 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hir"   & df$gender == "girls" & df$ownership == "gov"), ])
+c213 <- c211 + c212
+c214 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "msh_c" & df$gender == "girls" & df$ownership == "gov"), ])
+c215 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "qds"   & df$gender == "girls" & df$ownership == "gov"), ])
+c216 <- c214 + c215
+c217 <- c26 + c210 + c213 + c216
+
+# ===== مختلط (العمود 3) =====
+c31  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "njf_c" & df$gender == "mixed" & df$ownership == "gov"), ])
+c32  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hyd"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c33  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "shb"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c34  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "rdw"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c35  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "nur"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c36  <- c31 + c32 + c33 + c34 + c35
+c37  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "kfa_c" & df$gender == "mixed" & df$ownership == "gov"), ])
+c38  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "abb"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c39  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hry"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c310 <- c37 + c38 + c39
+c311 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "mnd_c" & df$gender == "mixed" & df$ownership == "gov"), ])
+c312 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hir"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c313 <- c311 + c312
+c314 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "msh_c" & df$gender == "mixed" & df$ownership == "gov"), ])
+c315 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "qds"   & df$gender == "mixed" & df$ownership == "gov"), ])
+c316 <- c314 + c315
+c317 <- c36 + c310 + c313 + c316
+
+# ===== المجموع (بنين + بنات + مختلط) - العمود 4 =====
+c41  <- c11  + c21  + c31
+c42  <- c12  + c22  + c32
+c43  <- c13  + c23  + c33
+c44  <- c14  + c24  + c34
+c45  <- c15  + c25  + c35
+c46  <- c16  + c26  + c36
+c47  <- c17  + c27  + c37
+c48  <- c18  + c28  + c38
+c49  <- c19  + c29  + c39
+c410 <- c110 + c210 + c310
+c411 <- c111 + c211 + c311
+c412 <- c112 + c212 + c312
+c413 <- c113 + c213 + c313
+c414 <- c114 + c214 + c314
+c415 <- c115 + c215 + c315
+c416 <- c116 + c216 + c316
+c417 <- c117 + c217 + c317
+
+# ===== بنين (العمود 1) =====
+c51  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "njf_c" & df$gender == "boys" & df$ownership == "priv"), ])
+c52  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hyd"   & df$gender == "boys" & df$ownership == "priv"), ])
+c53  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "shb"   & df$gender == "boys" & df$ownership == "priv"), ])
+c54  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "rdw"   & df$gender == "boys" & df$ownership == "priv"), ])
+c55  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "nur"   & df$gender == "boys" & df$ownership == "priv"), ])
+c56  <- c51 + c52 + c53 + c14 + c15
+c17  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "kfa_c" & df$gender == "boys" & df$ownership == "priv"), ])
+c18  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "abb"   & df$gender == "boys" & df$ownership == "priv"), ])
+c19  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hry"   & df$gender == "boys" & df$ownership == "priv"), ])
+c110 <- c17 + c18 + c19
+c111 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "mnd_c" & df$gender == "boys" & df$ownership == "priv"), ])
+c112 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hir"   & df$gender == "boys" & df$ownership == "priv"), ])
+c113 <- c111 + c112
+c114 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "msh_c" & df$gender == "boys" & df$ownership == "priv"), ])
+c115 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "qds"   & df$gender == "boys" & df$ownership == "priv"), ])
+c116 <- c114 + c115
+c117 <- c16 + c110 + c113 + c116
+
+# ===== بنات (العمود 2) =====
+c21  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "njf_c" & df$gender == "girls" & df$ownership == "priv"), ])
+c22  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hyd"   & df$gender == "girls" & df$ownership == "priv"), ])
+c23  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "shb"   & df$gender == "girls" & df$ownership == "priv"), ])
+c24  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "rdw"   & df$gender == "girls" & df$ownership == "priv"), ])
+c25  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "nur"   & df$gender == "girls" & df$ownership == "priv"), ])
+c26  <- c21 + c22 + c23 + c24 + c25
+c27  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "kfa_c" & df$gender == "girls" & df$ownership == "priv"), ])
+c28  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "abb"   & df$gender == "girls" & df$ownership == "priv"), ])
+c29  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hry"   & df$gender == "girls" & df$ownership == "priv"), ])
+c210 <- c27 + c28 + c29
+c211 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "mnd_c" & df$gender == "girls" & df$ownership == "priv"), ])
+c212 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hir"   & df$gender == "girls" & df$ownership == "priv"), ])
+c213 <- c211 + c212
+c214 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "msh_c" & df$gender == "girls" & df$ownership == "priv"), ])
+c215 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "qds"   & df$gender == "girls" & df$ownership == "priv"), ])
+c216 <- c214 + c215
+c217 <- c26 + c210 + c213 + c216
+
+# ===== مختلط (العمود 3) =====
+c31  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "njf_c" & df$gender == "mixed" & df$ownership == "priv"), ])
+c32  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hyd"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c33  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "shb"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c34  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "rdw"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c35  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "nur"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c36  <- c31 + c32 + c33 + c34 + c35
+c37  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "kfa_c" & df$gender == "mixed" & df$ownership == "priv"), ])
+c38  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "abb"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c39  <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hry"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c310 <- c37 + c38 + c39
+c311 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "mnd_c" & df$gender == "mixed" & df$ownership == "priv"), ])
+c312 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "hir"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c313 <- c311 + c312
+c314 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "msh_c" & df$gender == "mixed" & df$ownership == "priv"), ])
+c315 <- nrow(df[which(df$sch_class == "kg" & df$subdistrict == "qds"   & df$gender == "mixed" & df$ownership == "priv"), ])
+c316 <- c314 + c315
+c317 <- c36 + c310 + c313 + c316
+
+# ===== المجموع (بنين + بنات + مختلط) - العمود 4 =====
+c41  <- c11  + c21  + c31
+c42  <- c12  + c22  + c32
+c43  <- c13  + c23  + c33
+c44  <- c14  + c24  + c34
+c45  <- c15  + c25  + c35
+c46  <- c16  + c26  + c36
+c47  <- c17  + c27  + c37
+c48  <- c18  + c28  + c38
+c49  <- c19  + c29  + c39
+c410 <- c110 + c210 + c310
+c411 <- c111 + c211 + c311
+c412 <- c112 + c212 + c312
+c413 <- c113 + c213 + c313
+c414 <- c114 + c214 + c314
+c415 <- c115 + c215 + c315
+c416 <- c116 + c216 + c316
+c417 <- c117 + c217 + c317
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\setlength{\tabcolsep}{14pt}
+\caption{توزيع المؤسسات التعليمية حسب القضاء والناحية والعائدية والجنس في محافظة النجف الأشرف}
+\begin{tabular}{@{}rccccccccccccc@{}}
+\toprule
+{\color[HTML]{0F3A5F} }                                            & \multicolumn{4}{c}{{\color[HTML]{0F3A5F} \textbf{حكومية}}}   & \multicolumn{4}{c}{{\color[HTML]{0F3A5F} \textbf{أهلية (خاصة)}}} & \multicolumn{4}{c}{{\color[HTML]{0F3A5F} \textbf{دينية (وقف شيعي)}}} & {\color[HTML]{0F3A5F} }                                          \\ \cmidrule(lr){2-5} \cmidrule(lr){6-9} \cmidrule(lr){10-13}
+\multirow{-2}{*}{{\color[HTML]{0F3A5F} \textbf{القضاء / الناحية}}} & بنين                  & بنات       & مختلط      & المجموع    & بنين           & بنات           & مختلط          & المجموع       & بنين            & بنات            & مختلط           & المجموع        & \multirow{-2}{*}{{\color[HTML]{0F3A5F} \textbf{إجمالي المدارس}}} \\ \midrule
+\textbf{قضاء النجف}                                                & \textbf{`r ad(1993)`} & \textbf{0} & \textbf{0} & 0          & \textbf{0}     & \textbf{0}     & \textbf{0}     & \textbf{0}    & \textbf{0}      & \textbf{0}      & \textbf{0}      & \textbf{0}     & 0                                                                \\ \midrule
+مركز النجف                                                         & `r ad(1993)`          &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+الحيدرية                                                           & `r ad(1993)`          &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+الشبكة                                                             & `r ad(1993)`          &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+الرضوية                                                            & `r ad(1993)`          &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+النور (بانيقيا)                                                    & `r ad(1993)`          &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+\textbf{قضاء الكوفة}                                               & \textbf{0}            & \textbf{0} & \textbf{0} & 0          & \textbf{0}     & \textbf{0}     & \textbf{0}     & \textbf{0}    & \textbf{0}      & \textbf{0}      & \textbf{0}      & \textbf{0}     & 0                                                                \\ \midrule
+مركز الكوفة                                                        &                       &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+العباسية                                                           &                       &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+الحرية                                                             &                       &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+\textbf{قضاء المناذرة}                                             & \textbf{0}            & \textbf{0} & \textbf{0} & 0          & \textbf{0}     & \textbf{0}     & \textbf{0}     & \textbf{0}    & \textbf{0}      & \textbf{0}      & \textbf{0}      & \textbf{0}     & 0                                                                \\ \midrule
+مركز المناذرة                                                      &                       &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+الحيرة                                                             &                       &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+\textbf{قضاء المشخاب}                                              & \textbf{0}            & \textbf{0} & \textbf{0} & 0          & \textbf{0}     & \textbf{0}     & \textbf{0}     & \textbf{0}    & \textbf{0}      & \textbf{0}      & \textbf{0}      & \textbf{0}     & 0                                                                \\ \midrule
+مركز المشخاب                                                       &                       &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+القادسية                                                           &                       &            &            & \textbf{0} &                &                &                & 0             &                 &                 &                 & 0              & \textbf{0}                                                       \\ \midrule
+\textbf{الإجمالي}                                                  & \textbf{0}            & \textbf{0} & \textbf{0} & 0          & \textbf{0}     & \textbf{0}     & \textbf{0}     & \textbf{0}    & \textbf{0}      & \textbf{0}      & \textbf{0}      & \textbf{0}     & 0                                                                \\ \bottomrule
+\end{tabular}
+\end{table}
