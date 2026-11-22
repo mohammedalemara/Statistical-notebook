@@ -1,0 +1,20 @@
+```{r table13, include=FALSE}
+
+
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد الطلبة المسجلين في المدارس المسائية حسب الجنس والصف}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|ccccccccccccccccccccccc|cccc|}
+\hline
+\multicolumn{23}{|c|}{عددالطلبة}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 & \multicolumn{4}{c|}{\multirow{2}{*}{عدد الشعب}}                                              \\ \cline{1-23}
+\multicolumn{2}{|c|}{الاول المتوسط}                    & \multicolumn{2}{c|}{الثاني المتوسط}                   & \multicolumn{2}{c|}{الثالث المتوسط}                   & \multicolumn{2}{c|}{الرابع العلمي}                    & \multicolumn{2}{c|}{الرابع الادبي}                    & \multicolumn{2}{c|}{الخامس العلمي}                    & \multicolumn{2}{c|}{الخامس الادبي}                    & \multicolumn{2}{c|}{السادس العلمي}                    & \multicolumn{2}{c|}{السادس الادبي}                    & \multicolumn{2}{c|}{السادس الفنون}                    & \multicolumn{3}{c|}{المجموع}                                    & \multicolumn{4}{c|}{}                                                                        \\ \hline
+\multicolumn{1}{|c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & المجموع & \multicolumn{1}{c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{مختلط} & المجموع \\ \hline
+\multicolumn{1}{|c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & 0       & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}     & 0       \\ \hline
+\end{tabular}
+}
+\end{table}

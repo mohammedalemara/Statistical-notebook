@@ -1,7 +1,6 @@
 
 ```{r table4, include=FALSE}
 
-```{r table4, include=FALSE}
 
 c11 <- sum(as.numeric(df$staff_title_mgr_male), na.rm = TRUE)
 c12 <- sum(as.numeric(df$staff_title_mgr_female), na.rm = TRUE)

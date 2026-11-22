@@ -1,0 +1,86 @@
+```{r table6, include=FALSE}
+
+c11 <- sum(as.numeric(df$drop_stg7_boys),  na.rm = TRUE)
+c21 <- sum(as.numeric(df$drop_stg7_girls), na.rm = TRUE)
+c31 <- c11 + c21
+
+c12 <- sum(as.numeric(df$drop_stg8_boys),  na.rm = TRUE)
+c22 <- sum(as.numeric(df$drop_stg8_girls), na.rm = TRUE)
+c32 <- c12 + c22
+
+c13 <- sum(as.numeric(df$drop_stg9_boys),  na.rm = TRUE)
+c23 <- sum(as.numeric(df$drop_stg9_girls), na.rm = TRUE)
+c33 <- c13 + c23
+
+c14 <- sum(as.numeric(df$drop_stg10sci_boys),  na.rm = TRUE)
+c24 <- sum(as.numeric(df$drop_stg10sci_girls), na.rm = TRUE)
+c34 <- c14 + c24
+
+c15 <- sum(as.numeric(df$drop_stg10art_boys),  na.rm = TRUE)
+c25 <- sum(as.numeric(df$drop_stg10art_girls), na.rm = TRUE)
+c35 <- c15 + c25
+
+c16 <- "—"
+c26 <- "—"
+c36 <- "—"
+
+c17 <- sum(as.numeric(df$drop_stg11sci_boys),  na.rm = TRUE)
+c27 <- sum(as.numeric(df$drop_stg11sci_girls), na.rm = TRUE)
+c37 <- c17 + c27
+
+c18 <- sum(as.numeric(df$drop_stg11art_boys),  na.rm = TRUE)
+c28 <- sum(as.numeric(df$drop_stg11art_girls), na.rm = TRUE)
+c38 <- c18 + c28
+
+c19 <- "—"
+c29 <- "—"
+c39 <- "—"
+
+c110 <- sum(as.numeric(df$drop_stg12sci_boys),  na.rm = TRUE)
+c210 <- sum(as.numeric(df$drop_stg12sci_girls), na.rm = TRUE)
+c310 <- c110 + c210
+
+c111 <- sum(as.numeric(df$drop_stg12art_boys),  na.rm = TRUE)
+c211 <- sum(as.numeric(df$drop_stg12art_girls), na.rm = TRUE)
+c311 <- c111 + c211
+
+c112 <- "—"
+c212 <- "—"
+c312 <- "—"
+
+c113 <- c11 + c12 + c13 + c14 + c15 + c17 + c18 + c110 + c111
+c213 <- c21 + c22 + c23 + c24 + c25 + c27 + c28 + c210 + c211
+c313 <- c113 + c213
+
+
+##############################################################
+
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد الطلبة التاركين والناجحين والطلبة الراسبين حسب اسباب الرسوب}
+%\resizebox{\textwidth}{!}{%
+\begin{tabular}{|r|ccc|ccc|ccccccccc|}
+\hline
+\multicolumn{1}{|c|}{\multirow{3}{*}{الصف}} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}عدد الطلبة التاركون\\ حسب الصف والجنس\\ للعام الدراسي `r ad(by)`\end{tabular}} & \multicolumn{3}{c|}{\begin{tabular}[c]{@{}c@{}}عدد الطلبة الناجحين للعام\\ الدراسي `r ad(ay)`\\ حسب الصف والجنس\end{tabular}} & \multicolumn{9}{c|}{\begin{tabular}[c]{@{}c@{}}عدد الطلبة الراسبين حسب اسباب الرسوب\\ والصف والجنس للعام الدراسي `r ad(ay)`\end{tabular}}                                                                                                             \\ \cline{2-16} 
+\multicolumn{1}{|c|}{}                      & \multicolumn{1}{c|}{\multirow{2}{*}{بنين}}     & \multicolumn{1}{c|}{\multirow{2}{*}{بنات}}     & \multirow{2}{*}{المجموع}    & \multicolumn{1}{c|}{\multirow{2}{*}{بنين}}     & \multicolumn{1}{c|}{\multirow{2}{*}{بنات}}     & \multirow{2}{*}{المجموع}    & \multicolumn{2}{c|}{الفشل في الامتحان}                & \multicolumn{2}{c|}{تجاوز ايام الغياب}                & \multicolumn{2}{c|}{أسباب أخرى}                       & \multicolumn{3}{c|}{المجموع}                                                  \\ \cline{8-16} 
+\multicolumn{1}{|c|}{}                      & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & المجموع               \\ \hline
+الاول المتوسط                               & \multicolumn{1}{c|}{`r ad(c11)`}               & \multicolumn{1}{c|}{`r ad(c21)`}               & `r ad(c31)`                 & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                       \\ \hline
+الثاني المتوسط                              & \multicolumn{1}{c|}{`r ad(c12)`}               & \multicolumn{1}{c|}{`r ad(c22)`}               & `r ad(c32)`                 & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                       \\ \hline
+الثالث المتوسط                              & \multicolumn{1}{c|}{`r ad(c13)`}               & \multicolumn{1}{c|}{`r ad(c23)`}               & `r ad(c33)`                 & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                       \\ \hline
+الرابع العلمي                               & \multicolumn{1}{c|}{`r ad(c14)`}               & \multicolumn{1}{c|}{`r ad(c24)`}               & `r ad(c34)`                 & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                       \\ \hline
+الرابع الادبي                               & \multicolumn{1}{c|}{`r ad(c15)`}               & \multicolumn{1}{c|}{`r ad(c25)`}               & `r ad(c35)`                 & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                       \\ \hline
+الرابع الفنون                               & \multicolumn{1}{c|}{`r ad(c16)`}               & \multicolumn{1}{c|}{`r ad(c26)`}               & `r ad(c36)`                 & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                       \\ \hline
+الخامس العلمي                               & \multicolumn{1}{c|}{`r ad(c17)`}               & \multicolumn{1}{c|}{`r ad(c27)`}               & `r ad(c37)`                 & \multicolumn{1}{c|}{}                          & \multicolumn{1}{c|}{}                          &                             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                       \\ \hline
+الخامس الادبي                               & \multicolumn{1}{c|}{`r ad(c18)`}               & \multicolumn{1}{c|}{`r ad(c28)`}               & `r ad(c38)`                 & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}       & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{} \\ \hline
+الخامس الفنون                               & \multicolumn{1}{c|}{`r ad(c19)`}               & \multicolumn{1}{c|}{`r ad(c29)`}               & `r ad(c39)`                 & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}       & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{} \\ \hline
+السادس العلمي                               & \multicolumn{1}{c|}{`r ad(c110)`}              & \multicolumn{1}{c|}{`r ad(c210)`}              & `r ad(c310)`                & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}       & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{} \\ \hline
+السادس الادبي                               & \multicolumn{1}{c|}{`r ad(c111)`}              & \multicolumn{1}{c|}{`r ad(c211)`}              & `r ad(c311)`                & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}       & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{} \\ \hline
+السادس الفنون                               & \multicolumn{1}{c|}{`r ad(c112)`}              & \multicolumn{1}{c|}{`r ad(c212)`}              & `r ad(c312)`                & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}       & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{} \\ \hline
+المجموع                                     & \multicolumn{1}{c|}{`r ad(c113)`}              & \multicolumn{1}{c|}{`r ad(c213)`}              & `r ad(c313)`                & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}                          & \multicolumn{1}{l|}{}       & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{}     & \multicolumn{1}{l|}{} \\ \hline
+\end{tabular}
+%}
+\end{table}

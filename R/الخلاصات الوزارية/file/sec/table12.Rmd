@@ -1,0 +1,17 @@
+```{r table12, include=FALSE}
+
+
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد المدارس المسائية ودرجتها واعضاء الهيئة التدريسية حسب الجنس}
+\begin{tabular}{|cccc|cccc|ccc|}
+\hline
+\multicolumn{4}{|c|}{عدد المدارس حسب الجنس}                                                   & \multicolumn{4}{c|}{عدد المدارس حسب الدرجة}                                                     & \multicolumn{3}{c|}{عدد الهئية التدريسية}                       \\ \hline
+\multicolumn{1}{|c|}{بنين} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{مختلط} & المجموع & \multicolumn{1}{c|}{متوسط} & \multicolumn{1}{c|}{اعدادي} & \multicolumn{1}{c|}{ثانوي} & المجموع & \multicolumn{1}{c|}{ذكور} & \multicolumn{1}{c|}{اناث} & المجموع \\ \hline
+\multicolumn{1}{|c|}{0}    & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}     & 0       & \multicolumn{1}{c|}{0}     & \multicolumn{1}{c|}{0}      & \multicolumn{1}{c|}{0}     & 0       & \multicolumn{1}{c|}{0}    & \multicolumn{1}{c|}{0}    & 0       \\ \hline
+\end{tabular}
+\end{table}

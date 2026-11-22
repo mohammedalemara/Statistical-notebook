@@ -1,0 +1,33 @@
+```{r table11, include=FALSE}
+
+c11 <- sum(as.numeric(df$has_lib == "1"), na.rm = TRUE)
+c21 <- sum(as.numeric(df$has_lib == "0"), na.rm = TRUE)
+c31 <- sum(as.numeric(df$total_items), na.rm = TRUE)
+
+
+c41 <- sum(as.numeric(df$has_lab == "1"), na.rm = TRUE)
+c51 <- sum(as.numeric(df$has_lab == "0"), na.rm = TRUE)
+
+c61  <- sum(as.numeric(df$`lab_type/sci` == "1"), na.rm = TRUE)
+c71  <- sum(as.numeric(df$`lab_type/phy` == "1"), na.rm = TRUE)
+c81  <- sum(as.numeric(df$`lab_type/chem` == "1"), na.rm = TRUE)
+c91  <- sum(as.numeric(df$`lab_type/bio` == "1"), na.rm = TRUE)
+c101 <- sum(as.numeric(df$`lab_type/mix` == "1"), na.rm = TRUE)
+c111 <- sum(as.numeric(df$`lab_type/lang` == "1"), na.rm = TRUE)
+c121 <- sum(as.numeric(df$`lab_type/comp` == "1"), na.rm = TRUE)
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد المكتبات والمختبرات}
+\begin{tabular}{|ccc|ccccccccc|}
+\hline
+\multicolumn{3}{|c|}{\multirow{2}{*}{المكتبات المدرسية}}                                          & \multicolumn{9}{c|}{المختبرات المدرسية}                                                                                                                                                                                                                                                                                                                                                                                                         \\ \cline{4-12} 
+\multicolumn{3}{|c|}{}                                                                            & \multicolumn{2}{c|}{هل توجد مختبرات}                                                  & \multicolumn{5}{c|}{المختبرات العلمية}                                                                                                                                                                                                                             & \multicolumn{1}{c|}{\multirow{3}{*}{مختبر اللغة}} & \multirow{3}{*}{مختبر الحاسوب} \\ \cline{1-10}
+\multicolumn{2}{|c|}{عدد المكتبات}                                   & \multirow{2}{*}{عدد الكتب} & \multicolumn{1}{c|}{\multirow{2}{*}{نعم}} & \multicolumn{1}{c|}{\multirow{2}{*}{كلا}} & \multicolumn{1}{c|}{العلوم}                       & \multicolumn{1}{c|}{الفيزياء}                     & \multicolumn{1}{c|}{الكيمياء}                     & \multicolumn{1}{c|}{الاحياء}                      & \multicolumn{1}{c|}{مجمع المختبرات}                & \multicolumn{1}{c|}{}                             &                                \\ \cline{1-2} \cline{6-10}
+\multicolumn{1}{|c|}{نعم}         & \multicolumn{1}{c|}{كلا}         &                            & \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{\multirow{2}{*}{`r ad(c61)`}} & \multicolumn{1}{c|}{\multirow{2}{*}{`r ad(c71)`}} & \multicolumn{1}{c|}{\multirow{2}{*}{`r ad(c81)`}} & \multicolumn{1}{c|}{\multirow{2}{*}{`r ad(c91)`}} & \multicolumn{1}{c|}{\multirow{2}{*}{`r ad(c101)`}} & \multicolumn{1}{c|}{}                             &                                \\ \cline{1-5} \cline{11-12} 
+\multicolumn{1}{|c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} & `r ad(c31)`                & \multicolumn{1}{c|}{`r ad(c41)`}          & \multicolumn{1}{c|}{`r ad(c51)`}          & \multicolumn{1}{c|}{}                             & \multicolumn{1}{c|}{}                             & \multicolumn{1}{c|}{}                             & \multicolumn{1}{c|}{}                             & \multicolumn{1}{c|}{}                              & \multicolumn{1}{c|}{`r ad(c111)`}                 & `r ad(c121)`                   \\ \hline
+\end{tabular}
+\end{table}

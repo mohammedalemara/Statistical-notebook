@@ -1,0 +1,27 @@
+```{r table18, include=FALSE}
+
+c11 <- sum(as.numeric(df$staff_serv_le5_male), na.rm = TRUE)
+c21 <- sum(as.numeric(df$staff_serv_le5_female), na.rm = TRUE)
+c31 <- sum(as.numeric(df$staff_serv_y6_10_male), na.rm = TRUE)
+c41 <- sum(as.numeric(df$staff_serv_y6_10_female), na.rm = TRUE)
+c51 <- sum(as.numeric(df$staff_serv_y11_15_male), na.rm = TRUE)
+c61 <- sum(as.numeric(df$staff_serv_y11_15_female), na.rm = TRUE)
+c71 <- sum(as.numeric(df$staff_serv_ge16_male), na.rm = TRUE)
+c81 <- sum(as.numeric(df$staff_serv_ge16_female), na.rm = TRUE)
+c91 <- sum(as.numeric(df$staff_serv_total_male_calc), na.rm = TRUE)
+c101 <- sum(as.numeric(df$staff_serv_total_female_calc), na.rm = TRUE)
+c111 <- sum(as.numeric(df$staff_serv_total_total_calc), na.rm = TRUE)
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد اعضاء الهيئة التعليمية حسب سنوات الخدمة}
+\begin{tabular}{|cc|cc|cc|cc|ccc|}
+\hline
+\multicolumn{2}{|c|}{`r ad(5)` او أقل}          & \multicolumn{2}{c|}{`r ad(6)` - `r ad(10)`}    & \multicolumn{2}{c|}{`r ad(11)` - `r ad(15)`}   & \multicolumn{2}{c|}{`r ad(16)` فاكثر}          & \multicolumn{3}{c|}{المجموع}                                                        \\ \hline
+\multicolumn{1}{|c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & \multicolumn{1}{c|}{اناث}         & المجموع      \\ \hline
+\multicolumn{1}{|c|}{`r ad(c11)`} & `r ad(c21)` & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` & \multicolumn{1}{c|}{`r ad(c51)`} & `r ad(c61)` & \multicolumn{1}{c|}{`r ad(c71)`} & `r ad(c81)` & \multicolumn{1}{c|}{`r ad(c91)`} & \multicolumn{1}{c|}{`r ad(c101)`} & `r ad(c111)` \\ \hline
+\end{tabular}
+\end{table}

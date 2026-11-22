@@ -1,5 +1,6 @@
 ```{r table4, include=FALSE}
 
+# ===== الاول المتوسط (g7) =====
 c11 <- sum(as.numeric(df$reg_g7_age12_boys), na.rm = TRUE)
 c12 <- sum(as.numeric(df$reg_g7_age13_boys), na.rm = TRUE)
 c13 <- sum(as.numeric(df$reg_g7_age14_boys), na.rm = TRUE)
@@ -14,6 +15,7 @@ c24 <- sum(as.numeric(df$reg_g7_age15_girls), na.rm = TRUE)
 c25 <- sum(as.numeric(df$reg_g7_age16_girls), na.rm = TRUE)
 c26 <- c21 + c22 + c23 + c24 + c25
 
+# ===== الثاني المتوسط (g8) =====
 c31 <- sum(as.numeric(df$reg_g8_age13_boys), na.rm = TRUE)
 c32 <- sum(as.numeric(df$reg_g8_age14_boys), na.rm = TRUE)
 c33 <- sum(as.numeric(df$reg_g8_age15_boys), na.rm = TRUE)
@@ -28,6 +30,7 @@ c44 <- sum(as.numeric(df$reg_g8_age16_girls), na.rm = TRUE)
 c45 <- sum(as.numeric(df$reg_g8_age17_girls), na.rm = TRUE)
 c46 <- c41 + c42 + c43 + c44 + c45
 
+# ===== الثالث المتوسط (g9) =====
 c51 <- sum(as.numeric(df$reg_g9_age14_boys), na.rm = TRUE)
 c52 <- sum(as.numeric(df$reg_g9_age15_boys), na.rm = TRUE)
 c53 <- sum(as.numeric(df$reg_g9_age16_boys), na.rm = TRUE)
@@ -42,6 +45,144 @@ c64 <- sum(as.numeric(df$reg_g9_age17_girls), na.rm = TRUE)
 c65 <- sum(as.numeric(df$reg_g9_age18_girls), na.rm = TRUE)
 c66 <- c61 + c62 + c63 + c64 + c65
 
+# ===== الرابع العلمي (g10sci) =====
+c71 <- sum(as.numeric(df$reg_g10sci_age15_boys), na.rm = TRUE)
+c72 <- sum(as.numeric(df$reg_g10sci_age16_boys), na.rm = TRUE)
+c73 <- sum(as.numeric(df$reg_g10sci_age17_boys), na.rm = TRUE)
+c74 <- sum(as.numeric(df$reg_g10sci_age18_boys), na.rm = TRUE)
+c75 <- sum(as.numeric(df$reg_g10sci_age19_boys), na.rm = TRUE)
+c76 <- c71 + c72 + c73 + c74 + c75
+
+c81 <- sum(as.numeric(df$reg_g10sci_age15_girls), na.rm = TRUE)
+c82 <- sum(as.numeric(df$reg_g10sci_age16_girls), na.rm = TRUE)
+c83 <- sum(as.numeric(df$reg_g10sci_age17_girls), na.rm = TRUE)
+c84 <- sum(as.numeric(df$reg_g10sci_age18_girls), na.rm = TRUE)
+c85 <- sum(as.numeric(df$reg_g10sci_age19_girls), na.rm = TRUE)
+c86 <- c81 + c82 + c83 + c84 + c85
+
+# ===== الرابع (g10art) =====
+c91 <- sum(as.numeric(df$reg_g10art_age15_boys), na.rm = TRUE)
+c92 <- sum(as.numeric(df$reg_g10art_age16_boys), na.rm = TRUE)
+c93 <- sum(as.numeric(df$reg_g10art_age17_boys), na.rm = TRUE)
+c94 <- sum(as.numeric(df$reg_g10art_age18_boys), na.rm = TRUE)
+c95 <- sum(as.numeric(df$reg_g10art_age19_boys), na.rm = TRUE)
+c96 <- c91 + c92 + c93 + c94 + c95
+
+c101 <- sum(as.numeric(df$reg_g10art_age15_girls), na.rm = TRUE)
+c102 <- sum(as.numeric(df$reg_g10art_age16_girls), na.rm = TRUE)
+c103 <- sum(as.numeric(df$reg_g10art_age17_girls), na.rm = TRUE)
+c104 <- sum(as.numeric(df$reg_g10art_age18_girls), na.rm = TRUE)
+c105 <- sum(as.numeric(df$reg_g10art_age19_girls), na.rm = TRUE)
+c106 <- c101 + c102 + c103 + c104 + c105
+
+# ===== الرابع (الفرع الثالث) - لا توجد بيانات =====
+c111 <- "—"; c112 <- "—"; c113 <- "—"; c114 <- "—"; c115 <- "—"; c116 <- "—"
+c121 <- "—"; c122 <- "—"; c123 <- "—"; c124 <- "—"; c125 <- "—"; c126 <- "—"
+
+# ===== الخامس العلمي (g11sci) =====
+c131 <- sum(as.numeric(df$reg_g11sci_age16_boys), na.rm = TRUE)
+c132 <- sum(as.numeric(df$reg_g11sci_age17_boys), na.rm = TRUE)
+c133 <- sum(as.numeric(df$reg_g11sci_age18_boys), na.rm = TRUE)
+c134 <- sum(as.numeric(df$reg_g11sci_age19_boys), na.rm = TRUE)
+c135 <- sum(as.numeric(df$reg_g11sci_age20_boys), na.rm = TRUE)
+c136 <- c131 + c132 + c133 + c134 + c135
+
+c141 <- sum(as.numeric(df$reg_g11sci_age16_girls), na.rm = TRUE)
+c142 <- sum(as.numeric(df$reg_g11sci_age17_girls), na.rm = TRUE)
+c143 <- sum(as.numeric(df$reg_g11sci_age18_girls), na.rm = TRUE)
+c144 <- sum(as.numeric(df$reg_g11sci_age19_girls), na.rm = TRUE)
+c145 <- sum(as.numeric(df$reg_g11sci_age20_girls), na.rm = TRUE)
+c146 <- c141 + c142 + c143 + c144 + c145
+
+# ===== الخامس (g11art) =====
+c151 <- sum(as.numeric(df$reg_g11art_age16_boys), na.rm = TRUE)
+c152 <- sum(as.numeric(df$reg_g11art_age17_boys), na.rm = TRUE)
+c153 <- sum(as.numeric(df$reg_g11art_age18_boys), na.rm = TRUE)
+c154 <- sum(as.numeric(df$reg_g11art_age19_boys), na.rm = TRUE)
+c155 <- sum(as.numeric(df$reg_g11art_age20_boys), na.rm = TRUE)
+c156 <- c151 + c152 + c153 + c154 + c155
+
+c161 <- sum(as.numeric(df$reg_g11art_age16_girls), na.rm = TRUE)
+c162 <- sum(as.numeric(df$reg_g11art_age17_girls), na.rm = TRUE)
+c163 <- sum(as.numeric(df$reg_g11art_age18_girls), na.rm = TRUE)
+c164 <- sum(as.numeric(df$reg_g11art_age19_girls), na.rm = TRUE)
+c165 <- sum(as.numeric(df$reg_g11art_age20_girls), na.rm = TRUE)
+c166 <- c161 + c162 + c163 + c164 + c165
+
+# ===== الخامس (الفرع الثالث) - لا توجد بيانات =====
+c171 <- "—"; c172 <- "—"; c173 <- "—"; c174 <- "—"; c175 <- "—"; c176 <- "—"
+c181 <- "—"; c182 <- "—"; c183 <- "—"; c184 <- "—"; c185 <- "—"; c186 <- "—"
+
+# ===== السادس العلمي (g12sci) =====
+c191 <- sum(as.numeric(df$reg_g12sci_age17_boys), na.rm = TRUE)
+c192 <- sum(as.numeric(df$reg_g12sci_age18_boys), na.rm = TRUE)
+c193 <- sum(as.numeric(df$reg_g12sci_age19_boys), na.rm = TRUE)
+c194 <- sum(as.numeric(df$reg_g12sci_age20_boys), na.rm = TRUE)
+c195 <- sum(as.numeric(df$reg_g12sci_age21_boys), na.rm = TRUE)
+c196 <- c191 + c192 + c193 + c194 + c195
+
+c201 <- sum(as.numeric(df$reg_g12sci_age17_girls), na.rm = TRUE)
+c202 <- sum(as.numeric(df$reg_g12sci_age18_girls), na.rm = TRUE)
+c203 <- sum(as.numeric(df$reg_g12sci_age19_girls), na.rm = TRUE)
+c204 <- sum(as.numeric(df$reg_g12sci_age20_girls), na.rm = TRUE)
+c205 <- sum(as.numeric(df$reg_g12sci_age21_girls), na.rm = TRUE)
+c206 <- c201 + c202 + c203 + c204 + c205
+
+# ===== السادس (g12art) =====
+c211 <- sum(as.numeric(df$reg_g12art_age17_boys), na.rm = TRUE)
+c212 <- sum(as.numeric(df$reg_g12art_age18_boys), na.rm = TRUE)
+c213 <- sum(as.numeric(df$reg_g12art_age19_boys), na.rm = TRUE)
+c214 <- sum(as.numeric(df$reg_g12art_age20_boys), na.rm = TRUE)
+c215 <- sum(as.numeric(df$reg_g12art_age21_boys), na.rm = TRUE)
+c216 <- c211 + c212 + c213 + c214 + c215
+
+c221 <- sum(as.numeric(df$reg_g12art_age17_girls), na.rm = TRUE)
+c222 <- sum(as.numeric(df$reg_g12art_age18_girls), na.rm = TRUE)
+c223 <- sum(as.numeric(df$reg_g12art_age19_girls), na.rm = TRUE)
+c224 <- sum(as.numeric(df$reg_g12art_age20_girls), na.rm = TRUE)
+c225 <- sum(as.numeric(df$reg_g12art_age21_girls), na.rm = TRUE)
+c226 <- c221 + c222 + c223 + c224 + c225
+
+# ===== السادس (الفرع الثالث) - لا توجد بيانات =====
+c231 <- "—"; c232 <- "—"; c233 <- "—"; c234 <- "—"; c235 <- "—"; c236 <- "—"
+c241 <- "—"; c242 <- "—"; c243 <- "—"; c244 <- "—"; c245 <- "—"; c246 <- "—"
+
+c251  <- c11
+c252  <- c12  + c31
+c253  <- c13  + c32  + c51
+c254  <- c14  + c33  + c52  + c71  + c91
+c255  <- c15  + c34  + c53  + c72  + c92   + c131  + c151
+c256  <- c35  + c54  + c73  + c93  + c132  + c152  + c191 + c211
+c257  <- c55  + c74  + c94  + c133 + c153  + c192  + c212
+c258  <- c75  + c95  + c134 + c154 + c193  + c213
+c259  <- c135 + c155 + c194 + c214
+c2510 <- c195 + c215
+c2511 <- c251 + c252 + c253 + c254 + c255 + c256 + c257 + c258 + c259 + c2510
+
+c261  <- c21
+c262  <- c22  + c41
+c263  <- c23  + c42  + c61
+c264  <- c24  + c43  + c62  + c81  + c101
+c265  <- c25  + c44  + c63  + c82  + c102 + c141 + c161
+c266  <- c45  + c64  + c83  + c103 + c142 + c162 + c201 + c221
+c267  <- c65  + c84  + c104 + c143 + c163 + c202 + c222
+c268  <- c85  + c105 + c144 + c164 + c203 + c223
+c269  <- c145 + c165 + c204 + c224
+c2610 <- c205 + c225
+c2611 <- c261 + c262 + c263 + c264 + c265 + c266 + c267 + c268 + c269 + c2610
+
+c271  <- c251 + c261 
+c272  <- c252 + c262  
+c273  <- c253 + c263 
+c274  <- c254 + c264 
+c275  <- c255 + c265 
+c276  <- c256 + c266 
+c277  <- c257 + c267 
+c278  <- c258 + c268 
+c279  <- c259 + c269 
+c2710 <- c2510 + c2610 
+c2711 <- c271 + c272 + c273 + c274 + c275 + c276 + c277 + c278 + c279 + c2710
+
 ```
 
 \begin{table}[H]
@@ -51,19 +192,19 @@ c66 <- c61 + c62 + c63 + c64 + c65
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|c|cccccccccccccccccccccccc|ccc|}
 \hline
-\multirow{2}{*}{العمر} & \multicolumn{2}{c|}{الاول المتوسط}                    & \multicolumn{2}{c|}{الثاني المتوسط}                   & \multicolumn{2}{c|}{الثالث المتوسط}                   & \multicolumn{2}{c|}{الرابع العلمي}                    & \multicolumn{2}{c|}{الرابع الادبي}                    & \multicolumn{2}{c|}{الرابع الفنون}                    & \multicolumn{2}{c|}{الخامس العلمي}                    & \multicolumn{2}{c|}{الخامس الفنون}                    & \multicolumn{2}{c|}{الخامس الادبي}                    & \multicolumn{2}{c|}{السادس العلمي}                    & \multicolumn{2}{c|}{السادس الفنون}                    & \multicolumn{2}{c|}{السادس الادبي} & \multicolumn{3}{c|}{المجموع}                                    \\ \cline{2-28} 
-                       & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & \multicolumn{1}{c|}{بنون}  & بنات  & \multicolumn{1}{c|}{بنون} & \multicolumn{1}{c|}{بنات} & المجموع \\ \hline
-`r ad(12)`             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                            &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-5} \cline{26-28} 
-`r ad(13)`             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                            &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-7} \cline{26-28} 
-`r ad(14)`             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                            &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-13} \cline{26-28} 
-`r ad(15)`             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                            &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-19} \cline{26-28} 
-`r ad(16)`             & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &                           &                           &                           &                           &                            &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \hline
-`r ad(17)`             &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-1} \cline{4-28} 
-`r ad(18)`             &                           &                           &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-1} \cline{6-28} 
-`r ad(19)`             &                           &                           &                           &                           &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-1} \cline{8-28} 
-`r ad(20)`             &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \cline{1-1} \cline{14-28} 
-`r ad(21)` فاكثر       &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           &                           & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \hline
-المجموع                & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}      &       & \multicolumn{1}{c|}{}     & \multicolumn{1}{c|}{}     &         \\ \hline
+\multirow{2}{*}{العمر} & \multicolumn{2}{c|}{الاول المتوسط}                                  & \multicolumn{2}{c|}{الثاني المتوسط}                                 & \multicolumn{2}{c|}{الثالث المتوسط}                                 & \multicolumn{2}{c|}{الرابع العلمي}                                  & \multicolumn{2}{c|}{الرابع الادبي}                                   & \multicolumn{2}{c|}{الرابع الفنون}                                    & \multicolumn{2}{c|}{الخامس العلمي}                                    & \multicolumn{2}{c|}{الخامس الادبي}                                    & \multicolumn{2}{c|}{الخامس الفنون}                                    & \multicolumn{2}{c|}{السادس العلمي}                                    & \multicolumn{2}{c|}{السادس الادبي}                                    & \multicolumn{2}{c|}{السادس الفنون}               & \multicolumn{3}{c|}{المجموع}                                                            \\ \cline{2-28} 
+                       & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}        & \multicolumn{1}{c|}{بنون}        & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & \multicolumn{1}{c|}{بنات}         & \multicolumn{1}{c|}{بنون}         & بنات         & \multicolumn{1}{c|}{بنون}          & \multicolumn{1}{c|}{بنات}          & المجموع       \\ \hline
+`r ad(12)`             & \multicolumn{1}{c|}{`r ad(c11)`} & \multicolumn{1}{c|}{`r ad(c21)`} &                                  &                                  &                                  &                                  &                                  &                                  &                                  &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &              & \multicolumn{1}{c|}{`r ad(c251)`}  & \multicolumn{1}{c|}{`r ad(c261)`}  & `r ad(c271)`  \\ \cline{1-5} \cline{26-28} 
+`r ad(13)`             & \multicolumn{1}{c|}{`r ad(c12)`} & \multicolumn{1}{c|}{`r ad(c22)`} & \multicolumn{1}{c|}{`r ad(c31)`} & \multicolumn{1}{c|}{`r ad(c41)`} &                                  &                                  &                                  &                                  &                                  &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &              & \multicolumn{1}{c|}{`r ad(c252)`}  & \multicolumn{1}{c|}{`r ad(c262)`}  & `r ad(c272)`  \\ \cline{1-7} \cline{26-28} 
+`r ad(14)`             & \multicolumn{1}{c|}{`r ad(c13)`} & \multicolumn{1}{c|}{`r ad(c23)`} & \multicolumn{1}{c|}{`r ad(c32)`} & \multicolumn{1}{c|}{`r ad(c42)`} & \multicolumn{1}{c|}{`r ad(c51)`} & \multicolumn{1}{c|}{`r ad(c61)`} &                                  &                                  &                                  &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &              & \multicolumn{1}{c|}{`r ad(c253)`}  & \multicolumn{1}{c|}{`r ad(c263)`}  & `r ad(c273)`  \\ \cline{1-13} \cline{26-28} 
+`r ad(15)`             & \multicolumn{1}{c|}{`r ad(c14)`} & \multicolumn{1}{c|}{`r ad(c24)`} & \multicolumn{1}{c|}{`r ad(c33)`} & \multicolumn{1}{c|}{`r ad(c43)`} & \multicolumn{1}{c|}{`r ad(c52)`} & \multicolumn{1}{c|}{`r ad(c62)`} & \multicolumn{1}{c|}{`r ad(c71)`} & \multicolumn{1}{c|}{`r ad(c81)`} & \multicolumn{1}{c|}{`r ad(c91)`} & \multicolumn{1}{c|}{`r ad(c101)`} & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   &              & \multicolumn{1}{c|}{`r ad(c254)`}  & \multicolumn{1}{c|}{`r ad(c264)`}  & `r ad(c274)`  \\ \cline{1-19} \cline{26-28} 
+`r ad(16)`             & \multicolumn{1}{c|}{`r ad(c15)`} & \multicolumn{1}{c|}{`r ad(c25)`} & \multicolumn{1}{c|}{`r ad(c34)`} & \multicolumn{1}{c|}{`r ad(c44)`} & \multicolumn{1}{c|}{`r ad(c53)`} & \multicolumn{1}{c|}{`r ad(c63)`} & \multicolumn{1}{c|}{`r ad(c72)`} & \multicolumn{1}{c|}{`r ad(c82)`} & \multicolumn{1}{c|}{`r ad(c92)`} & \multicolumn{1}{c|}{`r ad(c102)`} & \multicolumn{1}{c|}{`r ad(c112)`} & \multicolumn{1}{c|}{`r ad(c122)`} & \multicolumn{1}{c|}{`r ad(c131)`} & \multicolumn{1}{c|}{`r ad(c141)`} & \multicolumn{1}{c|}{`r ad(c151)`} & \multicolumn{1}{c|}{`r ad(c161)`} & \multicolumn{1}{c|}{`r ad(c171)`} & \multicolumn{1}{c|}{`r ad(c181)`} &                                   &                                   &                                   &                                   &                                   &              & \multicolumn{1}{c|}{`r ad(c255)`}  & \multicolumn{1}{c|}{`r ad(c265)`}  & `r ad(c275)`  \\ \hline
+`r ad(17)`             &                                  & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{`r ad(c35)`} & \multicolumn{1}{c|}{`r ad(c45)`} & \multicolumn{1}{c|}{`r ad(c54)`} & \multicolumn{1}{c|}{`r ad(c64)`} & \multicolumn{1}{c|}{`r ad(c73)`} & \multicolumn{1}{c|}{`r ad(c83)`} & \multicolumn{1}{c|}{`r ad(c93)`} & \multicolumn{1}{c|}{`r ad(c103)`} & \multicolumn{1}{c|}{`r ad(c113)`} & \multicolumn{1}{c|}{`r ad(c123)`} & \multicolumn{1}{c|}{`r ad(c132)`} & \multicolumn{1}{c|}{`r ad(c142)`} & \multicolumn{1}{c|}{`r ad(c152)`} & \multicolumn{1}{c|}{`r ad(c162)`} & \multicolumn{1}{c|}{`r ad(c172)`} & \multicolumn{1}{c|}{`r ad(c182)`} & \multicolumn{1}{c|}{`r ad(c191)`} & \multicolumn{1}{c|}{`r ad(c201)`} & \multicolumn{1}{c|}{`r ad(c211)`} & \multicolumn{1}{c|}{`r ad(c221)`} & \multicolumn{1}{c|}{`r ad(c231)`} & `r ad(c241)` & \multicolumn{1}{c|}{`r ad(c256)`}  & \multicolumn{1}{c|}{`r ad(c266)`}  & `r ad(c276)`  \\ \cline{1-1} \cline{4-28} 
+`r ad(18)`             &                                  &                                  &                                  & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{`r ad(c55)`} & \multicolumn{1}{c|}{`r ad(c65)`} & \multicolumn{1}{c|}{`r ad(c74)`} & \multicolumn{1}{c|}{`r ad(c84)`} & \multicolumn{1}{c|}{`r ad(c94)`} & \multicolumn{1}{c|}{`r ad(c104)`} & \multicolumn{1}{c|}{`r ad(c114)`} & \multicolumn{1}{c|}{`r ad(c124)`} & \multicolumn{1}{c|}{`r ad(c133)`} & \multicolumn{1}{c|}{`r ad(c143)`} & \multicolumn{1}{c|}{`r ad(c153)`} & \multicolumn{1}{c|}{`r ad(c163)`} & \multicolumn{1}{c|}{`r ad(c173)`} & \multicolumn{1}{c|}{`r ad(c183)`} & \multicolumn{1}{c|}{`r ad(c192)`} & \multicolumn{1}{c|}{`r ad(c202)`} & \multicolumn{1}{c|}{`r ad(c212)`} & \multicolumn{1}{c|}{`r ad(c222)`} & \multicolumn{1}{c|}{`r ad(c232)`} & `r ad(c242)` & \multicolumn{1}{c|}{`r ad(c257)`}  & \multicolumn{1}{c|}{`r ad(c267)`}  & `r ad(c277)`  \\ \cline{1-1} \cline{6-28} 
+`r ad(19)`             &                                  &                                  &                                  &                                  &                                  & \multicolumn{1}{c|}{}            & \multicolumn{1}{c|}{`r ad(c75)`} & \multicolumn{1}{c|}{`r ad(c85)`} & \multicolumn{1}{c|}{`r ad(c95)`} & \multicolumn{1}{c|}{`r ad(c105)`} & \multicolumn{1}{c|}{`r ad(c115)`} & \multicolumn{1}{c|}{`r ad(c125)`} & \multicolumn{1}{c|}{`r ad(c134)`} & \multicolumn{1}{c|}{`r ad(c144)`} & \multicolumn{1}{c|}{`r ad(c154)`} & \multicolumn{1}{c|}{`r ad(c164)`} & \multicolumn{1}{c|}{`r ad(c174)`} & \multicolumn{1}{c|}{`r ad(c184)`} & \multicolumn{1}{c|}{`r ad(c193)`} & \multicolumn{1}{c|}{`r ad(c203)`} & \multicolumn{1}{c|}{`r ad(c213)`} & \multicolumn{1}{c|}{`r ad(c223)`} & \multicolumn{1}{c|}{`r ad(c233)`} & `r ad(c243)` & \multicolumn{1}{c|}{`r ad(c258)`}  & \multicolumn{1}{c|}{`r ad(c268)`}  & `r ad(c278)`  \\ \cline{1-1} \cline{8-28} 
+`r ad(20)`             &                                  &                                  &                                  &                                  &                                  &                                  &                                  &                                  &                                  &                                   &                                   & \multicolumn{1}{c|}{}             & \multicolumn{1}{c|}{`r ad(c135)`} & \multicolumn{1}{c|}{`r ad(c145)`} & \multicolumn{1}{c|}{`r ad(c155)`} & \multicolumn{1}{c|}{`r ad(c165)`} & \multicolumn{1}{c|}{`r ad(c175)`} & \multicolumn{1}{c|}{`r ad(c185)`} & \multicolumn{1}{c|}{`r ad(c194)`} & \multicolumn{1}{c|}{`r ad(c204)`} & \multicolumn{1}{c|}{`r ad(c214)`} & \multicolumn{1}{c|}{`r ad(c224)`} & \multicolumn{1}{c|}{`r ad(c234)`} & `r ad(c244)` & \multicolumn{1}{c|}{`r ad(c259)`}  & \multicolumn{1}{c|}{`r ad(c269)`}  & `r ad(c279)`  \\ \cline{1-1} \cline{14-28} 
+`r ad(21)` فاكثر       &                                  &                                  &                                  &                                  &                                  &                                  &                                  &                                  &                                  &                                   &                                   &                                   &                                   &                                   &                                   &                                   &                                   & \multicolumn{1}{c|}{}             & \multicolumn{1}{c|}{`r ad(c195)`} & \multicolumn{1}{c|}{`r ad(c205)`} & \multicolumn{1}{c|}{`r ad(c215)`} & \multicolumn{1}{c|}{`r ad(c225)`} & \multicolumn{1}{c|}{`r ad(c235)`} & `r ad(c245)` & \multicolumn{1}{c|}{`r ad(c2510)`} & \multicolumn{1}{c|}{`r ad(c2610)`} & `r ad(c2710)` \\ \hline
+المجموع                & \multicolumn{1}{c|}{`r ad(c16)`} & \multicolumn{1}{c|}{`r ad(c26)`} & \multicolumn{1}{c|}{`r ad(c36)`} & \multicolumn{1}{c|}{`r ad(c46)`} & \multicolumn{1}{c|}{`r ad(c56)`} & \multicolumn{1}{c|}{`r ad(c66)`} & \multicolumn{1}{c|}{`r ad(c76)`} & \multicolumn{1}{c|}{`r ad(c86)`} & \multicolumn{1}{c|}{`r ad(c96)`} & \multicolumn{1}{c|}{`r ad(c106)`} & \multicolumn{1}{c|}{`r ad(c116)`} & \multicolumn{1}{c|}{`r ad(c126)`} & \multicolumn{1}{c|}{`r ad(c136)`} & \multicolumn{1}{c|}{`r ad(c146)`} & \multicolumn{1}{c|}{`r ad(c156)`} & \multicolumn{1}{c|}{`r ad(c166)`} & \multicolumn{1}{c|}{`r ad(c176)`} & \multicolumn{1}{c|}{`r ad(c176)`} & \multicolumn{1}{c|}{`r ad(c196)`} & \multicolumn{1}{c|}{`r ad(c206)`} & \multicolumn{1}{c|}{`r ad(c216)`} & \multicolumn{1}{c|}{`r ad(c226)`} & \multicolumn{1}{c|}{`r ad(c236)`} & `r ad(c246)` & \multicolumn{1}{c|}{`r ad(c2511)`} & \multicolumn{1}{c|}{`r ad(c2611)`} & `r ad(c2711)` \\ \hline
 \end{tabular}
 }
 \end{table}

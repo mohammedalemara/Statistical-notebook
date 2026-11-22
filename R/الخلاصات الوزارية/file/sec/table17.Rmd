@@ -1,0 +1,30 @@
+```{r table17, include=FALSE}
+
+c11 <- sum(as.numeric(df$staff_age_le30_male), na.rm = TRUE)
+c21 <- sum(as.numeric(df$staff_age_le30_female), na.rm = TRUE)
+c31 <- sum(as.numeric(df$staff_age_y30_39_male), na.rm = TRUE)
+c41 <- sum(as.numeric(df$staff_age_y30_39_female), na.rm = TRUE)
+c51 <- sum(as.numeric(df$staff_age_y40_49_male), na.rm = TRUE)
+c61 <- sum(as.numeric(df$staff_age_y40_49_female), na.rm = TRUE)
+c71 <- sum(as.numeric(df$staff_age_y50_59_male), na.rm = TRUE)
+c81 <- sum(as.numeric(df$staff_age_y50_59_female), na.rm = TRUE)
+c91 <- sum(as.numeric(df$staff_age_y60_male), na.rm = TRUE)
+c101 <- sum(as.numeric(df$staff_age_y60_female), na.rm = TRUE)
+c111 <- sum(as.numeric(df$staff_age_total_male_calc), na.rm = TRUE)
+c121 <- sum(as.numeric(df$staff_age_total_female_calc), na.rm = TRUE)
+c131 <- sum(as.numeric(df$staff_age_total_total_calc), na.rm = TRUE)
+
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد اعضاء الهيئة التعليمية حسب سنوات العمر}
+\begin{tabular}{|cc|cc|cc|cc|cc|ccc|}
+\hline
+\multicolumn{2}{|c|}{اقل من `r ad(30)`}         & \multicolumn{2}{c|}{`r ad(30)` - `r ad(39)`}   & \multicolumn{2}{c|}{`r ad(40)` - `r ad(49)`}   & \multicolumn{2}{c|}{`r ad(50)` - `r ad(59)`}   & \multicolumn{2}{c|}{`r ad(60)` فأكثر}           & \multicolumn{3}{c|}{المجموع}                                                         \\ \hline
+\multicolumn{1}{|c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & اناث        & \multicolumn{1}{c|}{ذكور}        & اناث         & \multicolumn{1}{c|}{ذكور}         & \multicolumn{1}{c|}{اناث}         & المجموع      \\ \hline
+\multicolumn{1}{|c|}{`r ad(c11)`} & `r ad(c21)` & \multicolumn{1}{c|}{`r ad(c31)`} & `r ad(c41)` & \multicolumn{1}{c|}{`r ad(c51)`} & `r ad(c61)` & \multicolumn{1}{c|}{`r ad(c71)`} & `r ad(c81)` & \multicolumn{1}{c|}{`r ad(c91)`} & `r ad(c101)` & \multicolumn{1}{c|}{`r ad(c111)`} & \multicolumn{1}{c|}{`r ad(c121)`} & `r ad(c131)` \\ \hline
+\end{tabular}
+\end{table}

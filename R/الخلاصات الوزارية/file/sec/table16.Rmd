@@ -1,0 +1,29 @@
+```{r table16, include=FALSE}
+
+c11 <- sum(as.numeric(df$staff_lvl_lvl1_male), na.rm = TRUE)
+c12 <- sum(as.numeric(df$staff_lvl_lvl2_male), na.rm = TRUE)
+c13 <- c11 + c12
+
+c21 <- sum(as.numeric(df$staff_lvl_lvl1_female), na.rm = TRUE)
+c22 <- sum(as.numeric(df$staff_lvl_lvl2_female), na.rm = TRUE)
+c23 <- c21 + c22
+
+c31 <- c11 + c21
+c32 <- c12 + c22
+c33 <- c31 + c32
+
+
+```
+
+\begin{table}[H]
+\centering
+\Large
+\caption{عدد اعضاء الهيئة التدريسية حسب المرحلة التي يدرس فيها}
+\begin{tabular}{|r|c|c|c|}
+\hline
+المرحلة   & ذكور        & اناث        & المجموع     \\ \hline
+المتوسطة  & `r ad(c11)` & `r ad(c21)` & `r ad(c31)` \\ \hline
+الاعدادية & `r ad(c12)` & `r ad(c22)` & `r ad(c32)` \\ \hline
+المجموع   & `r ad(c13)` & `r ad(c23)` & `r ad(c33)` \\ \hline
+\end{tabular}
+\end{table}
