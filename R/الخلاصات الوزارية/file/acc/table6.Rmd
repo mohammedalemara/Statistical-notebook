@@ -1,16 +1,16 @@
 ```{r table6, include=FALSE}
 
 # ===== التاركون =====
-c11 <- sum(as.numeric(df$youth_drop_stg1_boys), na.rm = TRUE)
-c21 <- sum(as.numeric(df$youth_drop_stg1_girls), na.rm = TRUE)
+c11 <- sum(as.numeric(df$acc_drop_stg1_boys), na.rm = TRUE)
+c21 <- sum(as.numeric(df$acc_drop_stg1_girls), na.rm = TRUE)
 c31 <- c11 + c21
 
-c12 <- sum(as.numeric(df$youth_drop_stg2_boys), na.rm = TRUE)
-c22 <- sum(as.numeric(df$youth_drop_stg2_girls), na.rm = TRUE)
+c12 <- sum(as.numeric(df$acc_drop_stg2_boys), na.rm = TRUE)
+c22 <- sum(as.numeric(df$acc_drop_stg2_girls), na.rm = TRUE)
 c32 <- c12 + c22
 
-c13 <- sum(as.numeric(df$youth_drop_stg3_boys), na.rm = TRUE)
-c23 <- sum(as.numeric(df$youth_drop_stg3_girls), na.rm = TRUE)
+c13 <- sum(as.numeric(df$acc_drop_stg3_boys), na.rm = TRUE)
+c23 <- sum(as.numeric(df$acc_drop_stg3_girls), na.rm = TRUE)
 c33 <- c13 + c23
 
 c14 <- c11 + c12 + c13
@@ -19,16 +19,16 @@ c34 <- c31 + c32 + c33
 ###################################################################
 
 # ===== الناجحون =====
-c41 <- sum(as.numeric(df$youth_pass_stg1_boys), na.rm = TRUE)
-c51 <- sum(as.numeric(df$youth_pass_stg1_girls), na.rm = TRUE)
+c41 <- sum(as.numeric(df$acc_pass_stg1_boys), na.rm = TRUE)
+c51 <- sum(as.numeric(df$acc_pass_stg1_girls), na.rm = TRUE)
 c61 <- c41 + c51
 
-c42 <- sum(as.numeric(df$youth_pass_stg2_boys), na.rm = TRUE)
-c52 <- sum(as.numeric(df$youth_pass_stg2_girls), na.rm = TRUE)
+c42 <- sum(as.numeric(df$acc_pass_stg2_boys), na.rm = TRUE)
+c52 <- sum(as.numeric(df$acc_pass_stg2_girls), na.rm = TRUE)
 c62 <- c42 + c52
 
-c43 <- sum(as.numeric(df$youth_pass_stg3_boys), na.rm = TRUE)
-c53 <- sum(as.numeric(df$youth_pass_stg3_girls), na.rm = TRUE)
+c43 <- sum(as.numeric(df$acc_pass_stg3_boys), na.rm = TRUE)
+c53 <- sum(as.numeric(df$acc_pass_stg3_girls), na.rm = TRUE)
 c63 <- c43 + c53
 
 c44 <- c41 + c42 + c43
@@ -37,34 +37,34 @@ c64 <- c61 + c62 + c63
 ###################################################################
 
 # ===== الراسبون =====
-c71 <- sum(as.numeric(df$youth_fail_stg1_boys), na.rm = TRUE)
-c72 <- sum(as.numeric(df$youth_fail_stg2_boys), na.rm = TRUE)
-c73 <- sum(as.numeric(df$youth_fail_stg3_boys), na.rm = TRUE)
+c71 <- sum(as.numeric(df$acc_fail_stg1_boys), na.rm = TRUE)
+c72 <- sum(as.numeric(df$acc_fail_stg2_boys), na.rm = TRUE)
+c73 <- sum(as.numeric(df$acc_fail_stg3_boys), na.rm = TRUE)
 c74 <- c71 + c72 + c73
 
-c81 <- sum(as.numeric(df$youth_fail_stg1_girls), na.rm = TRUE)
-c82 <- sum(as.numeric(df$youth_fail_stg2_girls), na.rm = TRUE)
-c83 <- sum(as.numeric(df$youth_fail_stg3_girls), na.rm = TRUE)
+c81 <- sum(as.numeric(df$acc_fail_stg1_girls), na.rm = TRUE)
+c82 <- sum(as.numeric(df$acc_fail_stg2_girls), na.rm = TRUE)
+c83 <- sum(as.numeric(df$acc_fail_stg3_girls), na.rm = TRUE)
 c84 <- c81 + c82 + c83
 
-c91 <- sum(as.numeric(df$youth_limit_stg1_boys), na.rm = TRUE)
-c92 <- sum(as.numeric(df$youth_limit_stg2_boys), na.rm = TRUE)
-c93 <- sum(as.numeric(df$youth_limit_stg3_boys), na.rm = TRUE)
+c91 <- sum(as.numeric(df$acc_limit_stg1_boys), na.rm = TRUE)
+c92 <- sum(as.numeric(df$acc_limit_stg2_boys), na.rm = TRUE)
+c93 <- sum(as.numeric(df$acc_limit_stg3_boys), na.rm = TRUE)
 c94 <- c91 + c92 + c93
 
-c101 <- sum(as.numeric(df$youth_limit_stg1_girls), na.rm = TRUE)
-c102 <- sum(as.numeric(df$youth_limit_stg2_girls), na.rm = TRUE)
-c103 <- sum(as.numeric(df$youth_limit_stg3_girls), na.rm = TRUE)
+c101 <- sum(as.numeric(df$acc_limit_stg1_girls), na.rm = TRUE)
+c102 <- sum(as.numeric(df$acc_limit_stg2_girls), na.rm = TRUE)
+c103 <- sum(as.numeric(df$acc_limit_stg3_girls), na.rm = TRUE)
 c104 <- c101 + c102 + c103
 
-c111 <- sum(as.numeric(df$youth_other_stg1_boys), na.rm = TRUE)
-c112 <- sum(as.numeric(df$youth_other_stg2_boys), na.rm = TRUE)
-c113 <- sum(as.numeric(df$youth_other_stg3_boys), na.rm = TRUE)
+c111 <- sum(as.numeric(df$acc_other_stg1_boys), na.rm = TRUE)
+c112 <- sum(as.numeric(df$acc_other_stg2_boys), na.rm = TRUE)
+c113 <- sum(as.numeric(df$acc_other_stg3_boys), na.rm = TRUE)
 c114 <- c111 + c112 + c113
 
-c121 <- sum(as.numeric(df$youth_other_stg1_girls), na.rm = TRUE)
-c122 <- sum(as.numeric(df$youth_other_stg2_girls), na.rm = TRUE)
-c123 <- sum(as.numeric(df$youth_other_stg3_girls), na.rm = TRUE)
+c121 <- sum(as.numeric(df$acc_other_stg1_girls), na.rm = TRUE)
+c122 <- sum(as.numeric(df$acc_other_stg2_girls), na.rm = TRUE)
+c123 <- sum(as.numeric(df$acc_other_stg3_girls), na.rm = TRUE)
 c124 <- c121 + c122 + c123
 
 # مجموع الراسبين: بنون

@@ -36,8 +36,8 @@ c91 <- sum(as.numeric(df$new_g10sci_total_girls_calc[df$sch_env == "urb"]), na.r
 c92 <- sum(as.numeric(df$new_g10sci_total_girls_calc[df$sch_env == "rur"]), na.rm = TRUE)
 c93 <- c91 + c92
 
-c101 <- sum(as.numeric(df$new_g10sci_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE)
-c102 <- sum(as.numeric(df$new_g10sci_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE)
+c101 <- sum(as.numeric(df$new_g10art_total_boys_calc[df$sch_env == "urb"]), na.rm = TRUE)
+c102 <- sum(as.numeric(df$new_g10art_total_boys_calc[df$sch_env == "rur"]), na.rm = TRUE)
 c103 <- c101 + c102
 
 c111 <- sum(as.numeric(df$new_g10art_total_girls_calc[df$sch_env == "urb"]), na.rm = TRUE)

@@ -25,7 +25,6 @@ c111 <- sum(as.numeric(df$staff_serv_total_total_calc), na.rm = TRUE)
 \centering
 \Large
 \caption[]{عدد اعضاء الهيئة التعليمية حسب سنوات الخدمة}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cc|cc|cc|cc|ccc|}
 \hline
 \multicolumn{2}{|c|}{`r ad(5)` سنوات فأقل}      & \multicolumn{2}{c|}{`r ad(6)` - `r ad(10)`}    & \multicolumn{2}{c|}{`r ad(11)` - `r ad(15)`}   & \multicolumn{2}{c|}{`r ad(16)` فأكثر}          & \multicolumn{3}{c|}{المجموع}                                                        \\ \hline

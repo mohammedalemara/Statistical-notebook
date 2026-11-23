@@ -84,10 +84,10 @@ c63 <-  sum(as.numeric(df$reg_g7_total_girls_calc[df$sch_class == "high"]), na.r
 
 c64 <- c61 + c62 + c63
 
-c71 <- c51 + c61 + c71
-c72 <- c52 + c62 + c72
-c73 <- c53 + c63 + c73
-c74 <- c71 + c72 + c73
+c71 <- c51 + c61 
+c72 <- c52 + c62
+c73 <- c53 + c63
+c74 <- c54 + c64
 
 c81 <-  sum(as.numeric(df$staff_title_total_male_calc[df$sch_class == "mid"]), na.rm = TRUE)
 c82 <-  sum(as.numeric(df$staff_title_total_male_calc[df$sch_class == "sec"]), na.rm = TRUE)

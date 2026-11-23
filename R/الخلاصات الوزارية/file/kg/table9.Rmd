@@ -28,7 +28,6 @@ c131 <- sum(as.numeric(df$staff_age_total_total_calc), na.rm = TRUE)
 \centering
 \Large
 \caption[]{عدد اعضاء الهيئة التعليمية حسب العمر}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cc|cc|cc|cc|cc|ccc|}
 \hline
 \multicolumn{2}{|c|}{أقل من `r ad(30)` سنة}     & \multicolumn{2}{c|}{`r ad(30)` - `r ad(39)`}   & \multicolumn{2}{c|}{`r ad(40)` - `r ad(49)`}   & \multicolumn{2}{c|}{`r ad(50)` - `r ad(59)`}   & \multicolumn{2}{c|}{`r ad(60)` فأكثر}           & \multicolumn{3}{c|}{المجموع}                                                         \\ \hline

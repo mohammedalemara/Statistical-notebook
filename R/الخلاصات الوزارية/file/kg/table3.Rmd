@@ -67,7 +67,6 @@ c153 <- c151 + c152
 \centering
 \Large
 \caption{عدد المعلمات حسب العنوان الوظيفي والشهادة والبيئة}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cccccc|ccccccccccc|}
 \hline
 \multicolumn{6}{|c|}{الهيئة التعليمية حسب العنوان والبيئة}                                                                                                                                                                                                        & \multicolumn{11}{c|}{الهيئة التعليمية حسب الشهادة والبيئة}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              \\ \hline

@@ -44,7 +44,6 @@ c93 <- c33 + c63
 \centering
 \Large
 \caption{عدد الأطفال التاركين حسب الجنس والمرحلة والعمر}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|c|ccc|ccc|ccc|}
 \hline
 \multirow{2}{*}{}      & \multicolumn{3}{c|}{روضة}                                                         & \multicolumn{3}{c|}{تمهيدي}                                                       & \multicolumn{3}{c|}{المجموع}                                                      \\ \cline{2-10} 

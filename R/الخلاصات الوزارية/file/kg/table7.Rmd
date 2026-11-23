@@ -12,7 +12,6 @@ c13 <- sum(as.numeric(df$staff_train_total_train_calc), na.rm = TRUE)
 \centering
 \Large
 \caption[]{عدد اعضاء الهيئة التعليمية المشاركين في الدورات التدريبية للعام السابق}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|c|c|}
 \hline
 الجنس   & عدد المعلمات \\ \hline

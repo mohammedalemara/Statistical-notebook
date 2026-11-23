@@ -71,6 +71,17 @@ by <- "2027/2026"
 \Large
 \tableofcontents
 \newpage
+
+\clearpage
+\newgeometry{margin=0pt}
+\includepdf[
+    pages=1,
+    fitpaper=true
+]{image//ch_kg.pdf}
+\restoregeometry
+\clearpage
+
+
 \section{رياض الاطفال}
 \subsection{التعليم الحكومي}
 ```
@@ -245,6 +256,30 @@ df <- df_original %>%filter(book_class == "pri", sch_class == "yth")
 
 ```{=latex}
 \newpage
+\section{مدارس التعليم المسرع}
+\setcounter{table}{0}
+```
+```{r, include=FALSE}
+df <- df_original %>%filter(book_class == "pri", sch_class == "acc")
+```
+
+
+```{r, child='file//acc//table1.Rmd'}
+```
+```{r, child='file//acc//table2.Rmd'}
+```
+```{r, child='file//acc//table3.Rmd'}
+```
+```{r, child='file//acc//table4.Rmd'}
+```
+```{r, child='file//acc//table5.Rmd'}
+```
+```{r, child='file//acc//table6.Rmd'}
+```
+
+
+```{=latex}
+\newpage
 \section{التربية الخاصة}
 \setcounter{table}{0}
 ```
@@ -308,18 +343,14 @@ df <- df_original %>%filter(book_class == "sec", ownership == "gov")
 ```{r, child='file//sec//table18.Rmd'}
 ```
 
-\newpage
-\subsection{مدارس المتميزين}
-\setcounter{table}{0}
 
+```{=latex}
+\newpage
+\subsection{التعليم الأهلي}
+\setcounter{table}{0}
+```
 ```{r, include=FALSE}
-df <- df_original %>%
-  filter(
-    book_class == "sec",
-    ownership == "gov",
-    sch_stat_no %in% c(1401389, 1401390, 1401533, 1401534, 1401697, 1401698,
-                       1401416, 1401417, 1401479, 1401694, 1401436, 1401437)
-  )
+df <- df_original %>%filter(book_class == "sec", ownership == "priv")
 ```
 
 ```{r, child='file//sec//table1.Rmd'}
@@ -332,7 +363,135 @@ df <- df_original %>%
 ```
 ```{r, child='file//sec//table5.Rmd'}
 ```
+```{r, child='file//sec//table6.Rmd'}
+```
+```{r, child='file//sec//table7.Rmd'}
+```
+```{r, child='file//sec//table8.Rmd'}
+```
+```{r, child='file//sec//table9.Rmd'}
+```
+```{r, child='file//sec//table10.Rmd'}
+```
+```{r, child='file//sec//table11.Rmd'}
+```
+```{r, child='file//sec//table12.Rmd'}
+```
+```{r, child='file//sec//table13.Rmd'}
+```
+```{r, child='file//sec//table14.Rmd'}
+```
+```{r, child='file//sec//table15.Rmd'}
+```
+```{r, child='file//sec//table16.Rmd'}
+```
+```{r, child='file//sec//table17.Rmd'}
+```
+```{r, child='file//sec//table18.Rmd'}
+```
 
+
+
+\newpage
+\subsection{مدارس المتميزين}
+\setcounter{table}{0}
+
+```{r, include=FALSE}
+df <- df_original %>%
+  filter(
+    book_class == "sec",
+    ownership == "gov",
+    sch_stat_no %in% c(1400706, 1400707, 1401381, 1401489)
+      
+  )
+```
+```{r, child='file//sec//table1.Rmd'}
+```
+```{r, child='file//sec//table2.Rmd'}
+```
+```{r, child='file//sec//table3.Rmd'}
+```
+```{r, child='file//sec//table4.Rmd'}
+```
+```{r, child='file//sec//table5.Rmd'}
+```
+```{r, child='file//sec//table6.Rmd'}
+```
+```{r, child='file//sec//table7.Rmd'}
+```
+```{r, child='file//sec//table8.Rmd'}
+```
+```{r, child='file//sec//table9.Rmd'}
+```
+```{r, child='file//sec//table10.Rmd'}
+```
+```{r, child='file//sec//table11.Rmd'}
+```
+```{r, child='file//sec//table12.Rmd'}
+```
+```{r, child='file//sec//table13.Rmd'}
+```
+```{r, child='file//sec//table14.Rmd'}
+```
+```{r, child='file//sec//table15.Rmd'}
+```
+```{r, child='file//sec//table16.Rmd'}
+```
+```{r, child='file//sec//table17.Rmd'}
+```
+```{r, child='file//sec//table18.Rmd'}
+```
+
+\newpage
+\subsection{مدارس المتفوقين}
+\setcounter{table}{0}
+
+```{r, include=FALSE}
+df <- df_original %>%
+  filter(
+    book_class == "sec",
+    ownership == "gov",
+    sch_stat_no %in% c(1401389, 1401390, 1401533, 1401534, 1401697, 1401698, 1401416, 1401417, 1401479, 
+                       1401694, 1401436, 1401437)
+      
+  )
+```
+```{r, child='file//sec//table1.Rmd'}
+```
+```{r, child='file//sec//table2.Rmd'}
+```
+```{r, child='file//sec//table3.Rmd'}
+```
+```{r, child='file//sec//table4.Rmd'}
+```
+```{r, child='file//sec//table5.Rmd'}
+```
+```{r, child='file//sec//table6.Rmd'}
+```
+```{r, child='file//sec//table7.Rmd'}
+```
+```{r, child='file//sec//table8.Rmd'}
+```
+```{r, child='file//sec//table9.Rmd'}
+```
+```{r, child='file//sec//table10.Rmd'}
+```
+```{r, child='file//sec//table11.Rmd'}
+```
+```{r, child='file//sec//table12.Rmd'}
+```
+```{r, child='file//sec//table13.Rmd'}
+```
+```{r, child='file//sec//table14.Rmd'}
+```
+```{r, child='file//sec//table15.Rmd'}
+```
+```{r, child='file//sec//table16.Rmd'}
+```
+```{r, child='file//sec//table17.Rmd'}
+```
+```{r, child='file//sec//table18.Rmd'}
+```
 
 
 

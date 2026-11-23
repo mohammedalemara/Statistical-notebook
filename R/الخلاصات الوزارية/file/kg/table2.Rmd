@@ -19,7 +19,6 @@ c121 <- nrow(df[which(df$shared_type == "both"),])
 \centering
 \Large
 \caption{رياض الاطفال}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cccccccc|cccc|}
 \hline
 \multicolumn{8}{|c|}{عدد رياض الاطفال المشمولة :-}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         & \multicolumn{4}{c|}{هل الروضة}                                                                                                                                                                                                                                                                                                                                                        \\ \hline

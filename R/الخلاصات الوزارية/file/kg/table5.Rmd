@@ -21,7 +21,6 @@ c131 <- nrow(df[which(df$bld_material == "oth"),])
 \centering
 \Large
 \caption[]{عدد الأبنية والمكتبات}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|c|c|ccc|ccc|cccccc|}
 \hline
 عدد   المكتبات المدرسية       & \multirow{3}{*}{عدد الكتب} & \multicolumn{3}{c|}{عدد الأبنية   حسب العائدية}                                                    & \multicolumn{3}{c|}{عدد الأبنية حسب الحالة العمرانية}                                                                                                                      & \multicolumn{6}{c|}{عدد الأبنية حسب مادة البناء}                                                                                                                                                                                                                                                                               \\ \cline{1-1} \cline{3-14} 
@@ -51,7 +50,6 @@ c101<- nrow(df[which(df$has_fence == "1"),])
 \centering
 \Large
 \caption*{جدول ٥-١: عدد الابنية المدرسية ونوع لخدمات}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cc|ccc|c|cccc|}
 \hline
 \multicolumn{2}{|c|}{عدد الأبنية حسب نوعها}     & \multicolumn{3}{c|}{عدد الابنية التي تشغلها}                                      & \multirow{2}{*}{المجموع الكلي للابنية} & \multicolumn{4}{c|}{عدد الابنية حسب الخدمات}                                                                                                          \\ \cline{1-5} \cline{7-10} 
@@ -79,7 +77,6 @@ c101 <- c51 + c61 + c71 + c81 + c91
 \centering
 \Large
 \caption*{جدول ٥-٢: عدد الابنية المدرسية حسب عدد الطوابق وعدد الصفوف}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cccc|cccccc|}
 \hline
 \multicolumn{4}{|c|}{عدد الابنية حسب عدد الطوابق}                                                                     & \multicolumn{6}{c|}{عدد الابنية حسب عدد الصفوف}                                                                                                                                                     \\ \hline

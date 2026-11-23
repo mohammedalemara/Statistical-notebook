@@ -41,7 +41,6 @@ c310 <- c31 + c32 + c33 + c34 + c35 + c36 + c37 + c38 + c39
 \centering
 \Large
 \caption[]{عدد اعضاء الهئية التدريسية حسب الحالة الوظيفية}
-\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{|cc|c|c|c|}
 \hline
 \multicolumn{2}{|c|}{الحالة الوظيفية}                                               & ذكور         & اناث         & المجموع      \\ \hline
